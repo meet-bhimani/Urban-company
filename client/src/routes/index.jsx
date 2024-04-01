@@ -21,10 +21,6 @@ export const Router = (isAuthenticated = false) => {
           element: <PrivateRoutesCheck isAuthenticated={isAuthenticated} />,
           children: [],
         },
-        {
-          path: '*',
-          element: <ErrorPage />,
-        },
       ],
     },
     {
@@ -34,6 +30,10 @@ export const Router = (isAuthenticated = false) => {
     {
       path: 'register',
       element: <Register />,
+    },
+    {
+      path: '*',
+      element: <ErrorPage />,
     },
   ])
 }
