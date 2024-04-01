@@ -28,7 +28,13 @@ const Button = ({ children, classNames, variant, size, rounded, ...props }) => {
     'lg': 'px-5 py-2 text-base',
   }
 
-  const buttonClass = twMerge('px-4 py-1', classNames, variants[variant], sizes[size], rounded ? 'rounded' : '')
+  const buttonClass = twMerge(
+    'px-4 py-1 font-semibold',
+    classNames,
+    variants[variant],
+    sizes[size],
+    rounded ? 'rounded' : ''
+  )
 
   return (
     <button className={buttonClass} {...props}>
