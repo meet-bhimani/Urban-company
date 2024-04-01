@@ -3,7 +3,21 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   darkMode: ['selector', '[data-mode="dark"]'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: '#572ac8',
+        secondary: '#eceae8',
+        black: '#011222',
+        white: '#f6f9fc',
+        success: '#00bd5e',
+        warning: '#f58700',
+        danger: '#ff4238',
+        green: '#07794c',
+      },
+      fontFamily: {
+        roboto: ['Roboto', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
