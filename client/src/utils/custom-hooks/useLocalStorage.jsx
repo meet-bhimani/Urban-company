@@ -1,14 +1,14 @@
 const useLocalStorage = (key) => {
-  const setItem = (value)=>{
-    window.localStorage.setItem(key,JSON.stringify(value))
+  const setItem = (value) => {
+    window.localStorage.setItem(key, JSON.stringify(value))
   }
 
-  const getItem = ()=>{
+  const getItem = () => {
     const item = window.localStorage.getItem(key)
-    return item ? JSON.parse(item) : undefined;
+    return item ? JSON.parse(item) : undefined
   }
 
-  const removeItem = ()=>{
+  const removeItem = () => {
     window.localStorage.removeItem(key)
   }
 

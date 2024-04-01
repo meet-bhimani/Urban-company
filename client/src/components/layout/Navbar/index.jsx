@@ -1,12 +1,7 @@
 import React from 'react'
-import './navbar.css'
 
-const Navbar = () => {
-  return (
-    <div>
-      Navbar
-    </div>
-  )
+const index = () => {
+  return <div>Navbar Top</div>
 }
 
-export default Navbar
+export default index
