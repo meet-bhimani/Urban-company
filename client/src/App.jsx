@@ -11,8 +11,7 @@ const App = () => {
   return (
     <>
       <Suspense fallback={<Loader />}>
-        {/* <RouterProvider router={router} /> */}
-        <Loader />
+        <RouterProvider router={router} />
       </Suspense>
     </>
   )
