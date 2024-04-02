@@ -23,18 +23,12 @@ const Button = ({ children, classNames, variant, size, rounded, ...props }) => {
   }
 
   const sizes = {
-    'sm': 'px-2 py-1 text-xs',
-    'md': 'px-3 py-1 text-sm',
-    'lg': 'px-5 py-2 text-base',
+    'sm': 'px-2 py-1 text-xs sm:text-sm',
+    'md': 'px-1 py-1 text-xs xsm:text-sm sm:px-3 sm:py-1 sm:text-base',
+    'lg': 'px-2 py-1 text-base sm:px-5 sm:py-2 sm:text-lg md:text-xl',
   }
 
-  const buttonClass = twMerge(
-    'px-4 py-1 font-semibold',
-    classNames,
-    variants[variant],
-    sizes[size],
-    rounded ? 'rounded' : ''
-  )
+  const buttonClass = twMerge('px-4 py-1', classNames, variants[variant], sizes[size], rounded ? 'rounded' : '')
 
   return (
     <button className={buttonClass} {...props}>

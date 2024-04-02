@@ -8,7 +8,7 @@ const Sidebar = () => {
   return (
     <>
       <nav className="h-full flex flex-col bg-secondary border-r shadow-sm">
-        <div className={`py-4 px-3 pb-2 flex items-center ${showSidebar ? 'justify-between' : 'justify-center'}`}>
+        <div className={`py-4 px-3 pb-0 flex items-center ${showSidebar ? 'justify-between' : 'justify-center'}`}>
           {showSidebar && (
             <img
               src="/images/favicon.png"
