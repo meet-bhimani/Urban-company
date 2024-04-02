@@ -10,7 +10,7 @@ const SidebarLinks = ({ Links = [] }) => {
         return (
           <li
             key={link.label}
-            className={`flex items-center p-2 font-medium rounded-md cursor-pointer transition-colors`}
+            className={`flex items-center justify-center py-2 font-medium rounded-md cursor-pointer transition-colors`}
           >
             <NavLink
               to={link.slug}
@@ -18,7 +18,7 @@ const SidebarLinks = ({ Links = [] }) => {
               className={({ isActive }) =>
                 `${
                   isActive ? 'bg-gray-300' : ''
-                } relative text-black hover:bg-gray-300 flex items-center h-[40px] gap-1 text-[1rem] p-1.5 rounded transition-all duration-200 ease-in-out group`
+                } relative text-black hover:bg-gray-300 flex items-center h-[40px] gap-1 text-[1rem] p-0.5 xsm:p-1.5 rounded transition-all duration-200 ease-in-out group`
               }
             >
               <div className="flex items-center px-1">
