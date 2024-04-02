@@ -18,18 +18,18 @@ export const Router = (isAuthenticated = false) => {
           element: <Home />,
         },
         {
+          path: 'login',
+          element: <Login />,
+        },
+        {
+          path: 'register',
+          element: <Register />,
+        },
+        {
           element: <PrivateRoutesCheck isAuthenticated={isAuthenticated} />,
           children: [],
         },
       ],
-    },
-    {
-      path: 'login',
-      element: <Login />,
-    },
-    {
-      path: 'register',
-      element: <Register />,
     },
     {
       path: '*',

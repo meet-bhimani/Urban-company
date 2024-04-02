@@ -18,7 +18,7 @@ const TopNavbar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/signup" className="text-gray-700 hover:text-gray-900">
+              <NavLink to="/register" className="text-gray-700 hover:text-gray-900">
                 <Button variant={'primary-outline'} rounded size="md">
                   SignUp
                 </Button>
