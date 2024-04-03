@@ -9,6 +9,7 @@ import { getUserByEmail } from '../../../api/loginApi'
 import { setLoader } from '../../../redux/actions/appAction'
 import { setRole } from '../../../redux/actions/authAction'
 import HelmetHeader from '../../common/HelmetHeader'
+import toast from 'react-hot-toast'
 
 const Login = () => {
   const { isAuth, user } = useSelector((state) => state.role)
@@ -40,16 +41,16 @@ const Login = () => {
       if (success) {
         if (data[0].password === password) {
           dispatch(setRole(data[0]))
-          // alert('loggedIN')
+          toast.success(`Welcome, ${data[0].name}`)
           navigate('/')
         } else {
-          alert('Invalid credentials')
+          toast.error('Invalid credentials')
         }
       } else {
-        alert(error)
+        toast.error(error)
       }
     } catch (error) {
-      alert(error.message)
+      toast.error(error.message)
     } finally {
       dispatch(setLoader(false))
     }

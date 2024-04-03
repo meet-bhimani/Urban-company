@@ -320,7 +320,7 @@
       }
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "meet",
       "email": "meet11@gmail.com",
       "password": "123",
@@ -332,9 +332,45 @@
       }
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "meet",
       "email": "meet12@gmail.com",
+      "password": "123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "ahmedbad",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": "20",
+      "name": "Meet Bhimani",
+      "email": "meet5@gmail.com",
+      "password": "meet123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "ahmedabad",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": "21",
+      "name": "dhruv",
+      "email": "dhruv@test.com",
+      "password": "dhruv123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "visnagar",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": "22",
+      "name": "meet",
+      "email": "meet3@gmail.com",
       "password": "123",
       "role": "user",
       "location": {

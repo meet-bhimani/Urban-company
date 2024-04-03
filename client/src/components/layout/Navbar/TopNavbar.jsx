@@ -16,7 +16,7 @@ const TopNavbar = () => {
             /* logo and name for loggedIn user  */
             <div className="relative group">
               <span className="inline-block h-8 w-8 mr-4 rounded-full bg-gray-300 text-center leading-8 text-gray-700 cursor-pointer font-semibold transition-all">
-                {user?.name?.charAt(0)}
+                {user?.name?.charAt(0).toUpperCase()}
               </span>
               <div className="absolute w-max top-1/2 -translate-y-1/2 right-3/4 group-hover:right-full mr-1 bg-black text-white px-2 py-1 text-xs rounded invisible group-hover:visible transition-all">
                 {user?.name}

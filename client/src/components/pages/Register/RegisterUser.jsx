@@ -11,11 +11,12 @@ import { registerUser } from '../../../api/registerApi'
 import { getUserByEmail } from '../../../api/loginApi'
 import { getAllUsers } from '../../../api/usersApi'
 import { setRole } from '../../../redux/actions/authAction'
+import toast from 'react-hot-toast'
 
 const RegisterUser = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { isAuth, user } = useSelector((state) => state.role)
+  const { isAuth } = useSelector((state) => state.role)
 
   const initialValues = {
     name: '',
@@ -57,7 +58,7 @@ const RegisterUser = () => {
       if (!success) {
         const users = await getAllUsers()
         const userObj = {
-          id: users.data.length + 1,
+          id: String(users.data.length + 1),
           name,
           email,
           password,
@@ -67,14 +68,15 @@ const RegisterUser = () => {
         const { success: registerSuccess, data, error } = await registerUser(userObj)
         if (registerSuccess) {
           dispatch(setRole(data))
+          toast.success('Registration successful')
         } else {
-          alert(error)
+          toast.error(error)
         }
       } else {
-        alert('User already exists')
+        toast.error('User already exists')
       }
     } catch (error) {
-      alert(error.message)
+      toast.error(error.message)
     } finally {
       dispatch(setLoader(false))
     }
