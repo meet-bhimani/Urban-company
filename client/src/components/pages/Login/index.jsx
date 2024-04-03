@@ -5,7 +5,7 @@ import InputWithLabel from '../../common/InputWithLabel'
 import Button from '../../common/Button'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { getUserByEmail } from '../../../api/loginApi'
+import { getUserByEmail } from '../../../api/usersApi'
 import { setLoader } from '../../../redux/actions/appAction'
 import { setRole } from '../../../redux/actions/authAction'
 import HelmetHeader from '../../common/HelmetHeader'
@@ -80,9 +80,7 @@ const Login = () => {
               onBlur={handleBlur}
               className={touched.email && errors.email ? 'focus-within:border-danger focus-within:ring-danger' : ''}
             />
-            {touched.email && errors.email && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm md:text-base">{errors.email}</p>
-            )}
+            {touched.email && errors.email && <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.email}</p>}
           </div>
           <div>
             <InputWithLabel
@@ -99,7 +97,7 @@ const Login = () => {
               }
             />
             {touched.password && errors.password && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm md:text-base">{errors.password}</p>
+              <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.password}</p>
             )}
           </div>
 
@@ -112,7 +110,7 @@ const Login = () => {
                 Reset
               </Button>
             </div>
-            <p className="text-xs xsm:text-sm md:text-base mt-2 xsm:mt-0">
+            <p className="text-xs xsm:text-sm mt-2 xsm:mt-0">
               Don't have account yet?
               <NavLink to="/register" className="ml-1 text-primary hover:underline transition">
                 SignUp

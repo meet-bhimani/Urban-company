@@ -1,12 +1,18 @@
 import { API } from '../utils/axios-instance'
 
-export const getAllUsers = async () => {
+export const getAllUsers = () => API.get('users')
+
+export const getUserByEmail = async (email) => {
   try {
-    const res = await API.get('users')
-    return {
-      success: true,
-      data: res.data,
-      error: null,
+    const res = await API.get(`users/?email=${email}`)
+    if (res.data.length != 0) {
+      return {
+        success: true,
+        data: res.data,
+        error: null,
+      }
+    } else {
+      throw new Error('User not found')
     }
   } catch (error) {
     return {
