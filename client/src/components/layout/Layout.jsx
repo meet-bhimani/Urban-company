@@ -10,7 +10,7 @@ const Layout = () => {
     <>
       <div className="flex h-screen">
         <div
-          className={`fixed lg:relative h-svh bg-secondary ${
+          className={`z-10 fixed lg:relative h-svh bg-secondary ${
             showSidebar ? 'w-[250px]' : 'w-[40px] xsm:w-[60px]'
           } duration-300`}
         >

@@ -6,7 +6,8 @@ const Layout = React.lazy(() => import('../components/layout/Layout'))
 const Login = React.lazy(() => import('../components/pages/Login'))
 const ErrorPage = React.lazy(() => import('../components/pages/ErrorPage'))
 const Home = React.lazy(() => import('../components/pages/Home/Home'))
-const Register = React.lazy(() => import('../components/pages/Register'))
+const RegisterUser = React.lazy(() => import('../components/pages/Register/RegisterUser'))
+const RegisterServiceProvider = React.lazy(() => import('../components/pages/Register/RegisterServiceProvider'))
 
 export const Router = (isAuthenticated = false) => {
   return createBrowserRouter([
@@ -18,18 +19,22 @@ export const Router = (isAuthenticated = false) => {
           element: <Home />,
         },
         {
+          path: '/login',
+          element: <Login />,
+        },
+        {
+          path: '/register',
+          element: <RegisterUser />,
+        },
+        {
+          path: '/register/business',
+          element: <RegisterServiceProvider />,
+        },
+        {
           element: <PrivateRoutesCheck isAuthenticated={isAuthenticated} />,
           children: [],
         },
       ],
-    },
-    {
-      path: 'login',
-      element: <Login />,
-    },
-    {
-      path: 'register',
-      element: <Register />,
     },
     {
       path: '*',

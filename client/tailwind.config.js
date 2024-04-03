@@ -11,7 +11,7 @@ export default {
         white: '#f6f9fc',
         success: '#00bd5e',
         warning: '#f58700',
-        danger: '#ff4238',
+        danger: '#c53030',
         green: '#07794c',
       },
       fontFamily: {

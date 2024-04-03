@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { twMerge } from 'tailwind-merge'
 
-const Button = ({ children, classNames, variant, size, rounded, ...props }) => {
+const Button = ({ children, classNames, variant, size, rounded, type, ...props }) => {
   const variants = {
-    'primary': 'bg-primary text-white hover:opacity-85 transition',
-    'success': 'bg-success text-white hover:opacity-85 transition',
-    'warning': 'bg-warning text-white hover:opacity-85 transition',
-    'danger': 'bg-danger text-white hover:opacity-85 transition',
-    'light': 'bg-light text-white hover:opacity-85 transition',
-    'dark': 'bg-dark text-white hover:opacity-85 transition',
+    'primary': 'bg-primary border border-primary text-white hover:opacity-85 transition',
+    'success': 'bg-success border border-success text-white hover:opacity-85 transition',
+    'warning': 'bg-warning border border-warning text-white hover:opacity-85 transition',
+    'danger': 'bg-danger border border-danger text-white hover:opacity-85 transition',
+    'light': 'bg-light border border-light text-white hover:opacity-85 transition',
+    'dark': 'bg-dark border border-dark text-white hover:opacity-85 transition',
     'primary-outline':
       'border border-primary text-primary hover:bg-primary hover:text-white hover:opacity-85 transition',
     'success-outline':
@@ -28,10 +28,16 @@ const Button = ({ children, classNames, variant, size, rounded, ...props }) => {
     'lg': 'px-2 py-1 text-base sm:px-5 sm:py-2 sm:text-lg md:text-xl',
   }
 
-  const buttonClass = twMerge('px-4 py-1', classNames, variants[variant], sizes[size], rounded ? 'rounded' : '')
+  const buttonClass = twMerge(
+    'px-4 py-1 outline-none',
+    classNames,
+    variants[variant],
+    sizes[size],
+    rounded ? 'rounded' : ''
+  )
 
   return (
-    <button className={buttonClass} {...props}>
+    <button className={buttonClass} type={type} {...props}>
       {children}
     </button>
   )
@@ -57,12 +63,14 @@ Button.propTypes = {
   ]),
   size: PropTypes.oneOf(['sm', 'md', 'lg']),
   rounded: PropTypes.bool,
+  type: PropTypes.oneOf(['button', 'reset', 'submit']),
 }
 
 Button.defaultProps = {
   rounded: false,
   variant: 'primary',
   size: 'md',
+  type: 'button',
 }
 
 export default Button

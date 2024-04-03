@@ -2,9 +2,23 @@ import { LuChevronFirst, LuChevronLast } from 'react-icons/lu'
 import SidebarLinks from './SidebarLinks'
 import { publicLinks } from './LinkData'
 import { useSidebarContext } from '../../../../context/sideBarContext'
+import { PiSignOutBold } from 'react-icons/pi'
+import { useDispatch, useSelector } from 'react-redux'
+import { removeRole } from '../../../../redux/actions/authAction'
+import { useNavigate } from 'react-router-dom'
 
 const Sidebar = () => {
   const { showSidebar, setShowSidebar } = useSidebarContext()
+  const { isAuth, user } = useSelector((state) => state.role)
+  const dispatch = useDispatch()
+  const navigate = useNavigate()
+
+  const handleLogout = () => {
+    dispatch(removeRole())
+    alert('logout success')
+    navigate('/login')
+  }
+
   return (
     <>
       <nav className="h-full flex flex-col bg-secondary border-r shadow-sm">
@@ -24,6 +38,14 @@ const Sidebar = () => {
         <ul className="flex-1 px-1 mt-5">
           <SidebarLinks Links={publicLinks} />
         </ul>
+
+        {isAuth && (
+          <div className="mb-4 grid place-items-center text-xl">
+            <button onClick={handleLogout}>
+              <PiSignOutBold />
+            </button>
+          </div>
+        )}
       </nav>
     </>
   )
