@@ -19,15 +19,15 @@ const InputWithLabel = ({
   return (
     <label
       htmlFor={id}
-      className={`relative block rounded-md w-[min(100%,600px)] mx-auto border border-gray-200 shadow-sm focus-within:border-primary focus-within:ring-1 focus-within:ring-primary z-0 ${className}`}
+      className={`relative block rounded-md border border-gray-200 shadow-sm focus-within:border-primary focus-within:ring-1 focus-within:ring-primary z-0 ${className}`}
     >
       <input
-        type={type == 'password' ? (showPassword ? 'text' : 'password') : { type }}
+        type={type == 'password' ? (showPassword ? 'text' : 'password') : type}
         id={id}
         name={name}
         value={value}
         onChange={onChange}
-        className="peer border-none bg-transparent placeholder-transparent focus:border-transparent focus:outline-none focus:ring-0 px-3 py-2"
+        className="w-[min(100%,600px)] mx-auto peer border-none bg-transparent placeholder:text-sm placeholder-transparent autofill:bg-[transparent!important] focus:border-transparent focus:outline-none focus:placeholder-gray-500 focus:ring-0 px-3 py-2"
         placeholder={placeholder || label}
         {...props}
       />

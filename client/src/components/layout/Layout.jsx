@@ -8,16 +8,20 @@ const Layout = () => {
   const { showSidebar } = useSidebarContext()
   return (
     <>
-      <div className="flex h-screen">
+      <div className="flex h-svh">
         <div
-          className={`z-10 fixed lg:relative h-svh bg-secondary ${
+          className={`z-10 fixed left-0 top-0 h-full bg-secondary ${
             showSidebar ? 'w-[250px]' : 'w-[40px] xsm:w-[60px]'
           } duration-300`}
         >
           <Sidebar />
         </div>
 
-        <div className={`flex flex-col flex-grow lg:ml-0 ml-[40px] xsm:ml-[60px]`}>
+        <div
+          className={`duration-300 flex flex-col flex-grow ml-[40px] xsm:ml-[60px] ${
+            showSidebar ? 'lg:ml-[250px]' : 'lg:ml-[60px]'
+          }`}
+        >
           <TopNavbar />
 
           <div className="flex-grow">

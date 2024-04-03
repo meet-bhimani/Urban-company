@@ -6,6 +6,7 @@ import { PiSignOutBold } from 'react-icons/pi'
 import { useDispatch, useSelector } from 'react-redux'
 import { removeRole } from '../../../../redux/actions/authAction'
 import { useNavigate } from 'react-router-dom'
+import toast from 'react-hot-toast'
 
 const Sidebar = () => {
   const { showSidebar, setShowSidebar } = useSidebarContext()
@@ -15,7 +16,7 @@ const Sidebar = () => {
 
   const handleLogout = () => {
     dispatch(removeRole())
-    alert('logout success')
+    toast.success('logout successfully')
     navigate('/login')
   }
 

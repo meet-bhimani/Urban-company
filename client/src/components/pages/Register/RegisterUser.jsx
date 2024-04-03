@@ -8,14 +8,15 @@ import * as Yup from 'yup'
 import { setLoader } from '../../../redux/actions/appAction'
 import HelmetHeader from '../../common/HelmetHeader'
 import { registerUser } from '../../../api/registerApi'
-import { getUserByEmail } from '../../../api/loginApi'
+import { getUserByEmail } from '../../../api/usersApi'
 import { getAllUsers } from '../../../api/usersApi'
 import { setRole } from '../../../redux/actions/authAction'
+import toast from 'react-hot-toast'
 
 const RegisterUser = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { isAuth, user } = useSelector((state) => state.role)
+  const { isAuth } = useSelector((state) => state.role)
 
   const initialValues = {
     name: '',
@@ -54,10 +55,11 @@ const RegisterUser = () => {
       dispatch(setLoader(true))
       const { name, email, password, location } = values
       const { success } = await getUserByEmail(email)
+
       if (!success) {
         const users = await getAllUsers()
         const userObj = {
-          id: users.data.length + 1,
+          id: String(users.data.length + 1),
           name,
           email,
           password,
@@ -67,14 +69,15 @@ const RegisterUser = () => {
         const { success: registerSuccess, data, error } = await registerUser(userObj)
         if (registerSuccess) {
           dispatch(setRole(data))
+          toast.success('Registration successful')
         } else {
-          alert(error)
+          toast.error(error)
         }
       } else {
-        alert('User already exists')
+        toast.error('User already exists')
       }
     } catch (error) {
-      alert(error.message)
+      toast.error(error.message)
     } finally {
       dispatch(setLoader(false))
     }
@@ -110,9 +113,7 @@ const RegisterUser = () => {
               onBlur={handleBlur}
               className={touched.name && errors.name ? 'focus-within:border-danger focus-within:ring-danger' : ''}
             />
-            {touched.name && errors.name && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm md:text-base">{errors.name}</p>
-            )}
+            {touched.name && errors.name && <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.name}</p>}
           </div>
           <div>
             <InputWithLabel
@@ -125,9 +126,7 @@ const RegisterUser = () => {
               onBlur={handleBlur}
               className={touched.email && errors.email ? 'focus-within:border-danger focus-within:ring-danger' : ''}
             />
-            {touched.email && errors.email && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm md:text-base">{errors.email}</p>
-            )}
+            {touched.email && errors.email && <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.email}</p>}
           </div>
           <div>
             <InputWithLabel
@@ -144,7 +143,7 @@ const RegisterUser = () => {
               }
             />
             {touched.password && errors.password && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm md:text-base">{errors.password}</p>
+              <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.password}</p>
             )}
           </div>
           <div>
@@ -164,7 +163,7 @@ const RegisterUser = () => {
               }
             />
             {touched.confirmPassword && errors.confirmPassword && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm md:text-base">{errors.confirmPassword}</p>
+              <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.confirmPassword}</p>
             )}
           </div>
           <div>
@@ -183,7 +182,7 @@ const RegisterUser = () => {
               }
             />
             {touched.location?.addressLine && errors.location?.addressLine && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm md:text-base">{errors.location?.addressLine}</p>
+              <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.location?.addressLine}</p>
             )}
           </div>
           <div>
@@ -202,7 +201,7 @@ const RegisterUser = () => {
               }
             />
             {touched.location?.city && errors.location?.city && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm md:text-base">{errors.location?.city}</p>
+              <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.location?.city}</p>
             )}
           </div>
           <div>
@@ -221,7 +220,7 @@ const RegisterUser = () => {
               }
             />
             {touched.location?.state && errors.location?.state && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm md:text-base">{errors.location?.state}</p>
+              <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.location?.state}</p>
             )}
           </div>
 
@@ -234,7 +233,7 @@ const RegisterUser = () => {
                 Reset
               </Button>
             </div>
-            <p className="text-xs xsm:text-sm md:text-base mt-2 xsm:mt-0">
+            <p className="text-xs xsm:text-sm mt-2 xsm:mt-0">
               Already have an account?
               <NavLink to="/login" className="ml-1 text-primary hover:underline transition">
                 Login

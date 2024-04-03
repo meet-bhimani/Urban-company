@@ -12,6 +12,7 @@
       "name": "Priya Sharma",
       "email": "priya@example.com",
       "password": "priya@123",
+      "brand_name": "Sharma Services",
       "gstin": "GSTIN123D",
       "role": "service_provider",
       "expertise": [
@@ -20,17 +21,21 @@
       ],
       "offered_services": [
         "1",
-        "2"
+        "2",
+        "10",
+        "15"
       ],
       "accepted_services": [
-        "House Cleaning"
+        "1"
       ],
       "location": {
         "address_line": "456 Park Avenue",
         "city": "Bangalore",
         "state": "Karnataka"
       },
-      "completed_services": 8,
+      "completed_services": [
+        "2"
+      ],
       "average_rating": 4.2,
       "status": "active"
     },
@@ -320,7 +325,7 @@
       }
     },
     {
-      "id": 18,
+      "id": "18",
       "name": "meet",
       "email": "meet11@gmail.com",
       "password": "123",
@@ -332,7 +337,7 @@
       }
     },
     {
-      "id": 19,
+      "id": "19",
       "name": "meet",
       "email": "meet12@gmail.com",
       "password": "123",
@@ -342,6 +347,122 @@
         "city": "ahmedbad",
         "state": "gujarat"
       }
+    },
+    {
+      "id": "20",
+      "name": "Meet Bhimani",
+      "email": "meet5@gmail.com",
+      "password": "meet123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "ahmedabad",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": "21",
+      "name": "dhruv",
+      "email": "dhruv@test.com",
+      "password": "dhruv123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "visnagar",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": "22",
+      "name": "meet",
+      "email": "meet3@gmail.com",
+      "password": "123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "ahmedbad",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": "23",
+      "name": "meet",
+      "email": "meettest@test.com",
+      "password": "123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "ahmedabad",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": "24",
+      "name": "Meet Bhimani",
+      "email": "meet9@gmail.com",
+      "password": "123",
+      "role": "user",
+      "location": {
+        "addressLine": "123",
+        "city": "123",
+        "state": "123"
+      }
+    },
+    {
+      "id": "25",
+      "name": "meet",
+      "email": "meet8@gmail.com",
+      "password": "123",
+      "role": "user",
+      "location": {
+        "addressLine": "13",
+        "city": "123",
+        "state": "132"
+      }
+    },
+    {
+      "id": "26",
+      "name": "Meet Bhimani",
+      "email": "meetsp@gmail.com",
+      "password": "123",
+      "brand_name": "meet",
+      "gstin": "123",
+      "role": "service_provider",
+      "expertise": [
+        "plumbing"
+      ],
+      "location": {
+        "address_line": "123",
+        "city": "123",
+        "state": "123"
+      },
+      "offered_services": [],
+      "accepted_services": [],
+      "completed_services": [],
+      "average_rating": 0,
+      "status": "active"
+    },
+    {
+      "id": "27",
+      "name": "Meet Bhimani",
+      "email": "meetsp1@gmail.com",
+      "password": "123",
+      "brand_name": "meet",
+      "gstin": "123",
+      "role": "service_provider",
+      "expertise": [
+        "plumbing"
+      ],
+      "location": {
+        "address_line": "123",
+        "city": "123",
+        "state": "123"
+      },
+      "offered_services": [],
+      "accepted_services": [],
+      "completed_services": [],
+      "average_rating": 0,
+      "status": "active"
     }
   ]
 }
