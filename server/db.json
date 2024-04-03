@@ -1,8 +1,347 @@
 {
-	"users": [
-		{
-			"id": "1",
-			"name": "Meet"
-		}
-	]
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "email": "admin@example.com",
+      "password": "Admin@123",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "name": "Priya Sharma",
+      "email": "priya@example.com",
+      "password": "priya@123",
+      "gstin": "GSTIN123D",
+      "role": "service_provider",
+      "expertise": [
+        "House Cleaning",
+        "Painting"
+      ],
+      "offered_services": [
+        "1",
+        "2"
+      ],
+      "accepted_services": [
+        "House Cleaning"
+      ],
+      "location": {
+        "address_line": "456 Park Avenue",
+        "city": "Bangalore",
+        "state": "Karnataka"
+      },
+      "completed_services": 8,
+      "average_rating": 4.2,
+      "status": "active"
+    },
+    {
+      "id": "3",
+      "name": "Amit Patel",
+      "email": "amit@example.com",
+      "password": "hashed_password_3",
+      "role": "user",
+      "requested_services": [
+        "Plumbing"
+      ],
+      "active_services": [
+        "Plumbing"
+      ],
+      "location": {
+        "address_line": "789 Elm Street",
+        "city": "Delhi",
+        "state": "Delhi"
+      },
+      "status": "active"
+    },
+    {
+      "id": "4",
+      "name": "Neha Gupta",
+      "email": "neha@example.com",
+      "password": "hashed_password_4",
+      "role": "service_provider",
+      "expertise": [
+        "Carpentry",
+        "Gardening"
+      ],
+      "accepted_services": [
+        "Gardening"
+      ],
+      "location": {
+        "address_line": "101 Green Road",
+        "city": "Hyderabad",
+        "state": "Telangana"
+      },
+      "completed_services": 5,
+      "average_rating": 4.8,
+      "status": "active"
+    },
+    {
+      "id": "5",
+      "name": "Vijay Singh",
+      "email": "vijay@example.com",
+      "password": "hashed_password_5",
+      "role": "user",
+      "requested_services": [
+        "Electrical",
+        "Carpentry"
+      ],
+      "active_services": [
+        "Electrical"
+      ],
+      "location": {
+        "address_line": "234 Oak Avenue",
+        "city": "Chennai",
+        "state": "Tamil Nadu"
+      },
+      "status": "active"
+    },
+    {
+      "id": "6",
+      "name": "Anita Das",
+      "email": "anita@example.com",
+      "password": "hashed_password_6",
+      "role": "service_provider",
+      "expertise": [
+        "Plumbing",
+        "Electrical"
+      ],
+      "accepted_services": [
+        "Plumbing"
+      ],
+      "location": {
+        "address_line": "345 Maple Street",
+        "city": "Kolkata",
+        "state": "West Bengal"
+      },
+      "completed_services": 12,
+      "average_rating": 4.4,
+      "status": "active"
+    },
+    {
+      "id": "7",
+      "name": "Suresh Reddy",
+      "email": "suresh@example.com",
+      "password": "hashed_password_7",
+      "role": "user",
+      "requested_services": [
+        "Painting"
+      ],
+      "active_services": [
+        "Painting"
+      ],
+      "location": {
+        "address_line": "456 Pine Road",
+        "city": "Pune",
+        "state": "Maharashtra"
+      },
+      "status": "active"
+    },
+    {
+      "id": "8",
+      "name": "Deepika Jain",
+      "email": "deepika@example.com",
+      "password": "hashed_password_8",
+      "role": "service_provider",
+      "expertise": [
+        "HVAC",
+        "House Cleaning"
+      ],
+      "accepted_services": [
+        "HVAC"
+      ],
+      "location": {
+        "address_line": "567 Cedar Lane",
+        "city": "Jaipur",
+        "state": "Rajasthan"
+      },
+      "completed_services": 10,
+      "average_rating": 4.6,
+      "status": "active"
+    },
+    {
+      "id": "9",
+      "name": "Rajesh Iyer",
+      "email": "rajesh@example.com",
+      "password": "hashed_password_9",
+      "role": "user",
+      "requested_services": [
+        "Gardening"
+      ],
+      "active_services": [
+        "Gardening"
+      ],
+      "location": {
+        "address_line": "678 Elm Avenue",
+        "city": "Ahmedabad",
+        "state": "Gujarat"
+      },
+      "status": "active"
+    },
+    {
+      "id": "10",
+      "name": "Pooja Verma",
+      "email": "pooja@example.com",
+      "password": "hashed_password_10",
+      "role": "service_provider",
+      "expertise": [
+        "Carpentry",
+        "Plumbing"
+      ],
+      "accepted_services": [
+        "Plumbing"
+      ],
+      "location": {
+        "address_line": "789 Walnut Street",
+        "city": "Lucknow",
+        "state": "Uttar Pradesh"
+      },
+      "completed_services": 6,
+      "average_rating": 4.3,
+      "status": "active"
+    },
+    {
+      "id": "11",
+      "name": "Arun Kumar",
+      "email": "arun@example.com",
+      "password": "hashed_password_11",
+      "role": "user",
+      "requested_services": [
+        "Electrical",
+        "House Cleaning"
+      ],
+      "active_services": [
+        "Electrical"
+      ],
+      "location": {
+        "address_line": "890 Birch Lane",
+        "city": "Chandigarh",
+        "state": "Punjab"
+      },
+      "status": "active"
+    },
+    {
+      "id": "12",
+      "name": "Meera Sharma",
+      "email": "meera@example.com",
+      "password": "hashed_password_12",
+      "role": "service_provider",
+      "expertise": [
+        "Painting",
+        "Carpentry"
+      ],
+      "accepted_services": [
+        "Painting"
+      ],
+      "location": {
+        "address_line": "901 Pine Street",
+        "city": "Indore",
+        "state": "Madhya Pradesh"
+      },
+      "completed_services": 7,
+      "average_rating": 4.7,
+      "status": "active"
+    },
+    {
+      "id": "13",
+      "name": "Sudhir Gupta",
+      "email": "sudhir@example.com",
+      "password": "hashed_password_13",
+      "role": "user",
+      "requested_services": [
+        "HVAC"
+      ],
+      "active_services": [
+        "HVAC"
+      ],
+      "location": {
+        "address_line": "1123 Elm Street",
+        "city": "Nagpur",
+        "state": "Maharashtra"
+      },
+      "status": "active"
+    },
+    {
+      "id": "14",
+      "name": "Divya Singh",
+      "email": "divya@example.com",
+      "password": "hashed_password_14",
+      "role": "service_provider",
+      "expertise": [
+        "Electrical",
+        "Plumbing"
+      ],
+      "accepted_services": [
+        "Electrical"
+      ],
+      "location": {
+        "address_line": "1234 Oak Avenue",
+        "city": "Bhopal",
+        "state": "Madhya Pradesh"
+      },
+      "completed_services": 9,
+      "average_rating": 4.9,
+      "status": "active"
+    },
+    {
+      "id": "15",
+      "name": "Manoj Tiwari",
+      "email": "manoj@example.com",
+      "password": "hashed_password_15",
+      "role": "admin",
+      "location": {
+        "address_line": "2345 Maple Street",
+        "city": "Varanasi",
+        "state": "Uttar Pradesh"
+      },
+      "status": "active"
+    },
+    {
+      "id": "5c6a",
+      "name": "meet",
+      "email": "meet@gmail.com",
+      "password": "123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "ahmedbad",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": "7773",
+      "name": "meet",
+      "email": "meet1@gmail.com",
+      "password": "123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "ahmedbad",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": 18,
+      "name": "meet",
+      "email": "meet11@gmail.com",
+      "password": "123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "ahmedbad",
+        "state": "gujarat"
+      }
+    },
+    {
+      "id": 19,
+      "name": "meet",
+      "email": "meet12@gmail.com",
+      "password": "123",
+      "role": "user",
+      "location": {
+        "addressLine": "home",
+        "city": "ahmedbad",
+        "state": "gujarat"
+      }
+    }
+  ]
 }
