@@ -1,15 +1,32 @@
 import React from 'react'
-import PrivateRoutesCheck from '../utils/PrivateRoutesCheck'
 import { createBrowserRouter } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import {
+  CheckUserAuth,
+  PrivateRoutesForAdmin,
+  PrivateRoutesForServiceProvider,
+  PrivateRoutesForUser,
+} from './PrivateRoutesCheck'
 
 const Layout = React.lazy(() => import('../components/layout/Layout'))
+const Home = React.lazy(() => import('../views/Users/Home'))
+const ServicesList = React.lazy(() => import('../views/Users/ServicesList'))
+const ContactUs = React.lazy(() => import('../components/pages/Contact'))
 const Login = React.lazy(() => import('../components/pages/Login'))
-const ErrorPage = React.lazy(() => import('../components/pages/ErrorPage'))
-const Home = React.lazy(() => import('../components/pages/Home/Home'))
 const RegisterUser = React.lazy(() => import('../components/pages/Register/RegisterUser'))
 const RegisterServiceProvider = React.lazy(() => import('../components/pages/Register/RegisterServiceProvider'))
+const UserBookings = React.lazy(() => import('../views/Users/UserBookings'))
+const Profile = React.lazy(() => import('../components/pages/Profile'))
+const ServiceProviderDashboard = React.lazy(() => import('../views/ServiceProvider/ServiceProviderDashboard'))
+const ServiceProviderServices = React.lazy(() => import('../views/ServiceProvider/ServiceProviderServices'))
+const AdminDashboard = React.lazy(() => import('../views/Admin/AdminDashboard'))
+const Users = React.lazy(() => import('../views/Admin/Users'))
+const Services = React.lazy(() => import('../views/Admin/Services'))
+const ErrorPage = React.lazy(() => import('../components/pages/ErrorPage'))
 
-export const Router = (isAuthenticated = false) => {
+export const Router = () => {
+  const { isAuth, user } = useSelector((state) => state.role)
+
   return createBrowserRouter([
     {
       element: <Layout />,
@@ -19,20 +36,96 @@ export const Router = (isAuthenticated = false) => {
           element: <Home />,
         },
         {
-          path: '/login',
-          element: <Login />,
+          path: '/services',
+          element: <ServicesList />,
         },
         {
-          path: '/register',
-          element: <RegisterUser />,
+          path: '/contact',
+          element: <ContactUs />,
         },
         {
-          path: '/register/business',
-          element: <RegisterServiceProvider />,
+          element: <CheckUserAuth isAuth={isAuth} />,
+          children: [
+            {
+              path: '/login',
+              element: <Login />,
+            },
+            {
+              path: '/register',
+              element: <RegisterUser />,
+            },
+            {
+              path: '/register/business',
+              element: <RegisterServiceProvider />,
+            },
+          ],
         },
         {
-          element: <PrivateRoutesCheck isAuthenticated={isAuthenticated} />,
-          children: [],
+          element: <PrivateRoutesForUser isAuth={isAuth} user={user} />,
+          children: [
+            {
+              path: '/user-bookings',
+              element: <UserBookings />,
+            },
+            {
+              path: '/user-profile',
+              // make sure to pass that profile from user or service provider
+              element: <Profile />,
+            },
+          ],
+        },
+        {
+          element: <PrivateRoutesForServiceProvider isAuth={isAuth} user={user} />,
+          children: [
+            {
+              path: '/service-provider-dashboard',
+              element: <ServiceProviderDashboard />,
+            },
+            {
+              path: '/service-provider-services',
+              element: <ServiceProviderServices />,
+            },
+            // {
+            //   path: '/requested-services',
+            // make sure to pass that requested service from admin or service provider
+            //   element: <RequestedServices />
+            // },
+            // {
+            //   path: '/accepted-services',
+            //   element: <AcceptedServices />
+            // },
+            // {
+            //   path: '/completed-services',
+            //   element: <CompletedServices />
+            // },
+            {
+              path: '/service-provider-profile',
+              // make sure to pass that profile from user or service provider
+              element: <Profile />,
+            },
+          ],
+        },
+        {
+          element: <PrivateRoutesForAdmin isAuth={isAuth} user={user} />,
+          children: [
+            {
+              path: '/admin-dashboard',
+              element: <AdminDashboard />,
+            },
+            {
+              path: '/manage-users',
+              element: <Users />,
+            },
+            {
+              path: '/manage-services',
+              element: <Services />,
+            },
+            // {
+            //   path: '/service-requests',
+            //   // make sure to pass that requested service from admin or service provider
+            //   element: <RequestedServices />,
+            // },
+          ],
         },
       ],
     },

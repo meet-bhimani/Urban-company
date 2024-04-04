@@ -8,8 +8,7 @@ const Button = ({ children, classNames, variant, size, rounded, type, ...props }
     'success': 'bg-success border border-success text-white hover:opacity-85 transition',
     'warning': 'bg-warning border border-warning text-white hover:opacity-85 transition',
     'danger': 'bg-danger border border-danger text-white hover:opacity-85 transition',
-    'light': 'bg-light border border-light text-white hover:opacity-85 transition',
-    'dark': 'bg-dark border border-dark text-white hover:opacity-85 transition',
+    'dark': 'bg-gray-500 border border-gray-500 text-white hover:opacity-85 transition',
     'primary-outline':
       'border border-primary text-primary hover:bg-primary hover:text-white hover:opacity-85 transition',
     'success-outline':
@@ -17,8 +16,8 @@ const Button = ({ children, classNames, variant, size, rounded, type, ...props }
     'warning-outline':
       'border border-warning text-warning hover:bg-warning hover:text-white hover:opacity-85 transition',
     'danger-outline': 'border border-danger text-danger hover:bg-danger hover:text-white hover:opacity-85 transition',
-    'light-outline': 'border border-light text-light hover:bg-light hover:text-white hover:opacity-85 transition',
-    'dark-outline': 'border border-dark text-dark hover:bg-dark hover:text-white hover:opacity-85 transition',
+    'dark-outline':
+      'border border-gray-500 text-gray-500 hover:bg-gray-500 hover:text-white hover:opacity-85 transition',
     'disabled': 'bg-neutral-300 text-neutral-100 cursor-not-allowed transition',
   }
 
@@ -48,7 +47,6 @@ Button.propTypes = {
   classNames: PropTypes.string,
   variant: PropTypes.oneOf([
     'primary',
-    'light',
     'dark',
     'success',
     'danger',

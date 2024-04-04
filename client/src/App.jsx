@@ -7,8 +7,7 @@ import { useSelector } from 'react-redux'
 import { Toaster } from 'react-hot-toast'
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(true)
-  const router = Router(isAuthenticated)
+  const router = Router()
   const { loader } = useSelector((state) => state.app)
 
   return (

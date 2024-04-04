@@ -1,6 +1,5 @@
-import { useEffect } from 'react'
-import { NavLink, useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { NavLink } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
 import InputWithLabel from '../../common/InputWithLabel'
 import Button from '../../common/Button'
 import { useFormik } from 'formik'
@@ -13,9 +12,7 @@ import toast from 'react-hot-toast'
 import { setRole } from '../../../redux/actions/authAction'
 
 const RegisterServiceProvider = () => {
-  const navigate = useNavigate()
   const dispatch = useDispatch()
-  const { isAuth } = useSelector((state) => state.role)
 
   const initialValues = {
     name: '',
@@ -100,10 +97,6 @@ const RegisterServiceProvider = () => {
       dispatch(setLoader(false))
     }
   }
-
-  useEffect(() => {
-    isAuth && navigate('/')
-  }, [isAuth])
 
   return (
     <>
