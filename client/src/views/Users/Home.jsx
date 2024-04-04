@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import HelmetHeader from '../../components/common/HelmetHeader'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { getCategories, getSubCategories } from '../../api/categoriesApi'
 import Button from '../../components/common/Button'
 import { FaLongArrowAltRight } from 'react-icons/fa'
@@ -69,12 +69,10 @@ const Home = () => {
                   </div>
                 )}
               </div>
-              <Button
-                variant="dark"
-                rounded
-                classNames="absolute bottom-[3%] left-1/2 -translate-x-1/2 flex items-center justify-center gap-1"
-              >
-                Explore <FaLongArrowAltRight />
+              <Button variant="dark" rounded classNames="absolute bottom-[3%] left-1/2 -translate-x-1/2">
+                <NavLink to={'/services'} className="flex items-center justify-center gap-1">
+                  Explore <FaLongArrowAltRight />
+                </NavLink>
               </Button>
             </div>
           </div>
@@ -92,14 +90,14 @@ const Home = () => {
           />
         </div>
 
-        <div>
+        {/* <div>
           {categories &&
             categories.map((category) => (
               <div key={category.id}>
                 <h3>{category.name}</h3>
               </div>
             ))}
-        </div>
+        </div> */}
       </div>
     </>
   )

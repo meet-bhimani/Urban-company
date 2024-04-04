@@ -32,9 +32,9 @@
 			"name": "Amit Patel",
 			"email": "amit@example.com",
 			"password": "amitpass",
-			"role": "user",
-			"requested_services": [],
-			"active_services": ["1"],
+			"role": "service_provider",
+			"expertise": ["Appliance Repair", "Electrical Wiring"],
+			"offered_services": ["3", "4"],
 			"location": {
 				"address_line": "789 Elm Street",
 				"city": "Delhi",
@@ -43,6 +43,62 @@
 		},
 		{
 			"id": "4",
+			"name": "Deepak Singh",
+			"email": "deepak@example.com",
+			"password": "deepak123",
+			"role": "service_provider",
+			"expertise": ["Plumbing Services"],
+			"offered_services": ["5"],
+			"location": {
+				"address_line": "10 Oak Street",
+				"city": "Mumbai",
+				"state": "Maharashtra"
+			}
+		},
+		{
+			"id": "5",
+			"name": "Sneha Kapoor",
+			"email": "sneha@example.com",
+			"password": "sneha123",
+			"role": "service_provider",
+			"expertise": ["Salon at Home", "Spa at Home"],
+			"offered_services": ["6", "7"],
+			"location": {
+				"address_line": "102, Rosewood Avenue",
+				"city": "Chennai",
+				"state": "Tamil Nadu"
+			}
+		},
+		{
+			"id": "6",
+			"name": "Rahul Banerjee",
+			"email": "rahul@example.com",
+			"password": "rahul123",
+			"role": "service_provider",
+			"expertise": ["Fitness Trainer at Home"],
+			"offered_services": ["8"],
+			"location": {
+				"address_line": "20 Lake View Road",
+				"city": "Kolkata",
+				"state": "West Bengal"
+			}
+		},
+		{
+			"id": "7",
+			"name": "Aruna Reddy",
+			"email": "aruna@example.com",
+			"password": "aruna123",
+			"role": "service_provider",
+			"expertise": ["Yoga Instructor at Home", "Massage at Home"],
+			"offered_services": ["9", "10"],
+			"location": {
+				"address_line": "15 River Side Drive",
+				"city": "Hyderabad",
+				"state": "Telangana"
+			}
+		},
+		{
+			"id": "8",
 			"name": "Meet Bhimani",
 			"email": "meet@gmail.com",
 			"password": "meet123",
@@ -56,7 +112,7 @@
 			"active_services": []
 		},
 		{
-			"id": "5",
+			"id": "9",
 			"name": "Dhruv",
 			"email": "dhruv@test.com",
 			"password": "dhruv",
@@ -80,7 +136,7 @@
 		{
 			"id": "1",
 			"name": "House Cleaning",
-			"description": "Professional house cleaning services",
+			"description": "Experience the epitome of cleanliness and freshness with our professional house cleaning services. Our team of meticulous cleaners will meticulously scrub, sanitize, and polish every corner of your home, ensuring it shines from top to bottom. From dusting high ceilings to disinfecting hard-to-reach areas, we leave no stone unturned in our quest to create a spotless living environment for you and your family.",
 			"provider_id": "2",
 			"category": "Home Services",
 			"sub_category": "Cleaning",
@@ -94,8 +150,8 @@
 		},
 		{
 			"id": "2",
-			"name": "Painting",
-			"description": "Interior and exterior painting services",
+			"name": "Interior Painting",
+			"description": "Transform your living space into a work of art with our interior painting services. Our skilled painters bring creativity and precision to every brushstroke, delivering flawless results that enhance the beauty and ambiance of your home. From selecting the perfect color palette to applying premium-quality paint, we ensure a seamless painting experience that exceeds your expectations.",
 			"provider_id": "2",
 			"category": "Home Services",
 			"sub_category": "Painting",
@@ -105,6 +161,126 @@
 				"address_line": "456 Park Avenue",
 				"city": "Bangalore",
 				"state": "Karnataka"
+			}
+		},
+		{
+			"id": "3",
+			"name": "Appliance Repair",
+			"description": "Restore functionality to your essential home appliances with our reliable repair services. Our expert technicians are equipped with the knowledge and tools to diagnose and fix a wide range of appliance issues, from faulty wiring to mechanical malfunctions. With prompt service and lasting solutions, we'll have your appliances running smoothly in no time, saving you time, money, and hassle.",
+			"provider_id": "3",
+			"category": "Repairs & Maintenance",
+			"sub_category": "Appliance Repair",
+			"cost": 80,
+			"available": true,
+			"location": {
+				"address_line": "789 Elm Street",
+				"city": "Delhi",
+				"state": "Delhi"
+			}
+		},
+		{
+			"id": "4",
+			"name": "Electrical Wiring",
+			"description": "Ensure the safety and efficiency of your home's electrical system with our professional wiring services. Whether you're building a new home or renovating an existing one, our licensed electricians will design and install wiring solutions that meet your specific needs and comply with all safety regulations. From basic wiring installations to complex electrical upgrades, we provide reliable and cost-effective solutions for all your electrical needs.",
+			"provider_id": "3",
+			"category": "Home Services",
+			"sub_category": "Electrical",
+			"cost": 120,
+			"available": true,
+			"location": {
+				"address_line": "789 Elm Street",
+				"city": "Delhi",
+				"state": "Delhi"
+			}
+		},
+		{
+			"id": "5",
+			"name": "Plumbing Services",
+			"description": "Say goodbye to plumbing problems with our comprehensive plumbing services. From leaky faucets to clogged drains, our skilled plumbers have the expertise and equipment to tackle any plumbing issue with efficiency and precision. With prompt service and quality workmanship, we'll restore your plumbing system to optimal condition, ensuring smooth water flow and peace of mind.",
+			"provider_id": "4",
+			"category": "Home Services",
+			"sub_category": "Plumbing",
+			"cost": 90,
+			"available": true,
+			"location": {
+				"address_line": "10 Oak Street",
+				"city": "Mumbai",
+				"state": "Maharashtra"
+			}
+		},
+		{
+			"id": "6",
+			"name": "Salon at Home",
+			"description": "Experience luxury and convenience with our salon services brought directly to your doorstep. Indulge in a range of pampering treatments, including hair styling, manicures, pedicures, and more, all performed by skilled professionals in the comfort of your own home. With personalized attention and premium products, we'll help you look and feel your best without ever leaving your house.",
+			"provider_id": "5",
+			"category": "Beauty & Wellness",
+			"sub_category": "Salon at Home",
+			"cost": 80,
+			"available": true,
+			"location": {
+				"address_line": "102, Rosewood Avenue",
+				"city": "Chennai",
+				"state": "Tamil Nadu"
+			}
+		},
+		{
+			"id": "7",
+			"name": "Spa at Home",
+			"description": "Escape the stresses of daily life and indulge in a luxurious spa experience without ever leaving your home. Our spa services offer a variety of relaxing treatments, including massages, facials, and body scrubs, all designed to rejuvenate your body and mind. With soothing music, aromatic oils, and expert therapists, we'll create a tranquil oasis in the comfort of your own space.",
+			"provider_id": "5",
+			"category": "Beauty & Wellness",
+			"sub_category": "Spa at Home",
+			"cost": 150,
+			"available": true,
+			"location": {
+				"address_line": "102, Rosewood Avenue",
+				"city": "Chennai",
+				"state": "Tamil Nadu"
+			}
+		},
+		{
+			"id": "8",
+			"name": "Fitness Trainer at Home",
+			"description": "Achieve your fitness goals with personalized training sessions in the comfort and privacy of your own home. Our certified fitness trainers will design customized workout plans tailored to your needs and abilities, guiding you through exercises that target specific muscle groups and improve overall fitness. With expert guidance and motivation, you'll see results faster and enjoy a healthier lifestyle.",
+			"provider_id": "6",
+			"category": "Beauty & Wellness",
+			"sub_category": "Fitness Trainer at Home",
+			"cost": 120,
+			"available": true,
+			"location": {
+				"address_line": "20 Lake View Road",
+				"city": "Kolkata",
+				"state": "West Bengal"
+			}
+		},
+		{
+			"id": "9",
+			"name": "Yoga Instructor at Home",
+			"description": "Find inner peace and harmony with private yoga sessions conducted in the serene environment of your own home. Our experienced yoga instructors will guide you through gentle stretches, mindful breathing exercises, and meditation techniques, helping you connect with your body, mind, and spirit. With personalized instruction and encouragement, you'll experience the transformative power of yoga in the comfort of familiar surroundings.",
+			"provider_id": "7",
+			"category": "Beauty & Wellness",
+			"sub_category": "Yoga Instructor at Home",
+			"cost": 100,
+			"available": true,
+			"location": {
+				"address_line": "15 River Side Drive",
+				"city": "Hyderabad",
+				"state": "Telangana"
+			}
+		},
+		{
+			"id": "10",
+			"name": "Massage at Home",
+			"description": "Indulge in the ultimate relaxation experience with our massage services delivered directly to your doorstep. Choose from a variety of massage techniques, including Swedish, deep tissue, and aromatherapy, to soothe sore muscles, relieve tension, and promote overall well-being. With expert therapists and premium oils, we'll create a tranquil spa ambiance in the comfort of your own home, leaving you feeling rejuvenated and refreshed.",
+			"provider_id": "7",
+			"category": "Beauty & Wellness",
+			"sub_category": "Massage at Home",
+			"cost": 80,
+			"available": true,
+			"location": {
+				"address_line": "15 River Side Drive",
+				"city": "Hyderabad",
+				"state": "Telangana"
 			}
 		}
 	],

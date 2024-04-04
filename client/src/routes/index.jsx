@@ -11,6 +11,7 @@ import {
 const Layout = React.lazy(() => import('../components/layout/Layout'))
 const Home = React.lazy(() => import('../views/Users/Home'))
 const ServicesList = React.lazy(() => import('../views/Users/ServicesList'))
+const Service = React.lazy(() => import('../views/Users/ServiceDetails'))
 const ContactUs = React.lazy(() => import('../components/pages/Contact'))
 const Login = React.lazy(() => import('../components/pages/Login'))
 const RegisterUser = React.lazy(() => import('../components/pages/Register/RegisterUser'))
@@ -38,6 +39,10 @@ export const Router = () => {
         {
           path: '/services',
           element: <ServicesList />,
+        },
+        {
+          path: '/services/:id',
+          element: <Service />,
         },
         {
           path: '/contact',
