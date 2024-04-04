@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import InputWithLabel from '../../common/InputWithLabel'
 import Button from '../../common/Button'
 import { useFormik } from 'formik'
@@ -12,7 +11,6 @@ import HelmetHeader from '../../common/HelmetHeader'
 import toast from 'react-hot-toast'
 
 const Login = () => {
-  const { isAuth, user } = useSelector((state) => state.role)
   const navigate = useNavigate()
   const dispatch = useDispatch()
 
@@ -55,10 +53,6 @@ const Login = () => {
       dispatch(setLoader(false))
     }
   }
-
-  useEffect(() => {
-    isAuth ? navigate('/') : ''
-  }, [isAuth])
 
   return (
     <>

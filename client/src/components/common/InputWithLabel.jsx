@@ -28,7 +28,7 @@ const InputWithLabel = ({
         value={value}
         onChange={onChange}
         className="w-[min(100%,600px)] mx-auto peer border-none bg-transparent placeholder:text-sm placeholder-transparent autofill:bg-[transparent!important] focus:border-transparent focus:outline-none focus:placeholder-gray-500 focus:ring-0 px-3 py-2"
-        placeholder={placeholder || label}
+        placeholder={placeholder}
         {...props}
       />
 
