@@ -133,78 +133,66 @@
 			"id": "1",
 			"name": "Home Services",
 			"sub_categories": [
-				{
-					"id": "1",
-					"name": "Cleaning"
-				},
-				{
-					"id": "2",
-					"name": "Plumbing"
-				},
-				{
-					"id": "3",
-					"name": "Electrical"
-				},
-				{
-					"id": "4",
-					"name": "Carpentry"
-				},
-				{
-					"id": "5",
-					"name": "Pest Control"
-				}
+				{ "id": "1", "name": "Cleaning", "parent_category": "Home Services" },
+				{ "id": "2", "name": "Plumbing", "parent_category": "Home Services" },
+				{ "id": "3", "name": "Electrical", "parent_category": "Home Services" },
+				{ "id": "4", "name": "Carpentry", "parent_category": "Home Services" },
+				{ "id": "5", "name": "Pest Control", "parent_category": "Home Services" }
 			]
 		},
 		{
 			"id": "2",
 			"name": "Beauty & Wellness",
 			"sub_categories": [
-				{
-					"id": "6",
-					"name": "Salon at Home"
-				},
-				{
-					"id": "7",
-					"name": "Spa at Home"
-				},
-				{
-					"id": "8",
-					"name": "Fitness Trainer at Home"
-				},
-				{
-					"id": "9",
-					"name": "Yoga Instructor at Home"
-				},
-				{
-					"id": "10",
-					"name": "Massage at Home"
-				}
+				{ "id": "6", "name": "Salon at Home", "parent_category": "Beauty & Wellness" },
+				{ "id": "7", "name": "Spa at Home", "parent_category": "Beauty & Wellness" },
+				{ "id": "8", "name": "Fitness Trainer at Home", "parent_category": "Beauty & Wellness" },
+				{ "id": "9", "name": "Yoga Instructor at Home", "parent_category": "Beauty & Wellness" },
+				{ "id": "10", "name": "Massage at Home", "parent_category": "Beauty & Wellness" }
 			]
 		},
 		{
 			"id": "3",
 			"name": "Repairs & Maintenance",
 			"sub_categories": [
-				{
-					"id": "11",
-					"name": "Appliance Repair"
-				},
-				{
-					"id": "12",
-					"name": "AC Service & Repair"
-				},
-				{
-					"id": "13",
-					"name": "Computer/Laptop Repair"
-				},
-				{
-					"id": "14",
-					"name": "Mobile Repair"
-				},
-				{
-					"id": "15",
-					"name": "Car/Bike Service & Repair"
-				}
+				{ "id": "11", "name": "Appliance Repair", "parent_category": "Repairs & Maintenance" },
+				{ "id": "12", "name": "AC Service & Repair", "parent_category": "Repairs & Maintenance" },
+				{ "id": "13", "name": "Computer/Laptop Repair", "parent_category": "Repairs & Maintenance" },
+				{ "id": "14", "name": "Mobile Repair", "parent_category": "Repairs & Maintenance" },
+				{ "id": "15", "name": "Car/Bike Service & Repair", "parent_category": "Repairs & Maintenance" }
+			]
+		},
+		{
+			"id": "4",
+			"name": "Health & Fitness",
+			"sub_categories": [
+				{ "id": "16", "name": "Personal Training", "parent_category": "Health & Fitness" },
+				{ "id": "17", "name": "Nutritionist Consultation", "parent_category": "Health & Fitness" },
+				{ "id": "18", "name": "Yoga Instructor at Home", "parent_category": "Health & Fitness" },
+				{ "id": "19", "name": "Meditation Sessions", "parent_category": "Health & Fitness" },
+				{ "id": "20", "name": "Physical Therapy", "parent_category": "Health & Fitness" }
+			]
+		},
+		{
+			"id": "5",
+			"name": "Automotive Services",
+			"sub_categories": [
+				{ "id": "21", "name": "Car Wash & Detailing", "parent_category": "Automotive Services" },
+				{ "id": "22", "name": "Mechanic Services", "parent_category": "Automotive Services" },
+				{ "id": "23", "name": "Car Painting", "parent_category": "Automotive Services" },
+				{ "id": "24", "name": "Tire Replacement", "parent_category": "Automotive Services" },
+				{ "id": "25", "name": "Car Rental", "parent_category": "Automotive Services" }
+			]
+		},
+		{
+			"id": "6",
+			"name": "Pet Care",
+			"sub_categories": [
+				{ "id": "26", "name": "Dog Walking", "parent_category": "Pet Care" },
+				{ "id": "27", "name": "Pet Grooming", "parent_category": "Pet Care" },
+				{ "id": "28", "name": "Pet Sitting", "parent_category": "Pet Care" },
+				{ "id": "29", "name": "Veterinary Services", "parent_category": "Pet Care" },
+				{ "id": "30", "name": "Pet Training", "parent_category": "Pet Care" }
 			]
 		}
 	]

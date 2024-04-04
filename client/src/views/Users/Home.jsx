@@ -1,11 +1,38 @@
 import { useSelector } from 'react-redux'
 import HelmetHeader from '../../components/common/HelmetHeader'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { getCategories, getSubCategories } from '../../api/categoriesApi'
+import Button from '../../components/common/Button'
+import { FaLongArrowAltRight } from 'react-icons/fa'
 
 const Home = () => {
   const { isAuth, user } = useSelector((state) => state.role)
   const navigate = useNavigate()
+  const [categories, setCategories] = useState(null)
+  const [subCategories, setSubCategories] = useState(null)
+
+  const fetchCategories = async () => {
+    try {
+      const { success, data } = await getCategories()
+      if (success) {
+        setCategories(data)
+      }
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
+
+  const fetchSubCategories = async () => {
+    try {
+      const { success, data } = await getSubCategories()
+      if (success) {
+        setSubCategories(data)
+      }
+    } catch (error) {
+      console.error(error.message)
+    }
+  }
 
   useEffect(() => {
     if (user) {
@@ -15,12 +42,65 @@ const Home = () => {
         ? navigate('/admin-dashboard')
         : ''
     }
+    fetchCategories()
+    fetchSubCategories()
   }, [isAuth])
 
   return (
     <>
       <HelmetHeader title={'Urban Company'} description={'Urban Company - Get expert professional services at home'} />
-      <h1 className="text-3xl">Home</h1>
+      <div className="w-[85%] mx-auto">
+        <div className="my-10 w-full min-h-[80svh] grid grid-cols-1 lg:grid-cols-2 gap-4">
+          <div className="py-6 px-2 flex flex-col justify-center items-center lg:items-start gap-6">
+            <h1 className="text-2xl sm:text-3xl">Home services at your doorstep</h1>
+            <div className="relative border-2 border-secondary p-4 rounded-lg w-full md:w-[80%] pb-20 bg-gradient-to-b from-transparent to-secondary from-80%">
+              <p className="text-sm lg:text-lg mb-4">What are you looking for?</p>
+              <div className="">
+                {subCategories && (
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-2 gap-x-6">
+                    {subCategories.slice(0, 9).map((category) => {
+                      return (
+                        <div key={category.id} className="p-2 grid">
+                          <div className="bg-secondary w-[50px] h-[50px] rounded-lg justify-self-center"></div>
+                          <p className="text-center mt-2 text-sm xsm:text-base md:text-base">{category.name}</p>
+                        </div>
+                      )
+                    })}
+                  </div>
+                )}
+              </div>
+              <Button
+                variant="dark"
+                rounded
+                classNames="absolute bottom-[3%] left-1/2 -translate-x-1/2 flex items-center justify-center gap-1"
+              >
+                Explore <FaLongArrowAltRight />
+              </Button>
+            </div>
+          </div>
+          <div className="grid place-items-center">
+            <img src="/images/bg2.png" alt="Urban Company Services" width="500" height="500" className="w-full" />
+          </div>
+        </div>
+
+        <div className="my-16 sm:my-24 w-[min(800px,95%)] mx-auto">
+          <img
+            src="/images/bg1.png"
+            alt="Services at home like never experienced before"
+            width="600px"
+            className="w-full"
+          />
+        </div>
+
+        <div>
+          {categories &&
+            categories.map((category) => (
+              <div key={category.id}>
+                <h3>{category.name}</h3>
+              </div>
+            ))}
+        </div>
+      </div>
     </>
   )
 }
