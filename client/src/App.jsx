@@ -10,10 +10,13 @@ const App = () => {
   const router = Router()
   const { loader } = useSelector((state) => state.app)
 
+  if (loader) {
+    return <Loader />
+  }
+
   return (
     <>
       <Suspense fallback={<Loader />}>
-        {loader && <Loader />}
         <Toaster position="top-center" reverseOrder={false} />
         <RouterProvider router={router} />
       </Suspense>
