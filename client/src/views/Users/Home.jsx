@@ -5,6 +5,7 @@ import { NavLink, useNavigate } from 'react-router-dom'
 import { getCategories, getSubCategories } from '../../api/categoriesApi'
 import Button from '../../components/common/Button'
 import { FaLongArrowAltRight } from 'react-icons/fa'
+import dummySubCategories from '../../utils/data/dummySubCategories'
 
 const Home = () => {
   const { isAuth, user } = useSelector((state) => state.role)
@@ -56,13 +57,15 @@ const Home = () => {
             <div className="relative border-2 border-secondary p-4 rounded-lg w-full md:w-[80%] pb-20 bg-gradient-to-b from-transparent to-secondary from-80%">
               <p className="text-sm lg:text-lg mb-4">What are you looking for?</p>
               <div className="">
-                {subCategories && (
+                {dummySubCategories && (
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2 gap-x-6">
-                    {subCategories.slice(0, 9).map((category) => {
+                    {dummySubCategories.map((category) => {
                       return (
                         <div key={category.id} className="p-2 grid">
-                          <div className="bg-secondary w-[50px] h-[50px] rounded-lg justify-self-center"></div>
-                          <p className="text-center mt-2 text-sm xsm:text-base md:text-base">{category.name}</p>
+                          <div className="bg-[#f5f5f5] w-[50px] h-[50px] rounded-lg justify-self-center grid place-items-center">
+                            {category?.thumbnail && <img src={category?.thumbnail} className="w-[90%] rounded-lg" />}
+                          </div>
+                          <p className="text-center mt-2 text-xs xsm:text-sm md:text-sm">{category.name}</p>
                         </div>
                       )
                     })}

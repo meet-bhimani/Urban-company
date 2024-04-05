@@ -9,7 +9,9 @@ const TopNavbar = () => {
     <>
       <div className="flex items-center justify-between w-full px-2 py-0 min-h-[4rem] bg-secondary">
         <div className="invisible md:visible">
-          <img src="/images/logo.png" alt="Logo" width="130" height="130" />
+          <NavLink to="/">
+            <img src="/images/logo.png" alt="Logo" width="130" height="130" />
+          </NavLink>
         </div>
         <div className="flex gap-2 items-center">
           {isAuth ? (

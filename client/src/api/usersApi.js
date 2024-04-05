@@ -22,3 +22,5 @@ export const getUserByEmail = async (email) => {
     }
   }
 }
+
+export const getServiceProviderById = (id) => API.get(`users/${id}`)
