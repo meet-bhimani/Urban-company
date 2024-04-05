@@ -16,6 +16,7 @@ const ContactUs = React.lazy(() => import('../components/pages/Contact'))
 const Login = React.lazy(() => import('../components/pages/Login'))
 const RegisterUser = React.lazy(() => import('../components/pages/Register/RegisterUser'))
 const RegisterServiceProvider = React.lazy(() => import('../components/pages/Register/RegisterServiceProvider'))
+const ConfirmBooking = React.lazy(() => import('../views/Users/ConfirmBooking'))
 const UserBookings = React.lazy(() => import('../views/Users/UserBookings'))
 const Profile = React.lazy(() => import('../components/pages/Profile'))
 const ServiceProviderDashboard = React.lazy(() => import('../views/ServiceProvider/ServiceProviderDashboard'))
@@ -68,6 +69,10 @@ export const Router = () => {
         {
           element: <PrivateRoutesForUser isAuth={isAuth} user={user} />,
           children: [
+            {
+              path: '/services/:id/confirm-booking',
+              element: <ConfirmBooking />,
+            },
             {
               path: '/user-bookings',
               element: <UserBookings />,

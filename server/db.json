@@ -43,7 +43,7 @@
 			"completed_services": [],
 			"brand_name": "Patel Electricals",
 			"gstin": "GSTIN456E",
-			"average_rating": 4.0,
+			"average_rating": 4,
 			"status": "active"
 		},
 		{
@@ -133,7 +133,7 @@
 				"city": "Junagadh",
 				"state": "Gujarat"
 			},
-			"requested_services": [],
+			"requested_services": ["1", "2"],
 			"active_services": []
 		},
 		{
@@ -421,11 +421,31 @@
 			"name": "Home Services",
 			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700129474836-c5b146.jpeg",
 			"sub_categories": [
-				{ "id": "1", "name": "Cleaning", "parent_category": "Home Services" },
-				{ "id": "2", "name": "Plumbing", "parent_category": "Home Services" },
-				{ "id": "3", "name": "Electrical", "parent_category": "Home Services" },
-				{ "id": "4", "name": "Carpentry", "parent_category": "Home Services" },
-				{ "id": "5", "name": "Pest Control", "parent_category": "Home Services" }
+				{
+					"id": "1",
+					"name": "Cleaning",
+					"parent_category": "Home Services"
+				},
+				{
+					"id": "2",
+					"name": "Plumbing",
+					"parent_category": "Home Services"
+				},
+				{
+					"id": "3",
+					"name": "Electrical",
+					"parent_category": "Home Services"
+				},
+				{
+					"id": "4",
+					"name": "Carpentry",
+					"parent_category": "Home Services"
+				},
+				{
+					"id": "5",
+					"name": "Pest Control",
+					"parent_category": "Home Services"
+				}
 			]
 		},
 		{
@@ -433,11 +453,31 @@
 			"name": "Beauty & Wellness",
 			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1698747190108-6fb9c1.jpeg",
 			"sub_categories": [
-				{ "id": "6", "name": "Salon at Home", "parent_category": "Beauty & Wellness" },
-				{ "id": "7", "name": "Spa at Home", "parent_category": "Beauty & Wellness" },
-				{ "id": "8", "name": "Fitness Trainer at Home", "parent_category": "Beauty & Wellness" },
-				{ "id": "9", "name": "Yoga Instructor at Home", "parent_category": "Beauty & Wellness" },
-				{ "id": "10", "name": "Massage at Home", "parent_category": "Beauty & Wellness" }
+				{
+					"id": "6",
+					"name": "Salon at Home",
+					"parent_category": "Beauty & Wellness"
+				},
+				{
+					"id": "7",
+					"name": "Spa at Home",
+					"parent_category": "Beauty & Wellness"
+				},
+				{
+					"id": "8",
+					"name": "Fitness Trainer at Home",
+					"parent_category": "Beauty & Wellness"
+				},
+				{
+					"id": "9",
+					"name": "Yoga Instructor at Home",
+					"parent_category": "Beauty & Wellness"
+				},
+				{
+					"id": "10",
+					"name": "Massage at Home",
+					"parent_category": "Beauty & Wellness"
+				}
 			]
 		},
 		{
@@ -445,11 +485,31 @@
 			"name": "Repairs & Maintenance",
 			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700141800784-5ca077.jpeg",
 			"sub_categories": [
-				{ "id": "11", "name": "Appliance Repair", "parent_category": "Repairs & Maintenance" },
-				{ "id": "12", "name": "AC Service & Repair", "parent_category": "Repairs & Maintenance" },
-				{ "id": "13", "name": "Computer/Laptop Repair", "parent_category": "Repairs & Maintenance" },
-				{ "id": "14", "name": "Mobile Repair", "parent_category": "Repairs & Maintenance" },
-				{ "id": "15", "name": "Car/Bike Service & Repair", "parent_category": "Repairs & Maintenance" }
+				{
+					"id": "11",
+					"name": "Appliance Repair",
+					"parent_category": "Repairs & Maintenance"
+				},
+				{
+					"id": "12",
+					"name": "AC Service & Repair",
+					"parent_category": "Repairs & Maintenance"
+				},
+				{
+					"id": "13",
+					"name": "Computer/Laptop Repair",
+					"parent_category": "Repairs & Maintenance"
+				},
+				{
+					"id": "14",
+					"name": "Mobile Repair",
+					"parent_category": "Repairs & Maintenance"
+				},
+				{
+					"id": "15",
+					"name": "Car/Bike Service & Repair",
+					"parent_category": "Repairs & Maintenance"
+				}
 			]
 		},
 		{
@@ -457,11 +517,31 @@
 			"name": "Health & Fitness",
 			"thumbnail": "",
 			"sub_categories": [
-				{ "id": "16", "name": "Personal Training", "parent_category": "Health & Fitness" },
-				{ "id": "17", "name": "Nutritionist Consultation", "parent_category": "Health & Fitness" },
-				{ "id": "18", "name": "Yoga Instructor at Home", "parent_category": "Health & Fitness" },
-				{ "id": "19", "name": "Meditation Sessions", "parent_category": "Health & Fitness" },
-				{ "id": "20", "name": "Physical Therapy", "parent_category": "Health & Fitness" }
+				{
+					"id": "16",
+					"name": "Personal Training",
+					"parent_category": "Health & Fitness"
+				},
+				{
+					"id": "17",
+					"name": "Nutritionist Consultation",
+					"parent_category": "Health & Fitness"
+				},
+				{
+					"id": "18",
+					"name": "Yoga Instructor at Home",
+					"parent_category": "Health & Fitness"
+				},
+				{
+					"id": "19",
+					"name": "Meditation Sessions",
+					"parent_category": "Health & Fitness"
+				},
+				{
+					"id": "20",
+					"name": "Physical Therapy",
+					"parent_category": "Health & Fitness"
+				}
 			]
 		},
 		{
@@ -469,11 +549,31 @@
 			"name": "Automotive Services",
 			"thumbnail": "",
 			"sub_categories": [
-				{ "id": "21", "name": "Car Wash & Detailing", "parent_category": "Automotive Services" },
-				{ "id": "22", "name": "Mechanic Services", "parent_category": "Automotive Services" },
-				{ "id": "23", "name": "Car Painting", "parent_category": "Automotive Services" },
-				{ "id": "24", "name": "Tire Replacement", "parent_category": "Automotive Services" },
-				{ "id": "25", "name": "Car Rental", "parent_category": "Automotive Services" }
+				{
+					"id": "21",
+					"name": "Car Wash & Detailing",
+					"parent_category": "Automotive Services"
+				},
+				{
+					"id": "22",
+					"name": "Mechanic Services",
+					"parent_category": "Automotive Services"
+				},
+				{
+					"id": "23",
+					"name": "Car Painting",
+					"parent_category": "Automotive Services"
+				},
+				{
+					"id": "24",
+					"name": "Tire Replacement",
+					"parent_category": "Automotive Services"
+				},
+				{
+					"id": "25",
+					"name": "Car Rental",
+					"parent_category": "Automotive Services"
+				}
 			]
 		},
 		{
@@ -481,32 +581,64 @@
 			"name": "Pet Care",
 			"thumbnail": "",
 			"sub_categories": [
-				{ "id": "26", "name": "Dog Walking", "parent_category": "Pet Care" },
-				{ "id": "27", "name": "Pet Grooming", "parent_category": "Pet Care" },
-				{ "id": "28", "name": "Pet Sitting", "parent_category": "Pet Care" },
-				{ "id": "29", "name": "Veterinary Services", "parent_category": "Pet Care" },
-				{ "id": "30", "name": "Pet Training", "parent_category": "Pet Care" }
+				{
+					"id": "26",
+					"name": "Dog Walking",
+					"parent_category": "Pet Care"
+				},
+				{
+					"id": "27",
+					"name": "Pet Grooming",
+					"parent_category": "Pet Care"
+				},
+				{
+					"id": "28",
+					"name": "Pet Sitting",
+					"parent_category": "Pet Care"
+				},
+				{
+					"id": "29",
+					"name": "Veterinary Services",
+					"parent_category": "Pet Care"
+				},
+				{
+					"id": "30",
+					"name": "Pet Training",
+					"parent_category": "Pet Care"
+				}
 			]
 		}
 	],
 	"bookings": [
 		{
 			"id": "1",
-			"user_id": "3",
+			"user_id": "8",
 			"service_id": "1",
 			"provider_id": "2",
-			"booking_date": "2024-04-10",
+			"booking_date": "2024-04-05",
+			"expected_service_date": "2024-04-10",
 			"status": "accepted",
+			"location": {
+				"addressLine": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			},
 			"notes": "Please bring your own cleaning supplies"
 		},
 		{
 			"id": "2",
-			"user_id": "3",
+			"user_id": "8",
 			"service_id": "2",
 			"provider_id": "2",
-			"booking_date": "2024-04-15",
+			"booking_date": "2024-04-02",
+			"expected_service_date": "2024-04-05",
 			"status": "completed",
-			"notes": "Interior painting completed"
+			"location": {
+				"addressLine": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			},
+			"notes": "I have some paint colors"
 		}
 	]
 }

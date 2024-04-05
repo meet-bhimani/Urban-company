@@ -1,7 +1,5 @@
-import React from 'react'
-
 const UserBookings = () => {
-  return <div>UserBookings</div>
+  return <div>UserBookings component</div>
 }
 
 export default UserBookings

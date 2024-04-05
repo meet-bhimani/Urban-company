@@ -24,3 +24,9 @@ export const getUserByEmail = async (email) => {
 }
 
 export const getServiceProviderById = (id) => API.get(`users/${id}`)
+
+export const updateUser = async (user) => {
+  return await API.put(`/users/${user.id}`, {
+    ...user,
+  })
+}

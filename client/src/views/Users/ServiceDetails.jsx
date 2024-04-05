@@ -43,6 +43,8 @@ const ServiceDetails = () => {
         style: { backgroundColor: '#f58700', color: '#fff' },
         icon: <IoIosWarning />,
       })
+    } else {
+      navigate(`/services/${id}/confirm-booking`)
     }
   }
 
