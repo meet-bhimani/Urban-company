@@ -55,8 +55,8 @@ const UserBookings = () => {
             </Button>
           </div>
         ) : (
-          <div className="mt-20">
-            <h1>My Bookings</h1>
+          <div className="mt-10">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl text-center">My Bookings</h1>
             {userBookings && userBookedServices && (
               <div className="mt-4 grid grid-cols-1 gap-5">
                 {userBookings.map((booking) => {
