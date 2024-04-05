@@ -102,7 +102,12 @@ const ServiceDetails = () => {
               <h2 className="text-base md:text-lg font-semibold mb-1">Service Provider Details:</h2>
               <div className="pl-2 text-xs md:text-sm lg:text-base">
                 <p>Brand Name: {serviceProvider?.brand_name}</p>
-                <p>Email: {serviceProvider?.email}</p>
+                <p>
+                  Email:
+                  <a href={`mailto:${serviceProvider?.email}`} className="text-primary">
+                    {serviceProvider?.email}
+                  </a>
+                </p>
                 <p>Expertise: {serviceProvider?.expertise.join(', ')}</p>
                 <p>Ratings: {serviceProvider?.average_rating}/5</p>
                 <p>

@@ -62,6 +62,8 @@ const RegisterUser = () => {
           password,
           role: 'user',
           location,
+          requested_services: [],
+          active_services: [],
         }
         const { success: registerSuccess, data, error } = await registerUser(userObj)
         if (registerSuccess) {

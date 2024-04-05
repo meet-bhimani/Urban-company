@@ -44,7 +44,7 @@ const ServiceCard = ({ service }) => {
           </div>
           <div className="mt-auto">
             <NavLink to={`/services/${service.id}`}>
-              <Button variant={'primary-outline'} size="sm" rounded>
+              <Button variant={'primary'} size="sm" rounded>
                 View Details
               </Button>
             </NavLink>
