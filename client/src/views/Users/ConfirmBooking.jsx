@@ -43,7 +43,7 @@ const ConfirmBooking = () => {
 
   const onSubmit = async (values) => {
     try {
-      dispatch(setLoader(true))
+      // dispatch(setLoader(true))
       const { success, data, error } = await bookService(values, user, service)
       if (!success) throw new Error(error.message || 'Failed to book service, try again after sometime')
       dispatch(setRole(data))
@@ -52,7 +52,7 @@ const ConfirmBooking = () => {
     } catch (error) {
       toast.error(error?.message)
     } finally {
-      dispatch(setLoader(false))
+      // dispatch(setLoader(false))
     }
   }
 

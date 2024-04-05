@@ -49,7 +49,7 @@ const RegisterUser = () => {
 
   async function onSubmit() {
     try {
-      dispatch(setLoader(true))
+      // dispatch(setLoader(true))
       const { name, email, password, location } = values
       const { success } = await getUserByEmail(email)
 
@@ -78,7 +78,7 @@ const RegisterUser = () => {
     } catch (error) {
       toast.error(error.message)
     } finally {
-      dispatch(setLoader(false))
+      // dispatch(setLoader(false))
     }
   }
 

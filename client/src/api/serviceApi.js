@@ -24,7 +24,7 @@ export const bookService = async (values, user, service) => {
     }
     const newUserObj = {
       ...user,
-      'requested_services': [...user.requested_services, newBookingObj.id],
+      'requested_services': [...user.requested_services, service.id],
     }
     const { success: addBookingsSuccess, error: addBookingsError } = await API.post('/bookings', newBookingObj)
     if (!addBookingsSuccess) throw new Error(addBookingsError.message + 'add Bookings' || 'Error adding new booking')

@@ -54,7 +54,7 @@ const RegisterServiceProvider = () => {
 
   async function onSubmit() {
     try {
-      dispatch(setLoader(true))
+      // dispatch(setLoader(true))
       const { name, email, password, brandName, gstin, expertise, location } = values
       const { success } = await getUserByEmail(email)
 
@@ -94,7 +94,7 @@ const RegisterServiceProvider = () => {
     } catch (error) {
       toast.error(error.message)
     } finally {
-      dispatch(setLoader(false))
+      // dispatch(setLoader(false))
     }
   }
 
