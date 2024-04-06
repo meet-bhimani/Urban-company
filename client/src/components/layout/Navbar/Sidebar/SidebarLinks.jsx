@@ -3,14 +3,14 @@ import { scrollToTop } from '../../../../utils/functions/scrollToTop'
 import { useSidebarContext } from '../../../../context/sideBarContext'
 
 const SidebarLinks = ({ Links = [] }) => {
-  const { showSidebar, setShowSidebar } = useSidebarContext()
+  const { showSidebar } = useSidebarContext()
   return (
     <>
       {Links.map((link) => {
         return (
           <li
             key={link.label}
-            className={`flex items-center justify-center py-2 font-medium rounded-md cursor-pointer transition-colors`}
+            className={`flex items-center justify-center py-2 font-medium rounded-md cursor-pointer`}
           >
             <NavLink
               to={link.slug}
@@ -18,7 +18,7 @@ const SidebarLinks = ({ Links = [] }) => {
               className={({ isActive }) =>
                 `${
                   isActive ? 'bg-gray-300' : ''
-                } relative text-black hover:bg-gray-300 flex items-center h-[40px] gap-1 text-[1rem] p-0.5 xsm:p-1.5 rounded transition-all duration-200 ease-in-out group`
+                } relative text-black hover:bg-gray-300 flex items-center h-[40px] gap-1 text-[1rem] p-0.5 xsm:p-1.5 rounded transition-all duration-300 ease-in-out group`
               }
             >
               <div className="flex items-center px-1">
@@ -31,7 +31,7 @@ const SidebarLinks = ({ Links = [] }) => {
               </div>
               {!showSidebar && (
                 <div
-                  className={`absolute left-full w-max rounded-md px-2 py-1 ml-3 bg-gray-300 text-black text-sm invisible opacity-20 -translate-x-3 transition-all group-hover:visible group-hover:opacity-100 group-hover:translate-x-0`}
+                  className={`absolute left-full w-max rounded-md px-2 py-1 ml-3 bg-gray-300 text-black text-sm invisible opacity-20 -translate-x-3 transition-all duration-300 group-hover:visible group-hover:opacity-100 group-hover:translate-x-0`}
                 >
                   {link?.label}
                 </div>
