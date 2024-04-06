@@ -3,6 +3,7 @@ import Footer from './Footer'
 import Sidebar from './Navbar/Sidebar/Sidebar'
 import { useSidebarContext } from '../../context/sideBarContext'
 import TopNavbar from './Navbar/TopNavbar'
+import { twMerge } from 'tailwind-merge'
 
 const Layout = () => {
   const { showSidebar } = useSidebarContext()
@@ -10,15 +11,19 @@ const Layout = () => {
     <>
       <div className="flex h-svh">
         <div
-          className={`z-10 fixed left-0 top-0 h-full bg-secondary ${
-            showSidebar ? 'w-[250px]' : 'w-[40px] xsm:w-[60px]'
-          } duration-300`}
+          className={twMerge(
+            'z-10 fixed right-0 sm:left-0 top-0 h-full bg-secondary invisible sm:visible duration-300',
+            showSidebar ? 'w-[250px] visible' : 'w-[40px] xsm:w-[60px]'
+          )}
+          // className={`z-10 fixed left-0 top-0 h-full bg-secondary hidden sm:block ${
+          //   showSidebar ? 'w-[250px] block' : 'w-[40px] xsm:w-[60px]'
+          // } duration-300`}
         >
           <Sidebar />
         </div>
 
         <div
-          className={`duration-300 flex flex-col flex-grow ml-[40px] xsm:ml-[60px] ${
+          className={`duration-300 flex flex-col flex-grow sm:ml-[60px] ${
             showSidebar ? 'lg:ml-[250px]' : 'lg:ml-[60px]'
           }`}
         >

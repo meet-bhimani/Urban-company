@@ -8,6 +8,7 @@ import { removeRole } from '../../../../redux/actions/authAction'
 import { useNavigate } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import Button from '../../../common/Button'
+import { MdClose } from 'react-icons/md'
 
 const Sidebar = () => {
   const { showSidebar, setShowSidebar } = useSidebarContext()
@@ -50,9 +51,13 @@ const Sidebar = () => {
               alt=""
             />
           )}
-          <button onClick={() => setShowSidebar((curr) => !curr)} className="p-1 rounded-lg hover:bg-white">
+          <button
+            onClick={() => setShowSidebar((curr) => !curr)}
+            className="p-1 cursor-pointer rounded-lg hover:bg-white hidden sm:block"
+          >
             {showSidebar ? <LuChevronFirst /> : <LuChevronLast />}
           </button>
+          <MdClose className="sm:hidden" onClick={() => setShowSidebar((prev) => !prev)} />
         </div>
 
         <ul className="flex-1 px-1 mt-5">

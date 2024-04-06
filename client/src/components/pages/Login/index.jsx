@@ -32,7 +32,7 @@ const Login = () => {
 
   async function onSubmit() {
     try {
-      dispatch(setLoader(true))
+      // dispatch(setLoader(true))
       const { email, password } = values
       // check for user exists in database or not
       const { success, data, error } = await getUserByEmail(email)
@@ -50,7 +50,7 @@ const Login = () => {
     } catch (error) {
       toast.error(error.message)
     } finally {
-      dispatch(setLoader(false))
+      // dispatch(setLoader(false))
     }
   }
 

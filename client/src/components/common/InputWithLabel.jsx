@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { IoMdEye, IoMdEyeOff } from 'react-icons/io'
+import { twMerge } from 'tailwind-merge'
 
 const InputWithLabel = ({
   id,
@@ -19,7 +20,10 @@ const InputWithLabel = ({
   return (
     <label
       htmlFor={id}
-      className={`relative block rounded-md border border-gray-200 shadow-sm focus-within:border-primary focus-within:ring-1 focus-within:ring-primary z-0 ${className}`}
+      className={twMerge(
+        `relative block rounded-md border border-gray-200 shadow-sm focus-within:border-primary focus-within:ring-1 focus-within:ring-primary z-0`,
+        className
+      )}
     >
       <input
         type={type == 'password' ? (showPassword ? 'text' : 'password') : type}
@@ -42,9 +46,11 @@ const InputWithLabel = ({
           ))}
       </div>
 
-      <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-white p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
-        {label}
-      </span>
+      {label.length > 0 && (
+        <span className="pointer-events-none absolute start-2.5 top-0 -translate-y-1/2 bg-[#fff] p-0.5 text-xs text-gray-700 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-focus:top-0 peer-focus:text-xs">
+          {label}
+        </span>
+      )}
     </label>
   )
 }
@@ -53,7 +59,7 @@ InputWithLabel.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['text', 'password', 'email', 'number']),
+  type: PropTypes.oneOf(['text', 'password', 'email', 'number', 'date']),
   placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,

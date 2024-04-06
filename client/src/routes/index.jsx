@@ -11,10 +11,12 @@ import {
 const Layout = React.lazy(() => import('../components/layout/Layout'))
 const Home = React.lazy(() => import('../views/Users/Home'))
 const ServicesList = React.lazy(() => import('../views/Users/ServicesList'))
+const Service = React.lazy(() => import('../views/Users/ServiceDetails'))
 const ContactUs = React.lazy(() => import('../components/pages/Contact'))
 const Login = React.lazy(() => import('../components/pages/Login'))
 const RegisterUser = React.lazy(() => import('../components/pages/Register/RegisterUser'))
 const RegisterServiceProvider = React.lazy(() => import('../components/pages/Register/RegisterServiceProvider'))
+const ConfirmBooking = React.lazy(() => import('../views/Users/ConfirmBooking'))
 const UserBookings = React.lazy(() => import('../views/Users/UserBookings'))
 const Profile = React.lazy(() => import('../components/pages/Profile'))
 const ServiceProviderDashboard = React.lazy(() => import('../views/ServiceProvider/ServiceProviderDashboard'))
@@ -40,6 +42,10 @@ export const Router = () => {
           element: <ServicesList />,
         },
         {
+          path: '/services/:id',
+          element: <Service />,
+        },
+        {
           path: '/contact',
           element: <ContactUs />,
         },
@@ -63,6 +69,10 @@ export const Router = () => {
         {
           element: <PrivateRoutesForUser isAuth={isAuth} user={user} />,
           children: [
+            {
+              path: '/services/:id/confirm-booking',
+              element: <ConfirmBooking />,
+            },
             {
               path: '/user-bookings',
               element: <UserBookings />,
