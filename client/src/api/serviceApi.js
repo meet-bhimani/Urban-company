@@ -4,13 +4,33 @@ import { updateUser } from './usersApi'
 
 export const getAllServices = () => API.get('services')
 
+export const getServiceProviderServices = async (serviceProvider) => {
+  try {
+    const { success: fetchServicesSuccess, data: services, error: fetchServicesError } = await getAllServices()
+    if (!fetchServicesSuccess) throw new Error(fetchServicesError.message || 'Error Fetching Services')
+    const serviceProviderServices = services.filter((service) => serviceProvider.offered_services.includes(service.id))
+    return {
+      success: true,
+      data: serviceProviderServices,
+      error: null,
+    }
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message + 'else part',
+    }
+  }
+}
+
 export const getServiceById = (id) => API.get(`services/${id}`)
+
+export const updateService = (service) => API.put(`services/${service.id}`, { ...service })
 
 export const bookService = async (values, user, service) => {
   try {
     const { success: fetchBookingsSuccess, data: bookings, error: fetchBookingsError } = await getBookings()
-    if (!fetchBookingsSuccess)
-      throw new Error(fetchBookingsError.message + 'Fetch Bookings' || 'Error Fetching Bookings')
+    if (!fetchBookingsSuccess) throw new Error(fetchBookingsError.message || 'Error Fetching Bookings')
     const newBookingObj = {
       id: (bookings.length + 1).toString(),
       user_id: user.id,
@@ -27,10 +47,10 @@ export const bookService = async (values, user, service) => {
       'requested_services': [...user.requested_services, service.id],
     }
     const { success: addBookingsSuccess, error: addBookingsError } = await API.post('/bookings', newBookingObj)
-    if (!addBookingsSuccess) throw new Error(addBookingsError.message + 'add Bookings' || 'Error adding new booking')
+    if (!addBookingsSuccess) throw new Error(addBookingsError.message || 'Error adding new booking')
 
     const { success: updateUserSuccess, data: newUserData, error: updateUserError } = await updateUser(newUserObj)
-    if (!updateUserSuccess) throw new Error(updateUserError.message + 'update user' || 'Error updating user')
+    if (!updateUserSuccess) throw new Error(updateUserError.message || 'Error updating user')
 
     return {
       success: true,

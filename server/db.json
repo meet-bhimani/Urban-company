@@ -238,6 +238,22 @@
       },
       "requested_services": [],
       "active_services": []
+    },
+    {
+      "id": "12",
+      "name": "Harshul Shah",
+      "email": "harshul@gmail.com",
+      "password": "harshul123",
+      "role": "user",
+      "location": {
+        "addressLine": "college",
+        "city": "ahmedbad",
+        "state": "gujarat"
+      },
+      "requested_services": [
+        "1"
+      ],
+      "active_services": []
     }
   ],
   "services": [
@@ -249,7 +265,7 @@
       "provider_id": "2",
       "category": "Home Services",
       "sub_category": "Cleaning",
-      "cost": 50,
+      "cost": 5000,
       "available": true,
       "rating": 4.5,
       "total_reviews": "53k",
@@ -261,9 +277,10 @@
       },
       "features": [
         "Thorough cleaning of all areas",
-        "Sanitization of high-touch surfaces",
-        "Dusting of high ceilings",
-        "Disinfection of hard-to-reach spots"
+        "   Sanitization of high-touch surfaces",
+        "   Dusting of high ceilings",
+        "   Disinfection of hard-to-reach spots",
+        "   new feature"
       ],
       "offer_text": "10% off on your first booking!"
     },
@@ -901,6 +918,21 @@
         "addressLine": "Bhimani Heights",
         "city": "Junagadh",
         "state": "Gujarat"
+      }
+    },
+    {
+      "id": "15",
+      "user_id": "12",
+      "service_id": "1",
+      "provider_id": "2",
+      "booking_date": "2024-04-06",
+      "status": "pending",
+      "notes": "",
+      "expected_service_date": "2024-04-10",
+      "location": {
+        "addressLine": "LD college hostel",
+        "city": "ahmedbad",
+        "state": "gujarat"
       }
     }
   ]
