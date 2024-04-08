@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
+import { useDispatch } from 'react-redux'
 import { deleteServiceById, getServiceById, updateService } from '../../api/serviceApi'
 import { useSelector } from 'react-redux'
 import { useFormik } from 'formik'
@@ -10,6 +11,7 @@ import { MdKeyboardBackspace } from 'react-icons/md'
 import { NavLink } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import ConfirmDeleteModal from '../../components/common/ConfirmDeleteModal'
+import { setRole } from '../../redux/actions/authAction'
 
 const MyServiceDetails = () => {
   const { id } = useParams()
@@ -18,6 +20,7 @@ const MyServiceDetails = () => {
   const [showConfirmationModal, setShowConfirmationModal] = useState(false)
   const { user: serviceProvider } = useSelector((state) => state.role)
   const navigate = useNavigate()
+  const dispatch = useDispatch()
 
   const fetchService = async () => {
     try {
@@ -43,17 +46,22 @@ const MyServiceDetails = () => {
   const deleteService = async (serviceId) => {
     console.log('deleted')
     try {
-      // dispatch(setLoader(true));
-      const { success, data, error } = await deleteServiceById(productID)
+      const { success, data, error } = await deleteServiceById(serviceId)
       if (!success) throw new Error(error.message || 'Error deleting service')
       toast.success('Service deleted successfully')
-      console.log('deleted data', data)
+      const newServiceProviderObj = {
+        ...serviceProvider,
+        offered_services: serviceProvider.offered_services.filter((id) => id != data.id),
+        accepted_services: serviceProvider.accepted_services.filter((id) => id != data.id),
+        completed_services: serviceProvider.completed_services.filter((id) => id != data.id),
+      }
+      dispatch(setRole(newServiceProviderObj))
+      navigate('/my-services')
     } catch (error) {
       toast.error(error.message)
       console.error(error)
     } finally {
       setShowConfirmationModal(false)
-      // dispatch(setLoader(false));
     }
   }
 
