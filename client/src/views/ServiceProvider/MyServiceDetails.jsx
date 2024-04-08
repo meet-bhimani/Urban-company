@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
-import { getServiceById, updateService } from '../../api/serviceApi'
+import { deleteServiceById, getServiceById, updateService } from '../../api/serviceApi'
 import { useSelector } from 'react-redux'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
@@ -9,11 +9,13 @@ import Button from '../../components/common/Button'
 import { MdKeyboardBackspace } from 'react-icons/md'
 import { NavLink } from 'react-router-dom'
 import toast from 'react-hot-toast'
+import ConfirmDeleteModal from '../../components/common/ConfirmDeleteModal'
 
 const MyServiceDetails = () => {
   const { id } = useParams()
   const [service, setService] = useState(null)
   const [isEditMode, setIsEditMode] = useState(false)
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false)
   const { user: serviceProvider } = useSelector((state) => state.role)
   const navigate = useNavigate()
 
@@ -31,6 +33,27 @@ const MyServiceDetails = () => {
       }
     } catch (error) {
       console.error(error)
+    }
+  }
+
+  const handleDelete = () => {
+    setShowConfirmationModal(true)
+  }
+
+  const deleteService = async (serviceId) => {
+    console.log('deleted')
+    try {
+      // dispatch(setLoader(true));
+      const { success, data, error } = await deleteServiceById(productID)
+      if (!success) throw new Error(error.message || 'Error deleting service')
+      toast.success('Service deleted successfully')
+      console.log('deleted data', data)
+    } catch (error) {
+      toast.error(error.message)
+      console.error(error)
+    } finally {
+      setShowConfirmationModal(false)
+      // dispatch(setLoader(false));
     }
   }
 
@@ -105,6 +128,15 @@ const MyServiceDetails = () => {
               <MdKeyboardBackspace />
             </NavLink>
           </div>
+        )}
+        {showConfirmationModal && (
+          <ConfirmDeleteModal
+            modalType={'delete'}
+            dataType={'service'}
+            Id={id}
+            handleClick={deleteService}
+            setShowConfirmationModal={setShowConfirmationModal}
+          />
         )}
         <div className="flex flex-col justify-center">
           <h1 className="text-xl md:text-2xl lg:text-3xl font-semibold">Service Details</h1>
@@ -247,7 +279,7 @@ const MyServiceDetails = () => {
                 <Button onClick={toggleEditMode} rounded>
                   Edit Service
                 </Button>
-                <Button variant={'danger'} rounded>
+                <Button variant={'danger'} rounded onClick={handleDelete}>
                   Delete Service
                 </Button>
               </div>
