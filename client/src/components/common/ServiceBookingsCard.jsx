@@ -9,7 +9,7 @@ import InputWithLabel from './InputWithLabel' // Assuming you have a custom Inpu
 import toast from 'react-hot-toast'
 import { cancelBooking, updateBooking } from '../../api/bookingsApi'
 import ConfirmDeleteModal from './ConfirmDeleteModal'
-import { setRole } from '../../redux/actions/authAction'
+import { setLoader } from '../../redux/actions/appAction'
 
 const ServiceBookingsCard = ({ booking: userBooking, service }) => {
   const [booking, setBooking] = useState(userBooking)
@@ -63,14 +63,15 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
 
   async function handleCancelBooking(id) {
     try {
+      dispatch(setLoader(true))
       const { success, data, error } = await cancelBooking(userBooking, user)
       if (!success) throw new Error(error.message || 'Error in cancellation of booking')
       toast.success('Booking canceled successfully')
-      dispatch(setRole(data))
     } catch (error) {
       toast.error(error.message)
       console.error(error)
     } finally {
+      dispatch(setLoader(false))
       setShowConfirmationModal(false)
     }
   }

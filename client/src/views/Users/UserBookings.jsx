@@ -6,11 +6,12 @@ import Button from '../../components/common/Button'
 import { NavLink } from 'react-router-dom'
 import { getAllServices } from '../../api/serviceApi'
 import ServiceBookingsCard from '../../components/common/ServiceBookingsCard'
+import Loader from '../../components/common/Loader'
 
 const UserBookings = () => {
   const [userBookings, setUserBookings] = useState([])
   const [userBookedServices, setUserBookedServices] = useState([])
-
+  const { loader } = useSelector((state) => state.app)
   const { user } = useSelector((state) => state.role)
 
   const fetchUserBookings = async () => {
@@ -42,6 +43,7 @@ const UserBookings = () => {
 
   return (
     <>
+      {loader && <Loader />}
       <HelmetHeader
         title={'My Bookings | Urban Company'}
         description={'Check all your service booking, edit or cancel your service anytime'}
