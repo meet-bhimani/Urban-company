@@ -38,9 +38,9 @@ const Home = () => {
   useEffect(() => {
     if (user) {
       user.role === 'service_provider'
-        ? navigate('/service-provider-dashboard')
+        ? navigate('/my-services')
         : user.role === 'admin'
-        ? navigate('/admin-dashboard')
+        ? navigate('/manage-users')
         : ''
     }
     fetchCategories()

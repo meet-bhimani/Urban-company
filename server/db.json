@@ -944,7 +944,7 @@
       "service_id": "6",
       "provider_id": "5",
       "booking_date": "2024-04-05",
-      "status": "pending",
+      "status": "declined",
       "notes": "",
       "expected_service_date": "2024-04-06",
       "location": {
