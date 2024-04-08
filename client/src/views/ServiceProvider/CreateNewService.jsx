@@ -215,14 +215,14 @@ const CreateNewService = () => {
                 value={values.new_category}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={`mt-1 block w-full rounded-md border-2 shadow-sm focus:border-primary focus:ring-0 px-3 py-2 outline-none ${
+                className={`my-2 block w-full rounded-md border shadow-sm focus:border-primary focus:ring-0 outline-none ${
                   touched.new_category && errors.new_category ? 'border-danger' : ''
                 }`}
               />
               {touched.new_category && errors.new_category && (
                 <p className="text-red-500 text-xs mt-1">{errors.new_category}</p>
               )}
-              <Button variant="primary" onClick={handleNewCategorySubmit}>
+              <Button variant="primary" rounded onClick={handleNewCategorySubmit}>
                 Add
               </Button>
             </div>
