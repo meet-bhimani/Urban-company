@@ -14,31 +14,22 @@ const UserBookings = () => {
   const { loader } = useSelector((state) => state.app)
   const { user } = useSelector((state) => state.role)
 
-  const fetchUserBookings = async () => {
+  const fetchData = async () => {
     try {
-      const { success, data, error } = await getBookings()
-      if (!success) throw new Error(error.message || 'Error fetching bookings')
-      const filteredBookings = data.filter((booking) => booking.user_id === user.id)
+      const { success: bookingsSuccess, data: bookingsData, error: bookingsError } = await getBookings()
+      if (!bookingsSuccess) throw new Error(bookingsError?.message || 'Error fetching bookings')
+
+      const filteredBookings = bookingsData.filter((booking) => booking.user_id === user.id)
       setUserBookings(filteredBookings)
-      fetchUserBookedServices()
-    } catch (error) {
-      console.error(error.message)
-    }
-  }
 
-  async function fetchUserBookedServices() {
-    try {
-      const { success, data: services, error } = await getAllServices()
-      if (!success) throw new Error(error.message || 'Error fetching services')
-      const filteredServices = services.filter((service) => {
-        if (user.requested_services.includes(service.id)) {
-          return service
-        }
-        if (userBookings.find((booking) => booking.service_id === service.id)) {
-          return service
-        }
-      })
+      const { success: servicesSuccess, data: servicesData, error: servicesError } = await getAllServices()
+      if (!servicesSuccess) throw new Error(servicesError?.message || 'Error fetching services')
 
+      const filteredServices = servicesData.filter(
+        (service) =>
+          user.requested_services.includes(service.id) ||
+          filteredBookings.some((booking) => booking.service_id === service.id)
+      )
       setUserBookedServices(filteredServices)
     } catch (error) {
       console.error(error.message)
@@ -46,8 +37,8 @@ const UserBookings = () => {
   }
 
   useEffect(() => {
-    fetchUserBookings()
-  }, [])
+    fetchData()
+  }, [user.id])
 
   return (
     <>

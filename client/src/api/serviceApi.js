@@ -254,3 +254,26 @@ export const acceptServiceRequest = async (booking, serviceProvider, user) => {
     }
   }
 }
+
+export const declineServiceRequest = async (booking) => {
+  try {
+    const {
+      success: updateBookingSuccess,
+      data: newBookingData,
+      error: updateBookingError,
+    } = await updateBooking({ ...booking, status: 'declined' })
+    if (!updateBookingSuccess) throw new Error(updateBookingError.message || 'Error updating booking')
+
+    return {
+      success: true,
+      data: newBookingData,
+      error: null,
+    }
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message,
+    }
+  }
+}

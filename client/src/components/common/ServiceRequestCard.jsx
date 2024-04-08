@@ -2,26 +2,56 @@ import { useDispatch } from 'react-redux'
 import { MdOutlineCurrencyRupee } from 'react-icons/md'
 import Button from './Button'
 import toast from 'react-hot-toast'
-import { acceptServiceRequest } from '../../api/serviceApi'
+import { acceptServiceRequest, declineServiceRequest } from '../../api/serviceApi'
 import { setRole } from '../../redux/actions/authAction'
+import { cancelBooking, completeService } from '../../api/bookingsApi'
 
-const ServiceRequestCard = ({ service, booking, user, serviceProvider }) => {
+const ServiceRequestCard = ({ service, booking, user, serviceProvider, cardType }) => {
   const dispatch = useDispatch()
 
   const handleAcceptClick = async () => {
     try {
       const { success, data, error } = await acceptServiceRequest(booking, serviceProvider, user)
-      console.log(error)
       if (!success) throw new Error(error.message || 'Error accepting service')
       dispatch(setRole(data))
-      toast.success('Service Accepted')
+      toast.success('Service Accepted Successfully')
     } catch (error) {
       console.error(error)
       toast.error('Something went wrong! try again')
     }
   }
 
-  const handleDeclineClick = () => {}
+  const handleDeclineClick = async () => {
+    try {
+      const { success, data, error } = await declineServiceRequest(booking)
+      if (!success) throw new Error(error.message || 'Error Declining service')
+      toast.success('Service Declined Successfully')
+    } catch (error) {
+      console.error(error)
+      toast.error('Something went wrong! try again here')
+    }
+  }
+  const handleCompleteClick = async () => {
+    try {
+      const { success, data, error } = await completeService(booking, serviceProvider)
+      if (!success) throw new Error(error.message || 'Error in completing service')
+      toast.success('Booking Completed successfully')
+    } catch (error) {
+      toast.error(error.message)
+      console.error(error)
+    }
+  }
+
+  const handleCancelClick = async () => {
+    try {
+      const { success, data, error } = await cancelBooking(booking, 'service_provider')
+      if (!success) throw new Error(error.message || 'Error in cancellation of booking')
+      toast.success('Booking canceled successfully')
+    } catch (error) {
+      toast.error(error.message)
+      console.error(error)
+    }
+  }
 
   return (
     <>
@@ -64,16 +94,34 @@ const ServiceRequestCard = ({ service, booking, user, serviceProvider }) => {
               </div>
             </div>
             <div className="mt-4 flex flex-col gap-2 md:flex-row">
-              <div>
-                <Button variant={'primary'} size="sm" rounded onClick={handleAcceptClick}>
-                  Accept
-                </Button>
-              </div>
-              <div>
-                <Button variant={'danger'} size="sm" rounded onClick={handleDeclineClick}>
-                  Decline
-                </Button>
-              </div>
+              {cardType === 'requested' && (
+                <>
+                  <div>
+                    <Button variant={'primary'} size="sm" rounded onClick={handleAcceptClick}>
+                      Accept
+                    </Button>
+                  </div>
+                  <div>
+                    <Button variant={'danger'} size="sm" rounded onClick={handleDeclineClick}>
+                      Decline
+                    </Button>
+                  </div>
+                </>
+              )}
+              {cardType === 'accepted' && (
+                <>
+                  <div>
+                    <Button variant={'success'} size="sm" rounded onClick={handleCompleteClick}>
+                      Mark Done
+                    </Button>
+                  </div>
+                  <div>
+                    <Button variant={'danger'} size="sm" rounded onClick={handleCancelClick}>
+                      Cancel
+                    </Button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>

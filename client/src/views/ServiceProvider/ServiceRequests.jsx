@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import HelmetHeader from '../../components/common/HelmetHeader'
 import { useSelector } from 'react-redux'
-import { getBookingsForServiceProvider, getServiceProviderServices } from '../../api/serviceApi'
+import { getBookingsForServiceProvider } from '../../api/serviceApi'
 import ServiceRequestCard from '../../components/common/ServiceRequestCard'
 
 const ServiceRequests = () => {
@@ -48,6 +48,7 @@ const ServiceRequests = () => {
                 user={user}
                 key={booking.id}
                 serviceProvider={serviceProvider}
+                cardType={'requested'}
               />
             )
           })}

@@ -64,7 +64,7 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
   async function handleCancelBooking(id) {
     try {
       dispatch(setLoader(true))
-      const { success, data, error } = await cancelBooking(userBooking, user)
+      const { success, data, error } = await cancelBooking(userBooking, 'user')
       if (!success) throw new Error(error.message || 'Error in cancellation of booking')
       toast.success('Booking canceled successfully')
     } catch (error) {
@@ -233,7 +233,15 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
                     Expected Service day: <span>{booking?.expected_service_date}</span>
                   </p>
                   <p className="text-sm mt-1">
-                    Booking status: <span>{booking?.status.charAt(0).toUpperCase() + booking?.status.slice(1)}</span>
+                    Booking status:{' '}
+                    <span>
+                      {booking?.status.charAt(0).toUpperCase() + booking?.status.slice(1)}{' '}
+                      {booking?.canceled_by === 'user'
+                        ? 'By User'
+                        : booking?.canceled_by === 'service_provider'
+                        ? 'By Service Provider'
+                        : ''}
+                    </span>
                   </p>
                 </div>
               )}
