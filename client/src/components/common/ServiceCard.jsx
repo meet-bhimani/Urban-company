@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 import Button from './Button'
 import { MdOutlineCurrencyRupee } from 'react-icons/md'
 
-const ServiceCard = ({ service }) => {
+const ServiceCard = ({ service, isServiceProvider = false }) => {
   return (
     <>
       <div className="border-2 border-secondary p-4 rounded-md min-h-[300px] flex flex-col shadow">
@@ -43,11 +43,19 @@ const ServiceCard = ({ service }) => {
             </ul>
           </div>
           <div className="mt-auto">
-            <NavLink to={`/services/${service.id}`}>
-              <Button variant={'primary'} size="sm" rounded>
-                View Details
-              </Button>
-            </NavLink>
+            {isServiceProvider ? (
+              <NavLink to={`/my-services/${service.id}`}>
+                <Button variant={'primary'} size="sm" rounded>
+                  View Details
+                </Button>
+              </NavLink>
+            ) : (
+              <NavLink to={`/services/${service.id}`}>
+                <Button variant={'primary'} size="sm" rounded>
+                  View Details
+                </Button>
+              </NavLink>
+            )}
           </div>
         </div>
       </div>

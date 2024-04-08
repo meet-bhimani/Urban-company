@@ -1,4 +1,5 @@
 import { FaTasks, FaUser, FaCheckCircle, FaUsers, FaCogs, FaHeadphonesAlt, FaHome } from 'react-icons/fa'
+import { FaSquarePlus } from 'react-icons/fa6'
 import { MdAccessTimeFilled, MdEventNote } from 'react-icons/md'
 
 export const publicLinks = [
@@ -55,8 +56,13 @@ export const serviceProviderLinks = [
   },
   {
     label: 'My Services',
-    slug: '/service-provider-services',
+    slug: '/my-services',
     icon: <FaCogs />,
+  },
+  {
+    label: 'Add New Service',
+    slug: '/create-new-service',
+    icon: <FaSquarePlus />,
   },
   {
     label: 'Service Requests',
@@ -75,7 +81,7 @@ export const serviceProviderLinks = [
   },
   {
     label: 'My Profile',
-    slug: '/service-provider-profile',
+    slug: '/my-profile',
     icon: <FaUser />,
   },
   {

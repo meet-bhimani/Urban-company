@@ -23,6 +23,25 @@ export const getSubCategories = async () => {
   }
 }
 
+export const createCategory = async (name) => {
+  try {
+    const { success, data, error } = await getCategories()
+    if (!success) throw new Error(error.message || 'Error fetching categories')
+    return await API.post('categories', {
+      id: data.length + 1,
+      name: name,
+      thumbnail: '',
+      sub_categories: [],
+    })
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message,
+    }
+  }
+}
+
 // export const getMainCategoriesName = async () => {
 //   const response = await API.get('categories')
 //   return response.data.map((category) => category.name)

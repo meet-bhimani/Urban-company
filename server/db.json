@@ -21,10 +21,13 @@
       ],
       "offered_services": [
         "1",
-        "2"
+        "2",
+        "16",
+        "17"
       ],
       "accepted_services": [
-        "1"
+        "15",
+        "14"
       ],
       "location": {
         "address_line": "456 Park Avenue",
@@ -32,7 +35,8 @@
         "state": "Karnataka"
       },
       "completed_services": [
-        "2"
+        "2",
+        "1"
       ],
       "average_rating": 4.2,
       "status": "active"
@@ -51,6 +55,7 @@
         "3",
         "4"
       ],
+      "accepted_services": [],
       "location": {
         "address_line": "789 Elm Street",
         "city": "Delhi",
@@ -74,6 +79,7 @@
       "offered_services": [
         "5"
       ],
+      "accepted_services": [],
       "location": {
         "address_line": "10 Oak Street",
         "city": "Mumbai",
@@ -99,6 +105,9 @@
         "6",
         "7"
       ],
+      "accepted_services": [
+        "11"
+      ],
       "location": {
         "address_line": "102, Rosewood Avenue",
         "city": "Chennai",
@@ -122,6 +131,7 @@
       "offered_services": [
         "8"
       ],
+      "accepted_services": [],
       "location": {
         "address_line": "20 Lake View Road",
         "city": "Kolkata",
@@ -147,6 +157,7 @@
         "9",
         "10"
       ],
+      "accepted_services": [],
       "location": {
         "address_line": "15 River Side Drive",
         "city": "Hyderabad",
@@ -170,20 +181,18 @@
         "state": "Gujarat"
       },
       "requested_services": [
-        "1",
         "2",
         "3",
         "4",
         "5",
-        "6",
         "9",
-        "10",
-        "6",
-        "6",
-        "6",
-        "1"
+        "10"
       ],
-      "active_services": []
+      "active_bookings": [
+        "1",
+        "14",
+        "11"
+      ]
     },
     {
       "id": "9",
@@ -223,7 +232,7 @@
         "7",
         "8"
       ],
-      "active_services": []
+      "active_bookings": []
     },
     {
       "id": "11",
@@ -237,7 +246,23 @@
         "state": "gujarat"
       },
       "requested_services": [],
-      "active_services": []
+      "active_bookings": []
+    },
+    {
+      "id": "12",
+      "name": "Harshul Shah",
+      "email": "harshul@gmail.com",
+      "password": "harshul123",
+      "role": "user",
+      "location": {
+        "addressLine": "college",
+        "city": "ahmedbad",
+        "state": "gujarat"
+      },
+      "requested_services": [],
+      "active_bookings": [
+        "15"
+      ]
     }
   ],
   "services": [
@@ -249,7 +274,7 @@
       "provider_id": "2",
       "category": "Home Services",
       "sub_category": "Cleaning",
-      "cost": 50,
+      "cost": 5000,
       "available": true,
       "rating": 4.5,
       "total_reviews": "53k",
@@ -261,9 +286,10 @@
       },
       "features": [
         "Thorough cleaning of all areas",
-        "Sanitization of high-touch surfaces",
-        "Dusting of high ceilings",
-        "Disinfection of hard-to-reach spots"
+        "   Sanitization of high-touch surfaces",
+        "   Dusting of high ceilings",
+        "   Disinfection of hard-to-reach spots",
+        "   new feature"
       ],
       "offer_text": "10% off on your first booking!"
     },
@@ -496,6 +522,54 @@
         "Use of premium oils for rejuvenation"
       ],
       "offer_text": "Limited time offer: 15% off on first massage!"
+    },
+    {
+      "id": "11",
+      "name": "Native Water Purifier",
+      "description": "Service to add new native water purifier at your home with lowest cost",
+      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_233,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1687428458328-9e147d.jpeg",
+      "provider_id": "2",
+      "category": "Home Services",
+      "sub_category": "Plumbing",
+      "cost": 1500,
+      "available": true,
+      "rating": 0,
+      "total_reviews": 0,
+      "total_bookings": 0,
+      "location": {
+        "address_line": "456 Park Avenue",
+        "city": "Bangalore",
+        "state": "Karnataka"
+      },
+      "features": [
+        "10 stage purifier boosted",
+        " minerals & charged with copper"
+      ],
+      "offer_text": "10% off on your first order"
+    },
+    {
+      "id": "17",
+      "name": "Smart Locks",
+      "description": "secure home with smart locks and access",
+      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_233,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1700124385012-7be2b4.jpeg",
+      "provider_id": "2",
+      "category": "Locks",
+      "sub_category": "Locks",
+      "cost": 1500,
+      "available": true,
+      "rating": 0,
+      "total_reviews": 0,
+      "total_bookings": 0,
+      "location": {
+        "address_line": "456 Park Avenue",
+        "city": "Bangalore",
+        "state": "Karnataka"
+      },
+      "features": [
+        "3 year warranty",
+        " 100% fitment guaranty "
+      ],
+      "offer_text": ""
     }
   ],
   "categories": [
@@ -690,6 +764,12 @@
           "parent_category": "Pet Care"
         }
       ]
+    },
+    {
+      "id": "7",
+      "name": "Locks",
+      "thumbnail": "",
+      "sub_categories": []
     }
   ],
   "bookings": [
@@ -700,7 +780,7 @@
       "provider_id": "2",
       "booking_date": "2024-04-05",
       "expected_service_date": "2024-04-14",
-      "status": "accepted",
+      "status": "completed",
       "location": {
         "addressLine": "Jay ambenagar",
         "city": "Ahmedabad",
@@ -849,7 +929,7 @@
       "service_id": "6",
       "provider_id": "5",
       "booking_date": "2024-04-05",
-      "status": "pending",
+      "status": "accepted",
       "notes": "",
       "expected_service_date": "2024-04-27",
       "location": {
@@ -894,7 +974,7 @@
       "service_id": "1",
       "provider_id": "2",
       "booking_date": "2024-04-05",
-      "status": "pending",
+      "status": "accepted",
       "notes": "",
       "expected_service_date": "2024-04-19",
       "location": {
@@ -902,6 +982,22 @@
         "city": "Junagadh",
         "state": "Gujarat"
       }
+    },
+    {
+      "id": "15",
+      "user_id": "12",
+      "service_id": "1",
+      "provider_id": "2",
+      "booking_date": "2024-04-06",
+      "status": "canceled",
+      "notes": "",
+      "expected_service_date": "2024-04-10",
+      "location": {
+        "addressLine": "LD college hostel",
+        "city": "ahmedbad",
+        "state": "gujarat"
+      },
+      "canceled_by": "service_provider"
     }
   ]
 }

@@ -21,6 +21,11 @@ const UserBookings = React.lazy(() => import('../views/Users/UserBookings'))
 const Profile = React.lazy(() => import('../components/pages/Profile'))
 const ServiceProviderDashboard = React.lazy(() => import('../views/ServiceProvider/ServiceProviderDashboard'))
 const ServiceProviderServices = React.lazy(() => import('../views/ServiceProvider/ServiceProviderServices'))
+const MyServiceDetails = React.lazy(() => import('../views/ServiceProvider/MyServiceDetails'))
+const ServiceRequests = React.lazy(() => import('../views/ServiceProvider/ServiceRequests'))
+const AcceptedServices = React.lazy(() => import('../views/ServiceProvider/AcceptedServices'))
+const CompletedServices = React.lazy(() => import('../views/ServiceProvider/CompletedServices'))
+const CreateNewService = React.lazy(() => import('../views/ServiceProvider/CreateNewService'))
 const AdminDashboard = React.lazy(() => import('../views/Admin/AdminDashboard'))
 const Users = React.lazy(() => import('../views/Admin/Users'))
 const Services = React.lazy(() => import('../views/Admin/Services'))
@@ -92,24 +97,32 @@ export const Router = () => {
               element: <ServiceProviderDashboard />,
             },
             {
-              path: '/service-provider-services',
+              path: '/my-services',
               element: <ServiceProviderServices />,
             },
-            // {
-            //   path: '/requested-services',
-            // make sure to pass that requested service from admin or service provider
-            //   element: <RequestedServices />
-            // },
-            // {
-            //   path: '/accepted-services',
-            //   element: <AcceptedServices />
-            // },
-            // {
-            //   path: '/completed-services',
-            //   element: <CompletedServices />
-            // },
             {
-              path: '/service-provider-profile',
+              path: '/my-services/:id',
+              element: <MyServiceDetails />,
+            },
+            {
+              path: '/create-new-service',
+              element: <CreateNewService />,
+            },
+            {
+              path: '/requested-services',
+              // make sure to pass that requested service from admin or service provider
+              element: <ServiceRequests />,
+            },
+            {
+              path: '/accepted-services',
+              element: <AcceptedServices />,
+            },
+            {
+              path: '/completed-services',
+              element: <CompletedServices />,
+            },
+            {
+              path: '/my-profile',
               // make sure to pass that profile from user or service provider
               element: <Profile />,
             },

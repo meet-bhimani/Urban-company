@@ -18,7 +18,7 @@ API.interceptors.response.use(
     return {
       success: false,
       data: [],
-      error: error.message,
+      error: { message: error.message },
     }
   }
 )
