@@ -25,6 +25,56 @@ export const getServiceProviderServices = async (serviceProvider) => {
 
 export const getServiceById = (id) => API.get(`services/${id}`)
 
+export const createNewService = async (values, serviceProvider) => {
+  try {
+    const { success: fetchServicesSuccess, data: services, error: fetchServicesError } = await getAllServices()
+    if (!fetchServicesSuccess) throw new Error(fetchServicesError.message || 'Error Fetching Services')
+    const newServiceId = (services.length + 1).toString()
+    const newServiceObj = {
+      id: newServiceId,
+      name: values.name,
+      description: values.description,
+      thumbnail: values.thumbnail,
+      provider_id: serviceProvider.id,
+      category: values.category,
+      sub_category: values.sub_category === '' ? values.category : values.sub_category,
+      cost: values.cost,
+      available: true,
+      rating: 0,
+      total_reviews: 0,
+      total_bookings: 0,
+      location: serviceProvider.location,
+      features: values.features.split(','),
+      offer_text: values.offer_text,
+    }
+    const {
+      success: createServicesSuccess,
+      data: newService,
+      error: createServicesError,
+    } = await API.post('services', {
+      ...newServiceObj,
+    })
+    if (!createServicesSuccess) throw new Error(createServicesError.message || 'Error creating new service')
+    const {
+      success: updateUserSuccess,
+      data: newServiceProviderObj,
+      error: updateUserError,
+    } = await updateUser({ ...serviceProvider, offered_services: [...serviceProvider.offered_services, newServiceId] })
+    if (!updateUserSuccess) throw new Error(updateUserError.message || 'Error updating user')
+    return {
+      success: true,
+      data: newServiceProviderObj,
+      error: null,
+    }
+  } catch (error) {
+    return {
+      success: false,
+      data: [],
+      error: error.message,
+    }
+  }
+}
+
 export const updateService = (service) => API.put(`services/${service.id}`, { ...service })
 
 export const bookService = async (values, user, service) => {
