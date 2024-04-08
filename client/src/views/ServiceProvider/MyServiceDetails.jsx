@@ -44,7 +44,6 @@ const MyServiceDetails = () => {
   }
 
   const deleteService = async (serviceId) => {
-    console.log('deleted')
     try {
       const { success, data, error } = await deleteServiceById(serviceId)
       if (!success) throw new Error(error.message || 'Error deleting service')
@@ -96,7 +95,6 @@ const MyServiceDetails = () => {
   const onSubmit = async (values) => {
     try {
       const newServiceObj = { ...service, ...values, features: values.features.split(',') }
-      console.log(newServiceObj)
       const { success, data, error } = await updateService(newServiceObj)
       if (success) {
         setService(data)

@@ -8,8 +8,8 @@ import { getAllServices } from '../../api/serviceApi'
 import ServiceBookingsCard from '../../components/common/ServiceBookingsCard'
 
 const UserBookings = () => {
-  const [userBookings, setUserBookings] = useState(null)
-  const [userBookedServices, setUserBookedServices] = useState(null)
+  const [userBookings, setUserBookings] = useState([])
+  const [userBookedServices, setUserBookedServices] = useState([])
 
   const { user } = useSelector((state) => state.role)
 
@@ -47,7 +47,7 @@ const UserBookings = () => {
         description={'Check all your service booking, edit or cancel your service anytime'}
       />
       <div className="w-[min(800px,90%)] mx-auto my-10 mb-16 px-4">
-        {!userBookings ? (
+        {userBookings.length === 0 || userBookedServices.length === 0 ? (
           <div className="flex flex-col justify-center items-center mt-48 gap-4">
             <h1 className="text-base md:text-xl lg:text-2xl">You currently don't have any bookings </h1>
             <Button variant="dark" rounded>
