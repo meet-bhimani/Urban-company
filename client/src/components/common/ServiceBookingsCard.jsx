@@ -5,7 +5,7 @@ import Button from './Button'
 import { MdOutlineCurrencyRupee } from 'react-icons/md'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import InputWithLabel from './InputWithLabel' // Assuming you have a custom Input component
+import InputWithLabel from './InputWithLabel'
 import toast from 'react-hot-toast'
 import { cancelBooking, updateBooking } from '../../api/bookingsApi'
 import ConfirmDeleteModal from './ConfirmDeleteModal'
@@ -238,7 +238,6 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
                 </div>
               )}
             </div>
-            {/* Additional fields can be added here */}
             <hr className="border-b-[1.5px] border-primary border-opacity-20 border-dashed my-4" />
             <div className="mt-auto flex flex-col gap-2 md:flex-row">
               <NavLink to={`/services/${service.id}`}>

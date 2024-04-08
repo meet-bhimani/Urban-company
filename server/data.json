@@ -7,7 +7,7 @@
 			"password": "hashed_password_1",
 			"role": "user",
 			"requested_services": ["Plumbing", "Electrical"],
-			"active_services": ["Plumbing"],
+			"active_bookings": ["Plumbing"],
 			"location": { "address_line": "123 Main Street", "city": "Mumbai", "state": "Maharashtra" },
 			"status": "active"
 		},
@@ -31,7 +31,7 @@
 			"password": "hashed_password_3",
 			"role": "user",
 			"requested_services": ["Plumbing"],
-			"active_services": ["Plumbing"],
+			"active_bookings": ["Plumbing"],
 			"location": { "address_line": "789 Elm Street", "city": "Delhi", "state": "Delhi" },
 			"status": "active"
 		},
@@ -55,7 +55,7 @@
 			"password": "hashed_password_5",
 			"role": "user",
 			"requested_services": ["Electrical", "Carpentry"],
-			"active_services": ["Electrical"],
+			"active_bookings": ["Electrical"],
 			"location": { "address_line": "234 Oak Avenue", "city": "Chennai", "state": "Tamil Nadu" },
 			"status": "active"
 		},
@@ -79,7 +79,7 @@
 			"password": "hashed_password_7",
 			"role": "user",
 			"requested_services": ["Painting"],
-			"active_services": ["Painting"],
+			"active_bookings": ["Painting"],
 			"location": { "address_line": "456 Pine Road", "city": "Pune", "state": "Maharashtra" },
 			"status": "active"
 		},
@@ -103,7 +103,7 @@
 			"password": "hashed_password_9",
 			"role": "user",
 			"requested_services": ["Gardening"],
-			"active_services": ["Gardening"],
+			"active_bookings": ["Gardening"],
 			"location": { "address_line": "678 Elm Avenue", "city": "Ahmedabad", "state": "Gujarat" },
 			"status": "active"
 		},
@@ -127,7 +127,7 @@
 			"password": "hashed_password_11",
 			"role": "user",
 			"requested_services": ["Electrical", "House Cleaning"],
-			"active_services": ["Electrical"],
+			"active_bookings": ["Electrical"],
 			"location": { "address_line": "890 Birch Lane", "city": "Chandigarh", "state": "Punjab" },
 			"status": "active"
 		},
@@ -151,7 +151,7 @@
 			"password": "hashed_password_13",
 			"role": "user",
 			"requested_services": ["HVAC"],
-			"active_services": ["HVAC"],
+			"active_bookings": ["HVAC"],
 			"location": { "address_line": "1123 Elm Street", "city": "Nagpur", "state": "Maharashtra" },
 			"status": "active"
 		},

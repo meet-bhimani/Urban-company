@@ -30,7 +30,15 @@ const UserBookings = () => {
     try {
       const { success, data: services, error } = await getAllServices()
       if (!success) throw new Error(error.message || 'Error fetching services')
-      const filteredServices = services.filter((service) => user.requested_services.includes(service.id))
+      const filteredServices = services.filter((service) => {
+        if (user.requested_services.includes(service.id)) {
+          return service
+        }
+        if (userBookings.find((booking) => booking.service_id === service.id)) {
+          return service
+        }
+      })
+
       setUserBookedServices(filteredServices)
     } catch (error) {
       console.error(error.message)
