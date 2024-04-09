@@ -80,7 +80,7 @@ const ServiceRequestCard = ({ service, booking, user, serviceProvider, cardType 
                 <p className="text-sm sm:text-base mt-2">
                   Location for service:{' '}
                   <span className="text-sm">
-                    {booking?.location?.addressLine}, {booking?.location?.city}, {booking?.location?.state}
+                    {booking?.location?.address_line}, {booking?.location?.city}, {booking?.location?.state}
                   </span>
                 </p>
                 <p className="text-sm mt-1">

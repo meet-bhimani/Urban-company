@@ -3,7 +3,7 @@ import React from 'react'
 
 const Table = ({ columns, rows, pageSizeOptions }) => {
   return (
-    <>
+    <div style={{ width: '100%' }}>
       <DataGrid
         rows={rows}
         columns={columns}
@@ -13,8 +13,9 @@ const Table = ({ columns, rows, pageSizeOptions }) => {
           },
         }}
         pageSizeOptions={pageSizeOptions}
+        rowSelection={false}
       />
-    </>
+    </div>
   )
 }
 

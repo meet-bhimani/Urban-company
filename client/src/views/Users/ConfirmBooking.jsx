@@ -32,7 +32,7 @@ const ConfirmBooking = () => {
     name: Yup.string().required('Name is required'),
     email: Yup.string().trim().required('Email is required').email('Please enter a valid email address'),
     location: Yup.object().shape({
-      addressLine: Yup.string().required('Address line is required'),
+      address_line: Yup.string().required('Address line is required'),
       city: Yup.string().required('City is required'),
       state: Yup.string().required('State is required'),
     }),
@@ -126,21 +126,21 @@ const ConfirmBooking = () => {
               </div>
               <div>
                 <InputWithLabel
-                  id="location.addressLine"
-                  name="location.addressLine"
+                  id="location.address_line"
+                  name="location.address_line"
                   label="Address Line"
                   type="text"
-                  value={values.location.addressLine}
+                  value={values.location.address_line}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={
-                    touched.location?.addressLine && errors.location?.addressLine
+                    touched.location?.address_line && errors.location?.address_line
                       ? 'focus-within:border-danger focus-within:ring-danger'
                       : ''
                   }
                 />
-                {touched.location?.addressLine && errors.location?.addressLine && (
-                  <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.location?.addressLine}</p>
+                {touched.location?.address_line && errors.location?.address_line && (
+                  <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.location?.address_line}</p>
                 )}
               </div>
               <div>

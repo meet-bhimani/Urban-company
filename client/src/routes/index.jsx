@@ -28,6 +28,7 @@ const CompletedServices = React.lazy(() => import('../views/ServiceProvider/Comp
 const CreateNewService = React.lazy(() => import('../views/ServiceProvider/CreateNewService'))
 const AdminDashboard = React.lazy(() => import('../views/Admin/AdminDashboard'))
 const Users = React.lazy(() => import('../views/Admin/Users'))
+const EditUser = React.lazy(() => import('../views/Admin/EditUser'))
 const Services = React.lazy(() => import('../views/Admin/Services'))
 const ErrorPage = React.lazy(() => import('../components/pages/ErrorPage'))
 
@@ -138,6 +139,10 @@ export const Router = () => {
             {
               path: '/manage-users',
               element: <Users />,
+            },
+            {
+              path: '/edit-user/:id',
+              element: <EditUser />,
             },
             {
               path: '/manage-services',
