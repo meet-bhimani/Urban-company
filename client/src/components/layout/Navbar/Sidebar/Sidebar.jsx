@@ -9,14 +9,30 @@ import { removeRole } from '../../../../redux/actions/authAction'
 import toast from 'react-hot-toast'
 import Button from '../../../common/Button'
 import { MdClose } from 'react-icons/md'
+import { useEffect, useRef } from 'react'
 
 const Sidebar = () => {
+  const sidebarRef = useRef(null)
   const { showSidebar, setShowSidebar } = useSidebarContext()
   const { isAuth, user } = useSelector((state) => state.role)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
+  const handleClickOutside = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setShowSidebar(false)
+    }
+  }
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [])
+
   const handleLogout = () => {
+    setShowSidebar(false)
     dispatch(removeRole())
     toast.success('logout successfully')
     navigate('/login')
@@ -42,7 +58,7 @@ const Sidebar = () => {
 
   return (
     <>
-      <nav className="h-full flex flex-col bg-secondary border-r shadow-sm">
+      <nav ref={sidebarRef} className="h-full flex flex-col bg-secondary border-r shadow-sm">
         <div className={`py-4 px-3 pb-0 flex items-center ${showSidebar ? 'justify-between' : 'justify-center'}`}>
           {showSidebar && (
             <img
@@ -67,7 +83,7 @@ const Sidebar = () => {
         {isAuth && (
           <div className="mb-4 text-xl text-center">
             {showSidebar ? (
-              <Button variant={'dark-outline'} rounded classNames="w-[80%] border-2">
+              <Button variant={'dark-outline'} rounded classNames="w-[80%] border-2" onClick={handleLogout}>
                 Logout
               </Button>
             ) : (
