@@ -85,7 +85,7 @@ export const deleteUserById = async (userId) => {
 
         const { success: fetchUserSuccess, data: userObj, error: fetchUserError } = await API.get(`/users/${userId}`)
         if (!fetchUserSuccess) throw new Error(fetchUserError.message || `Error fetching user`)
-        console.log(userObj, 'me userObj')
+
         userObj.requested_services = userObj.requested_services.filter((serviceId) => serviceId !== booking.service_id)
         userObj.active_bookings = userObj.active_bookings.filter((bookingId) => bookingId !== booking.id)
 
@@ -108,7 +108,6 @@ export const deleteUserById = async (userId) => {
       }
     }
   } catch (error) {
-    console.log(error)
     return {
       success: false,
       data: [],

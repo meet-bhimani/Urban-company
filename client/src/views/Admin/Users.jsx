@@ -20,7 +20,6 @@ const Users = () => {
   const deleteUser = async (userId) => {
     try {
       const { success, data, error } = await deleteUserById(userId.toString())
-      console.log(error)
       if (!success) throw new Error(error.message || 'Error deleting user')
       toast.success('User deleted successfully')
     } catch (error) {

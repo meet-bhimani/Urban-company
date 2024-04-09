@@ -64,7 +64,6 @@ const CreateNewService = () => {
   const onSubmit = async (values) => {
     try {
       const { success, data, error } = await createNewService(values)
-      console.log(error)
       if (!success) throw new Error(error.message || 'Error creating service')
       if (user.role === 'service_provider') dispatch(setRole(data))
       toast.success('Service created successfully')
