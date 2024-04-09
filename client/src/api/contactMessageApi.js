@@ -15,6 +15,7 @@ export const submitContactMessage = async (values) => {
       id: (contactMessages.length + 1).toString(),
       ...values,
       reviewed: false,
+      timestamp: new Date().toLocaleString(),
     }
     const {
       success: submitMessageSuccess,
@@ -35,3 +36,5 @@ export const submitContactMessage = async (values) => {
     }
   }
 }
+
+export const markMessageReviewed = (messageId) => API.patch(`/contacts/${messageId}`, { reviewed: true })

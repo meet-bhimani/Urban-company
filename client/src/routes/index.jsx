@@ -29,6 +29,7 @@ const CreateNewService = React.lazy(() => import('../views/ServiceProvider/Creat
 const AdminDashboard = React.lazy(() => import('../views/Admin/AdminDashboard'))
 const Users = React.lazy(() => import('../views/Admin/Users'))
 const Services = React.lazy(() => import('../views/Admin/Services'))
+const ContactMessages = React.lazy(() => import('../views/Admin/ContactMessages'))
 const ErrorPage = React.lazy(() => import('../components/pages/ErrorPage'))
 
 export const Router = () => {
@@ -146,6 +147,10 @@ export const Router = () => {
             {
               path: '/admin-create-service',
               element: <CreateNewService />,
+            },
+            {
+              path: '/contact-messages',
+              element: <ContactMessages />,
             },
             // {
             //   path: '/service-requests',
