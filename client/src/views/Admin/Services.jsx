@@ -40,7 +40,7 @@ const Services = () => {
 
   useEffect(() => {
     fetchServices()
-  }, [])
+  }, [serviceIdToBeDeleted])
 
   const columns = useMemo(() => {
     return [
