@@ -83,13 +83,13 @@ export const deleteUserById = async (userId) => {
       for (const booking of providerBookings) {
         const userId = booking.user_id
 
-        const { success: fetchUserSuccess, data: provider, error: fetchUserError } = await API.get(`/users/${userId}`)
+        const { success: fetchUserSuccess, data: userObj, error: fetchUserError } = await API.get(`/users/${userId}`)
         if (!fetchUserSuccess) throw new Error(fetchUserError.message || `Error fetching user`)
+        console.log(userObj, 'me userObj')
+        userObj.requested_services = userObj.requested_services.filter((serviceId) => serviceId !== booking.service_id)
+        userObj.active_bookings = userObj.active_bookings.filter((bookingId) => bookingId !== booking.id)
 
-        user.requested_services = user.requested_services.filter((serviceId) => serviceId !== booking.service_id)
-        user.active_bookings = user.active_bookings.filter((bookingId) => bookingId !== booking.id)
-
-        const { success: updateUserSuccess, error: updateUserError } = await updateUser(user)
+        const { success: updateUserSuccess, error: updateUserError } = await updateUser(userObj)
         if (!updateUserSuccess) throw new Error(updateUserError.message || `Error updating user`)
 
         const { success: deleteBookingsSuccess, error: deleteBookingsError } = await API.delete(
@@ -108,6 +108,7 @@ export const deleteUserById = async (userId) => {
       }
     }
   } catch (error) {
+    console.log(error)
     return {
       success: false,
       data: [],
