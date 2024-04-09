@@ -32,7 +32,7 @@ const Users = () => {
     return [
       { field: 'id', headerName: 'ID', width: 60 },
       { field: 'name', headerName: 'Name', width: 150 },
-      { field: 'email', headerName: 'Email', width: 180 },
+      { field: 'email', headerName: 'Email', width: 170 },
       { field: 'role', headerName: 'Role', width: 140, sortable: false },
       { field: 'expertise', headerName: 'Expertise', width: 200, sortable: false },
       { field: 'brand_name', headerName: 'Brand Name', width: 150, sortable: false },
@@ -59,7 +59,7 @@ const Users = () => {
 
   return (
     <>
-      <div className="w-[90%] max-w-[80svw] mx-auto mt-10 mb-16">
+      <div className="w-[90%] max-w-[80svw] md:max-w-[85svw] lg:max-w-[90svw] mx-auto mt-10 mb-16">
         <h1 className="text-xl md:text-2xl lg:text-3xl text-center mb-5">Users</h1>
         <Table columns={columns} rows={users.slice(1)} pageSizeOptions={[5, 10, 25, 50]} />
       </div>

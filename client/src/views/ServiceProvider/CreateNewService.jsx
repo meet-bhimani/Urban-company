@@ -10,15 +10,17 @@ import { createCategory, getCategories } from '../../api/categoriesApi'
 import toast from 'react-hot-toast'
 import { createNewService } from '../../api/serviceApi'
 import { setRole } from '../../redux/actions/authAction'
+import { twMerge } from 'tailwind-merge'
 
 const CreateNewService = () => {
   const [categories, setCategories] = useState([])
   const [showNewCategoryInput, setShowNewCategoryInput] = useState(false)
-  const { user: serviceProvider } = useSelector((state) => state.role)
+  const { user } = useSelector((state) => state.role)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const initialValues = {
+    service_provider_id: user.role === 'service_provider' ? user.id : '',
     name: '',
     description: '',
     thumbnail: '',
@@ -31,6 +33,7 @@ const CreateNewService = () => {
   }
 
   const validationSchema = Yup.object({
+    service_provider_id: Yup.string().required('Service provider id is required'),
     name: Yup.string().required('Name is required'),
     description: Yup.string().required('Description is required'),
     thumbnail: Yup.string().required('Thumbnail is required'),
@@ -60,11 +63,16 @@ const CreateNewService = () => {
 
   const onSubmit = async (values) => {
     try {
-      const { success, data, error } = await createNewService(values, serviceProvider)
-      if (!success) throw new Error(error.message || 'Error creating category here')
-      dispatch(setRole(data))
+      const { success, data, error } = await createNewService(values)
+      console.log(error)
+      if (!success) throw new Error(error.message || 'Error creating service')
+      if (user.role === 'service_provider') dispatch(setRole(data))
       toast.success('Service created successfully')
-      navigate('/my-services')
+      if (user.role === 'service_provider') {
+        navigate('/my-services')
+      } else {
+        navigate('/manage-services')
+      }
     } catch (error) {
       console.error(error.message)
       toast.error('Error creating service, try again')
@@ -100,6 +108,30 @@ const CreateNewService = () => {
       <div className="w-[min(600px,90%)] mx-auto my-10 mb-16">
         <h2 className="text-lg xsm:text-xl sm:text-2xl md:text-3xl mb-6 text-center">Add New Service</h2>
         <form onSubmit={handleSubmit} onReset={handleReset} className="space-y-4 w-[min(90%,550px)]">
+          <div>
+            <InputWithLabel
+              id="service_provider_id"
+              name="service_provider_id"
+              label="Service Provider ID"
+              type="text"
+              value={values.service_provider_id}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={
+                (twMerge(
+                  '',
+                  touched.service_provider_id && errors.service_provider_id
+                    ? 'focus-within:border-danger focus-within:ring-danger'
+                    : ''
+                ),
+                user.role === 'service_provider' ? 'text-gray-400' : '')
+              }
+              disabled={user.role === 'service_provider'}
+            />
+            {touched.service_provider_id && errors.service_provider_id && (
+              <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.service_provider_id}</p>
+            )}
+          </div>
           <div>
             <InputWithLabel
               id="name"
@@ -152,7 +184,7 @@ const CreateNewService = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="category" className="block font-medium text-gray-700">
+              <label htmlFor="category" className="block text-sm text-gray-700">
                 Category
               </label>
               <select
@@ -161,7 +193,7 @@ const CreateNewService = () => {
                 value={values.category}
                 onChange={handleCategoryChange}
                 onBlur={handleBlur}
-                className={`mt-1 block w-full rounded-md border-2 shadow-sm focus:border-primary focus:ring-0 px-3 py-2 outline-none ${
+                className={`mt-1 text-xs block w-full rounded-md border-2 shadow-sm focus:border-primary focus:ring-0 px-3 py-2 outline-none ${
                   touched.category && errors.category ? 'border-danger' : ''
                 }`}
               >
@@ -177,7 +209,7 @@ const CreateNewService = () => {
             </div>
 
             <div>
-              <label htmlFor="sub_category" className="block font-medium text-gray-700">
+              <label htmlFor="sub_category" className="block text-sm text-gray-700">
                 Sub Category
               </label>
               <select
@@ -186,7 +218,7 @@ const CreateNewService = () => {
                 value={values.sub_category}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={`mt-1 block w-full rounded-md border-2 shadow-sm focus:border-primary focus:ring-0 px-3 py-2 outline-none ${
+                className={`mt-1 text-xs block w-full rounded-md border-2 shadow-sm focus:border-primary focus:ring-0 px-3 py-2 outline-none ${
                   touched.sub_category && errors.sub_category ? 'border-red-500' : ''
                 }`}
               >

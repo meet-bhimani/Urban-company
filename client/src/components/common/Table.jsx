@@ -14,6 +14,7 @@ const Table = ({ columns, rows, pageSizeOptions }) => {
         }}
         pageSizeOptions={pageSizeOptions}
         rowSelection={false}
+        style={{ transition: 'none', animationDuration: '0 !important', transitionDuration: '0 !important' }}
       />
     </div>
   )

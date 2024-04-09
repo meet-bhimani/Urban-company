@@ -107,6 +107,11 @@ export const adminLinks = [
     slug: '/manage-services',
     icon: <FaCogs />,
   },
+  {
+    label: 'Create New Service',
+    slug: '/admin-create-service',
+    icon: <FaSquarePlus />,
+  },
   // {
   //   label: 'Service Reviews',
   //   slug: '/service-reviews',

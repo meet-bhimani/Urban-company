@@ -46,7 +46,7 @@ const Services = () => {
     return [
       { field: 'id', headerName: 'ID', width: 50 },
       { field: 'name', headerName: 'Name', width: 150 },
-      { field: 'description', headerName: 'Description', width: 300 },
+      { field: 'description', headerName: 'Description', width: 300, sortable: false },
       { field: 'provider_id', headerName: 'Provider ID', width: 120 },
       { field: 'category', headerName: 'Category', width: 120 },
       { field: 'sub_category', headerName: 'Sub Category', width: 150 },

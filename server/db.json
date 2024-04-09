@@ -16,7 +16,7 @@
 			"gstin": "GSTIN123D",
 			"role": "service_provider",
 			"expertise": ["House Cleaning", "Painting"],
-			"offered_services": ["1", "2", "16", "17"],
+			"offered_services": ["1", "2"],
 			"accepted_services": ["15", "14"],
 			"location": {
 				"address_line": "456 Park Avenue",
@@ -482,27 +482,6 @@
 			},
 			"features": ["10 stage purifier boosted", " minerals & charged with copper"],
 			"offer_text": "10% off on your first order"
-		},
-		{
-			"id": "17",
-			"name": "Smart Locks",
-			"description": "secure home with smart locks and access",
-			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_233,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1700124385012-7be2b4.jpeg",
-			"provider_id": "2",
-			"category": "Locks",
-			"sub_category": "Locks",
-			"cost": 1500,
-			"available": true,
-			"rating": 0,
-			"total_reviews": 0,
-			"total_bookings": 0,
-			"location": {
-				"address_line": "456 Park Avenue",
-				"city": "Bangalore",
-				"state": "Karnataka"
-			},
-			"features": ["3 year warranty", " 100% fitment guaranty "],
-			"offer_text": ""
 		}
 	],
 	"categories": [
