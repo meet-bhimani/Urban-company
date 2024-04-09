@@ -143,6 +143,10 @@ export const Router = () => {
               path: '/manage-services',
               element: <Services />,
             },
+            {
+              path: '/admin-create-service',
+              element: <CreateNewService />,
+            },
             // {
             //   path: '/service-requests',
             //   // make sure to pass that requested service from admin or service provider

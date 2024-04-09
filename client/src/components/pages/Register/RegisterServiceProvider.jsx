@@ -23,7 +23,7 @@ const RegisterServiceProvider = () => {
     gstin: '',
     expertise: '',
     location: {
-      addressLine: '',
+      address_line: '',
       city: '',
       state: '',
     },
@@ -40,7 +40,7 @@ const RegisterServiceProvider = () => {
     gstin: Yup.string().required('GSTIN is required'),
     expertise: Yup.string().required('Expertise is required'),
     location: Yup.object().shape({
-      addressLine: Yup.string().required('Address line is required'),
+      address_line: Yup.string().required('Address line is required'),
       city: Yup.string().required('City is required'),
       state: Yup.string().required('State is required'),
     }),
@@ -70,7 +70,7 @@ const RegisterServiceProvider = () => {
           role: 'service_provider',
           expertise: expertise.split(','),
           location: {
-            address_line: location.addressLine,
+            address_line: location.address_line,
             city: location.city,
             state: location.state,
           },
@@ -223,21 +223,21 @@ const RegisterServiceProvider = () => {
           </div>
           <div>
             <InputWithLabel
-              id="location.addressLine"
-              name="location.addressLine"
+              id="location.address_line"
+              name="location.address_line"
               label="Address Line"
               type="text"
-              value={values.location.addressLine}
+              value={values.location.address_line}
               onChange={handleChange}
               onBlur={handleBlur}
               className={
-                touched.location?.addressLine && errors.location?.addressLine
+                touched.location?.address_line && errors.location?.address_line
                   ? 'focus-within:border-danger focus-within:ring-danger'
                   : ''
               }
             />
-            {touched.location?.addressLine && errors.location?.addressLine && (
-              <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.location?.addressLine}</p>
+            {touched.location?.address_line && errors.location?.address_line && (
+              <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.location?.address_line}</p>
             )}
           </div>
           <div>
