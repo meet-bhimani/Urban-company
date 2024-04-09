@@ -1,9 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import { getAllUsers } from '../../api/usersApi'
+import React, { useEffect, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { deleteUserById, getAllUsers } from '../../api/usersApi'
 import Table from '../../components/common/Table'
+import { MdDelete } from 'react-icons/md'
+import ConfirmDeleteModal from '../../components/common/ConfirmDeleteModal'
+import toast from 'react-hot-toast'
 
 const Users = () => {
   const [users, setUsers] = useState([])
+  const navigate = useNavigate()
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false)
+  const [userIdToBeDeleted, setUserIdToBeDeleted] = useState(null)
+
+  const handleDelete = (id) => {
+    setUserIdToBeDeleted(id)
+    setShowConfirmationModal(true)
+  }
+
+  const deleteUser = async (userId) => {
+    try {
+      const { success, data, error } = await deleteUserById(userId.toString())
+      if (!success) throw new Error(error.message || 'Error deleting user')
+      toast.success('User deleted successfully')
+    } catch (error) {
+      toast.error(error.message)
+      console.error(error)
+    } finally {
+      setUserIdToBeDeleted(null)
+      setShowConfirmationModal(false)
+    }
+  }
 
   const fetchUsers = async () => {
     try {
@@ -17,40 +43,48 @@ const Users = () => {
 
   useEffect(() => {
     fetchUsers()
+  }, [userIdToBeDeleted])
+
+  const columns = useMemo(() => {
+    return [
+      { field: 'id', headerName: 'ID', width: 60 },
+      { field: 'name', headerName: 'Name', width: 150 },
+      { field: 'email', headerName: 'Email', width: 170 },
+      { field: 'role', headerName: 'Role', width: 140, sortable: false },
+      { field: 'expertise', headerName: 'Expertise', width: 200, sortable: false },
+      { field: 'brand_name', headerName: 'Brand Name', width: 150, sortable: false },
+      { field: 'gstin', headerName: 'GSTIN', width: 130, sortable: false },
+      { field: 'average_rating', headerName: 'Rating', width: 80 },
+      {
+        field: 'actions',
+        headerName: 'Actions',
+        width: 70,
+        sortable: false,
+        renderCell: (params) => (
+          <div className="text-center">
+            <button onClick={() => handleDelete(params.row.id)}>
+              <MdDelete className="text-danger text-xl" />
+            </button>
+          </div>
+        ),
+      },
+    ]
   }, [])
-
-  // const columns = [
-  //   { field: 'id', headerName: 'ID', width: 70 },
-  //   { field: 'firstName', headerName: 'First name', width: 130 },
-  //   { field: 'lastName', headerName: 'Last name', width: 130 },
-  //   {
-  //     field: 'age',
-  //     headerName: 'Age',
-  //     type: 'number',
-  //     width: 90,
-  //   },
-  //   {
-  //     field: 'fullName',
-  //     headerName: 'Full name',
-  //     description: 'This column has a value getter and is not sortable.',
-  //     sortable: false,
-  //     width: 160,
-  //     valueGetter: (value, row) => `${row.firstName || ''} ${row.lastName || ''}`,
-  //   },
-  // ]
-
-  const columns = [
-    { field: 'id', headerName: 'ID', width: 70 },
-    { field: 'name', headerName: 'Name', width: 130 },
-    { field: 'email', headerName: 'Email', width: 200 },
-    { field: 'age', headerName: 'Age', type: 'number', width: 90 },
-  ]
 
   return (
     <>
-      <div className="w-3/4 mx-auto mt-10">
-        <h1>Users</h1>
-        <Table columns={columns} rows={users} pageSizeOptions={[5, 10, 25, 50]} />
+      {showConfirmationModal && (
+        <ConfirmDeleteModal
+          modalType={'delete'}
+          dataType={'user'}
+          Id={userIdToBeDeleted}
+          handleClick={deleteUser}
+          setShowConfirmationModal={setShowConfirmationModal}
+        />
+      )}
+      <div className="w-[90%] max-w-[80svw] md:max-w-[85svw] lg:max-w-[90svw] mx-auto mt-10 mb-16">
+        <h1 className="text-xl md:text-2xl lg:text-3xl text-center mb-5">Users</h1>
+        <Table columns={columns} rows={users.slice(1)} pageSizeOptions={[5, 10, 25, 50]} />
       </div>
     </>
   )

@@ -25,8 +25,15 @@ export const getServiceProviderServices = async (serviceProvider) => {
 
 export const getServiceById = (id) => API.get(`services/${id}`)
 
-export const createNewService = async (values, serviceProvider) => {
+export const createNewService = async (values) => {
   try {
+    const {
+      success: fetchServiceProviderSuccess,
+      data: serviceProvider,
+      error: fetchServiceProviderError,
+    } = await API.get(`users/${values.service_provider_id}`)
+    if (!fetchServiceProviderSuccess)
+      throw new Error(fetchServiceProviderError.message || 'Error fetching service provider')
     const { success: fetchServicesSuccess, data: services, error: fetchServicesError } = await getAllServices()
     if (!fetchServicesSuccess) throw new Error(fetchServicesError.message || 'Error Fetching Services')
     const newServiceId = (services.length + 1).toString()

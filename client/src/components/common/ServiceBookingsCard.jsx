@@ -23,14 +23,14 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
   const dispatch = useDispatch()
 
   const initialValues = {
-    addressLine: editedLocation.addressLine,
+    address_line: editedLocation.address_line,
     city: editedLocation.city,
     state: editedLocation.state,
     expected_service_date: editedLocation.expected_service_date,
   }
 
   const locationSchema = Yup.object({
-    addressLine: Yup.string().trim().required('Address Line is required'),
+    address_line: Yup.string().trim().required('Address Line is required'),
     city: Yup.string().trim().required('City is required'),
     state: Yup.string().trim().required('State is required'),
     expected_service_date: Yup.date()
@@ -80,7 +80,7 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
     try {
       const newBookingObj = {
         ...booking,
-        location: { addressLine: values.addressLine, city: values.city, state: values.state },
+        location: { address_line: values.address_line, city: values.city, state: values.state },
         expected_service_date: values.expected_service_date,
       }
       const { success, data, error } = await updateBooking(newBookingObj)
@@ -134,21 +134,21 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
                 <form onSubmit={handleSubmit} onReset={handleReset} className="space-y-4 mt-4">
                   <div>
                     <InputWithLabel
-                      id="addressLine"
-                      name="addressLine"
+                      id="address_line"
+                      name="address_line"
                       label="Address Line"
                       type="text"
-                      value={values.addressLine}
+                      value={values.address_line}
                       onChange={handleChange}
                       onBlur={handleBlur}
                       className={
-                        touched.addressLine && errors.addressLine
+                        touched.address_line && errors.address_line
                           ? 'focus-within:border-danger focus-within:ring-danger'
                           : ''
                       }
                     />
-                    {touched.addressLine && errors.addressLine && (
-                      <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.addressLine}</p>
+                    {touched.address_line && errors.address_line && (
+                      <p className="text-danger ml-1 text-xs xsm:text-sm">{errors.address_line}</p>
                     )}
                   </div>
                   <div>
@@ -226,7 +226,7 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
                   <p className="text-sm sm:text-base mt-2">
                     Location for service:{' '}
                     <span className="text-sm">
-                      {booking?.location?.addressLine}, {booking?.location?.city}, {booking?.location?.state}
+                      {booking?.location?.address_line}, {booking?.location?.city}, {booking?.location?.state}
                     </span>
                   </p>
                   <p className="text-sm mt-1">

@@ -21,9 +21,7 @@
       ],
       "offered_services": [
         "1",
-        "2",
-        "16",
-        "17"
+        "2"
       ],
       "accepted_services": [
         "15",
@@ -176,7 +174,7 @@
       "password": "meet123",
       "role": "user",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       },
@@ -186,7 +184,8 @@
         "4",
         "5",
         "9",
-        "10"
+        "10",
+        "11"
       ],
       "active_bookings": [
         "1",
@@ -224,7 +223,7 @@
       "password": "smit123",
       "role": "user",
       "location": {
-        "addressLine": "jay ambenagar society",
+        "address_line": "jay ambenagar society",
         "city": "Ahmedabad",
         "state": "Gujarat"
       },
@@ -241,7 +240,7 @@
       "password": "123",
       "role": "user",
       "location": {
-        "addressLine": "gulab tower",
+        "address_line": "gulab tower",
         "city": "ahmedbad",
         "state": "gujarat"
       },
@@ -255,7 +254,7 @@
       "password": "harshul123",
       "role": "user",
       "location": {
-        "addressLine": "college",
+        "address_line": "college",
         "city": "ahmedbad",
         "state": "gujarat"
       },
@@ -286,10 +285,10 @@
       },
       "features": [
         "Thorough cleaning of all areas",
-        "   Sanitization of high-touch surfaces",
-        "   Dusting of high ceilings",
-        "   Disinfection of hard-to-reach spots",
-        "   new feature"
+        "Sanitization of high-touch surfaces",
+        "Dusting of high ceilings",
+        "Disinfection of hard-to-reach spots",
+        "new feature"
       ],
       "offer_text": "10% off on your first booking!"
     },
@@ -546,30 +545,6 @@
         " minerals & charged with copper"
       ],
       "offer_text": "10% off on your first order"
-    },
-    {
-      "id": "17",
-      "name": "Smart Locks",
-      "description": "secure home with smart locks and access",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_233,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1700124385012-7be2b4.jpeg",
-      "provider_id": "2",
-      "category": "Locks",
-      "sub_category": "Locks",
-      "cost": 1500,
-      "available": true,
-      "rating": 0,
-      "total_reviews": 0,
-      "total_bookings": 0,
-      "location": {
-        "address_line": "456 Park Avenue",
-        "city": "Bangalore",
-        "state": "Karnataka"
-      },
-      "features": [
-        "3 year warranty",
-        " 100% fitment guaranty "
-      ],
-      "offer_text": ""
     }
   ],
   "categories": [
@@ -782,7 +757,7 @@
       "expected_service_date": "2024-04-14",
       "status": "completed",
       "location": {
-        "addressLine": "Jay ambenagar",
+        "address_line": "Jay ambenagar",
         "city": "Ahmedabad",
         "state": "Gujarat"
       },
@@ -797,7 +772,7 @@
       "expected_service_date": "2024-04-05",
       "status": "completed",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       },
@@ -813,7 +788,7 @@
       "notes": "",
       "expected_service_date": "2024-04-13",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -828,7 +803,7 @@
       "notes": "",
       "expected_service_date": "2024-04-13",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -843,7 +818,7 @@
       "notes": "",
       "expected_service_date": "2024-04-13",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -858,7 +833,7 @@
       "notes": "note",
       "expected_service_date": "2024-04-12",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -873,7 +848,7 @@
       "notes": "",
       "expected_service_date": "2024-04-13",
       "location": {
-        "addressLine": "jay ambenagar society",
+        "address_line": "jay ambenagar society",
         "city": "Ahmedabad",
         "state": "Gujarat"
       }
@@ -888,7 +863,7 @@
       "notes": "",
       "expected_service_date": "2024-04-14",
       "location": {
-        "addressLine": "jay ambenagar society",
+        "address_line": "jay ambenagar society",
         "city": "Ahmedabad",
         "state": "Gujarat"
       }
@@ -903,7 +878,7 @@
       "notes": "",
       "expected_service_date": "2024-04-20",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -918,7 +893,7 @@
       "notes": "",
       "expected_service_date": "2024-04-14",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -933,7 +908,7 @@
       "notes": "",
       "expected_service_date": "2024-04-27",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -948,7 +923,7 @@
       "notes": "",
       "expected_service_date": "2024-04-06",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -963,7 +938,7 @@
       "notes": "",
       "expected_service_date": "2024-04-07",
       "location": {
-        "addressLine": "Near Petrol Pump, Ajab",
+        "address_line": "Near Petrol Pump, Ajab",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -978,7 +953,7 @@
       "notes": "",
       "expected_service_date": "2024-04-19",
       "location": {
-        "addressLine": "Bhimani Heights",
+        "address_line": "Bhimani Heights",
         "city": "Junagadh",
         "state": "Gujarat"
       }
@@ -993,11 +968,26 @@
       "notes": "",
       "expected_service_date": "2024-04-10",
       "location": {
-        "addressLine": "LD college hostel",
+        "address_line": "LD college hostel",
         "city": "ahmedbad",
         "state": "gujarat"
       },
       "canceled_by": "service_provider"
+    },
+    {
+      "id": "18",
+      "user_id": "8",
+      "service_id": "11",
+      "provider_id": "2",
+      "booking_date": "2024-04-09",
+      "status": "pending",
+      "notes": "",
+      "expected_service_date": "2024-04-21",
+      "location": {
+        "address_line": "Near Petrol Pump, Ajab",
+        "city": "Junagadh",
+        "state": "Gujarat"
+      }
     }
   ]
 }
