@@ -1,6 +1,6 @@
 import { FaTasks, FaUser, FaCheckCircle, FaUsers, FaCogs, FaHeadphonesAlt, FaHome } from 'react-icons/fa'
 import { FaSquarePlus } from 'react-icons/fa6'
-import { MdAccessTimeFilled, MdEventNote } from 'react-icons/md'
+import { MdAccessTimeFilled, MdContactSupport, MdEventNote } from 'react-icons/md'
 
 export const publicLinks = [
   {
@@ -111,6 +111,11 @@ export const adminLinks = [
     label: 'Create New Service',
     slug: '/admin-create-service',
     icon: <FaSquarePlus />,
+  },
+  {
+    label: 'Contact Messages',
+    slug: '/contact-messages',
+    icon: <MdContactSupport />,
   },
   // {
   //   label: 'Service Reviews',
