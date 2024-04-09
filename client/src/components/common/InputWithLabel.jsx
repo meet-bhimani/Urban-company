@@ -36,7 +36,7 @@ const InputWithLabel = ({
         {...props}
       />
 
-      <div className="absolute right-2 top-0 translate-y-1/2 text-xl bg-white pl-3">
+      <div className="absolute right-2 top-0 translate-y-1/2 text-xl pl-3">
         {type == 'password' &&
           passwordEye &&
           (!showPassword ? (
