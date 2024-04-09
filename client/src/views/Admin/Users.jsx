@@ -1,12 +1,36 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getAllUsers } from '../../api/usersApi'
+import { deleteUserById, getAllUsers } from '../../api/usersApi'
 import Table from '../../components/common/Table'
-import { MdDelete, MdEdit } from 'react-icons/md'
+import { MdDelete } from 'react-icons/md'
+import ConfirmDeleteModal from '../../components/common/ConfirmDeleteModal'
+import toast from 'react-hot-toast'
 
 const Users = () => {
   const [users, setUsers] = useState([])
   const navigate = useNavigate()
+  const [showConfirmationModal, setShowConfirmationModal] = useState(false)
+  const [userIdToBeDeleted, setUserIdToBeDeleted] = useState(null)
+
+  const handleDelete = (id) => {
+    setUserIdToBeDeleted(id)
+    setShowConfirmationModal(true)
+  }
+
+  const deleteUser = async (userId) => {
+    try {
+      const { success, data, error } = await deleteUserById(userId.toString())
+      console.log(error)
+      if (!success) throw new Error(error.message || 'Error deleting user')
+      toast.success('User deleted successfully')
+    } catch (error) {
+      toast.error(error.message)
+      console.error(error)
+    } finally {
+      setUserIdToBeDeleted(null)
+      setShowConfirmationModal(false)
+    }
+  }
 
   const fetchUsers = async () => {
     try {
@@ -20,13 +44,7 @@ const Users = () => {
 
   useEffect(() => {
     fetchUsers()
-  }, [])
-
-  const handleEdit = (id) => {
-    navigate(`/edit-user/${id}`)
-  }
-
-  const handleDelete = (id) => {}
+  }, [userIdToBeDeleted])
 
   const columns = useMemo(() => {
     return [
@@ -41,13 +59,10 @@ const Users = () => {
       {
         field: 'actions',
         headerName: 'Actions',
-        width: 120,
+        width: 70,
         sortable: false,
         renderCell: (params) => (
-          <div>
-            <button onClick={() => handleEdit(params.row.id)}>
-              <MdEdit className="text-primary text-xl mr-2" />
-            </button>
+          <div className="text-center">
             <button onClick={() => handleDelete(params.row.id)}>
               <MdDelete className="text-danger text-xl" />
             </button>
@@ -59,6 +74,15 @@ const Users = () => {
 
   return (
     <>
+      {showConfirmationModal && (
+        <ConfirmDeleteModal
+          modalType={'delete'}
+          dataType={'user'}
+          Id={userIdToBeDeleted}
+          handleClick={deleteUser}
+          setShowConfirmationModal={setShowConfirmationModal}
+        />
+      )}
       <div className="w-[90%] max-w-[80svw] md:max-w-[85svw] lg:max-w-[90svw] mx-auto mt-10 mb-16">
         <h1 className="text-xl md:text-2xl lg:text-3xl text-center mb-5">Users</h1>
         <Table columns={columns} rows={users.slice(1)} pageSizeOptions={[5, 10, 25, 50]} />
