@@ -112,7 +112,7 @@ const ServiceRequestCard = ({ service, booking, user, serviceProvider, cardType 
                 <>
                   <div>
                     <Button variant={'success'} size="sm" rounded onClick={handleCompleteClick}>
-                      Mark Done
+                      Done
                     </Button>
                   </div>
                   <div>

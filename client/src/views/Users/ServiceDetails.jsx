@@ -49,6 +49,7 @@ const ServiceDetails = () => {
   }
 
   useEffect(() => {
+    if (isAuth && (user.role === 'admin' || user.role === 'service_provider')) navigate('/')
     fetchService()
   }, [id])
 

@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router'
+import { useSelector } from 'react-redux'
 import { getAllServices } from '../../api/serviceApi'
 import ServiceCard from '../../components/common/ServiceCard'
 import HelmetHeader from '../../components/common/HelmetHeader'
@@ -6,6 +8,8 @@ import HelmetHeader from '../../components/common/HelmetHeader'
 const ServicesList = () => {
   const [services, setServices] = useState(null)
   const [uniqueCategories, setUniqueCategories] = useState([])
+  const { isAuth, user } = useSelector((state) => state.role)
+  const navigate = useNavigate()
 
   const fetchServices = async () => {
     try {
@@ -24,6 +28,7 @@ const ServicesList = () => {
   }
 
   useEffect(() => {
+    if (isAuth && (user.role === 'admin' || user.role === 'service_provider')) navigate('/')
     fetchServices()
   }, [])
 
