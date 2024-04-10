@@ -1,14 +1,14 @@
 import React from 'react'
 import InputWithLabel from './InputWithLabel'
 
-const SearchInput = ({ dataType, className, value, onChange, ...props }) => {
+const SearchInput = ({ dataName, className, value, onChange, ...props }) => {
   return (
     <>
       <InputWithLabel
         name={'search'}
         id={'search'}
-        label={`Search ${dataType}`}
-        placeholder={`Search ${dataType}...`}
+        label={`Search ${dataName}`}
+        placeholder={`Search ${dataName}...`}
         type="text"
         value={value}
         onChange={onChange}

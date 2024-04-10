@@ -101,7 +101,7 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
       {showConfirmationModal && (
         <ConfirmDeleteModal
           modalType={'cancel'}
-          dataType={'booking'}
+          dataName={'booking'}
           Id={userBooking.id}
           handleClick={handleCancelBooking}
           setShowConfirmationModal={setShowConfirmationModal}

@@ -1,10 +1,17 @@
 import { DataGrid } from '@mui/x-data-grid'
 import React from 'react'
 
-const Table = ({ columns, rows, pageSizeOptions }) => {
+const Table = ({ columns, rows, pageSizeOptions, dataName }) => {
+  function CustomNoRowsOverlay() {
+    return <div className="h-full grid place-items-center">No matching {dataName} found </div>
+  }
+
   return (
     <div style={{ width: '100%' }}>
       <DataGrid
+        slots={{
+          noRowsOverlay: CustomNoRowsOverlay,
+        }}
         autoHeight={true}
         rows={rows}
         columns={columns}

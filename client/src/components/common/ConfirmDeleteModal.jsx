@@ -6,7 +6,7 @@ const ConfirmDeleteModal = ({
   handleClick,
   setShowConfirmationModal,
   setDataIdToBeDeleted,
-  dataType,
+  dataName,
   modalType,
 }) => {
   const handleCancelClick = () => {
@@ -25,7 +25,7 @@ const ConfirmDeleteModal = ({
         <h2 className="text-2xl font-medium">Confirm {modalType}</h2>
         <hr className="h-2 mt-3" />
         <p className="mt-4 text-base bg-red-200 text-red-900 font-medium p-5  rounded-md">
-          Are you sure you want to {modalType} {dataType} with ID: {Id}
+          Are you sure you want to {modalType} {dataName} with ID: {Id}
         </p>
         <div className="flex w-full mx-auto justify-start gap-2 mt-4">
           <Button variant={'danger'} rounded onClick={handleCancelClick}>

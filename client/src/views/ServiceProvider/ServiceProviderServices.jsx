@@ -54,7 +54,7 @@ const ServiceProviderServices = () => {
       <div className="w-[80%] mx-auto mb-14 mt-8">
         <h2 className="text-xl md:text-2xl lg:text-3xl text-center mb-4">My Services</h2>
         <SearchInput
-          dataType={'service...'}
+          dataName={'service...'}
           className={'w-[min(400px,100%)] mx-auto'}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}

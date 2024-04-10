@@ -79,7 +79,7 @@ const Users = () => {
       {showConfirmationModal && (
         <ConfirmDeleteModal
           modalType={'delete'}
-          dataType={'user'}
+          dataName={'user'}
           Id={userIdToBeDeleted}
           handleClick={deleteUser}
           setShowConfirmationModal={setShowConfirmationModal}
@@ -89,14 +89,14 @@ const Users = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2 sm:gap-10 mb-5">
           <h1 className="text-xl md:text-2xl lg:text-3xl text-center">Users</h1>
           <SearchInput
-            dataType={'users'}
+            dataName={'users'}
             placeholder={'Search users by name or email'}
-            className={'w-[min(400px,90%)]'}
+            className={'w-[min(400px,100%)]'}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
-        <Table columns={columns} rows={filteredUsers} pageSizeOptions={[5, 10, 25, 50]} />
+        <Table columns={columns} rows={filteredUsers} pageSizeOptions={[5, 10, 25, 50]} dataName={'user'} />
       </div>
     </>
   )

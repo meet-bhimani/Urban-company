@@ -138,7 +138,7 @@ const MyServiceDetails = () => {
         {showConfirmationModal && (
           <ConfirmDeleteModal
             modalType={'delete'}
-            dataType={'service'}
+            dataName={'service'}
             Id={id}
             handleClick={deleteService}
             setShowConfirmationModal={setShowConfirmationModal}

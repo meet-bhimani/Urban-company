@@ -52,7 +52,7 @@ const ServicesList = () => {
       />
       <div className="w-[85%] mx-auto mb-14 mt-8">
         <SearchInput
-          dataType={'services'}
+          dataName={'services'}
           className={'w-[min(400px,100%)] mx-auto'}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
