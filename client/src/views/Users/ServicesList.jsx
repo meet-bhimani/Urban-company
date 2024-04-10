@@ -5,7 +5,7 @@ import { getAllServices } from '../../api/serviceApi'
 import ServiceCard from '../../components/common/ServiceCard'
 import HelmetHeader from '../../components/common/HelmetHeader'
 import useGlobalSearch from '../../utils/custom-hooks/useGlobalSearch'
-import InputWithLabel from '../../components/common/InputWithLabel'
+import SearchInput from '../../components/common/SearchInput'
 
 const ServicesList = () => {
   const [services, setServices] = useState(null)
@@ -13,7 +13,7 @@ const ServicesList = () => {
   const { isAuth, user } = useSelector((state) => state.role)
   const navigate = useNavigate()
 
-  const fieldsToSearch = useMemo(() => ['name', 'description'], [])
+  const fieldsToSearch = useMemo(() => ['name', 'description', 'category', 'sub_category', 'features'], [])
   const { filteredData: filteredServices, searchQuery, setSearchQuery } = useGlobalSearch(services, fieldsToSearch)
 
   const getNonEmptyUniqueCategories = (uniqueCategories) => {
@@ -51,19 +51,12 @@ const ServicesList = () => {
         description={'explore professional services that experienced never before at your home with urban Company'}
       />
       <div className="w-[85%] mx-auto mb-14 mt-8">
-        <div>
-          <InputWithLabel
-            name={'search'}
-            id={'search'}
-            label={'Search services'}
-            placeholder={'Search services...'}
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            autoComplete={'off'}
-            className={'w-[min(400px,100%)] mx-auto'}
-          />
-        </div>
+        <SearchInput
+          dataType={'services'}
+          className={'w-[min(400px,100%)] mx-auto'}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+        />
         {getNonEmptyUniqueCategories(uniqueCategories).length > 0 ? (
           getNonEmptyUniqueCategories(uniqueCategories).map((category) => {
             return (
@@ -78,7 +71,7 @@ const ServicesList = () => {
             )
           })
         ) : (
-          <div className="text-base mt-4">No services found matching your search</div>
+          <div className="text-base text-center mt-4">No services found matching your search</div>
         )}
       </div>
     </>
