@@ -1,8 +1,13 @@
+import { useSelector } from 'react-redux'
+
 const ChatSupport = () => {
+  const { isAuth, user } = useSelector((state) => state.role)
   const whatsappWebURL =
     window.innerWidth <= 768
       ? 'whatsapp://send?phone=919601063644&text=Hi%2C%20I%20would%20like%20to%20request%20chat%20support%20for%20Urban%20Company'
       : 'https://web.whatsapp.com/send?phone=919601063644&text=Hi%2C%20I%20would%20like%20to%20request%20chat%20support%20for%20Urban%20Company'
+
+  if (isAuth && user.role === 'admin') return
 
   return (
     <a href={whatsappWebURL} target="_blank" className="group relative w-full">
