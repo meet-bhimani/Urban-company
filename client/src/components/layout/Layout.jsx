@@ -4,6 +4,7 @@ import Sidebar from './Navbar/Sidebar/Sidebar'
 import { useSidebarContext } from '../../context/sideBarContext'
 import TopNavbar from './Navbar/TopNavbar'
 import { twMerge } from 'tailwind-merge'
+import ChatSupport from '../common/ChatSupport'
 
 const Layout = () => {
   const { showSidebar } = useSidebarContext()
@@ -15,9 +16,6 @@ const Layout = () => {
             'z-10 fixed right-0 sm:left-0 top-0 h-full bg-secondary invisible sm:visible duration-300',
             showSidebar ? 'w-[250px] visible' : 'w-[40px] xsm:w-[60px]'
           )}
-          // className={`z-10 fixed left-0 top-0 h-full bg-secondary hidden sm:block ${
-          //   showSidebar ? 'w-[250px] block' : 'w-[40px] xsm:w-[60px]'
-          // } duration-300`}
         >
           <Sidebar />
         </div>
@@ -34,6 +32,10 @@ const Layout = () => {
           </div>
 
           <Footer />
+        </div>
+
+        <div className="fixed bottom-[15px] right-[25px] w-8">
+          <ChatSupport />
         </div>
       </div>
     </>
