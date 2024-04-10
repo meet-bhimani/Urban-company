@@ -63,7 +63,7 @@ const ContactMessages = () => {
                     variant={message.reviewed ? 'disabled' : 'primary'}
                     size={'sm'}
                     rounded={true}
-                    onClick={() => handleReview(message.id)}
+                    onClick={message.reviewed ? () => {} : () => handleReview(message.id)}
                   >
                     {message.reviewed ? 'Reviewed' : 'Review'}
                   </Button>
