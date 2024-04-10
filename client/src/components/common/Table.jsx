@@ -5,6 +5,7 @@ const Table = ({ columns, rows, pageSizeOptions }) => {
   return (
     <div style={{ width: '100%' }}>
       <DataGrid
+        autoHeight={true}
         rows={rows}
         columns={columns}
         initialState={{
@@ -14,7 +15,6 @@ const Table = ({ columns, rows, pageSizeOptions }) => {
         }}
         pageSizeOptions={pageSizeOptions}
         rowSelection={false}
-        // style={{ transition: 'none', animationDuration: '0 !important', transitionDuration: '0 !important' }}
       />
     </div>
   )

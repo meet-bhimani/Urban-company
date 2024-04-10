@@ -3,7 +3,7 @@ import InputWithLabel from './InputWithLabel'
 
 const SearchInput = ({ dataType, className, value, onChange, ...props }) => {
   return (
-    <div>
+    <>
       <InputWithLabel
         name={'search'}
         id={'search'}
@@ -16,7 +16,7 @@ const SearchInput = ({ dataType, className, value, onChange, ...props }) => {
         className={className}
         {...props}
       />
-    </div>
+    </>
   )
 }
 
