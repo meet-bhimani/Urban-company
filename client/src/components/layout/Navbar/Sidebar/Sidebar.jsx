@@ -73,7 +73,7 @@ const Sidebar = () => {
           >
             {showSidebar ? <LuChevronFirst /> : <LuChevronLast />}
           </button>
-          <MdClose className="sm:hidden" onClick={() => setShowSidebar((prev) => !prev)} />
+          <MdClose className="sm:hidden cursor-pointer" onClick={() => setShowSidebar((prev) => !prev)} />
         </div>
 
         <ul className="flex-1 px-1 mt-5">
