@@ -61,12 +61,12 @@ const Home = () => {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2 gap-x-6">
                     {dummySubCategories.map((category) => {
                       return (
-                        <div key={category.id} className="p-2 grid">
+                        <NavLink to={`/services`} key={category.id} className="p-2 grid">
                           <div className="bg-[#f5f5f5] w-[50px] h-[50px] rounded-lg justify-self-center grid place-items-center">
                             {category?.thumbnail && <img src={category?.thumbnail} className="w-[90%] rounded-lg" />}
                           </div>
                           <p className="text-center mt-2 text-xs xsm:text-sm md:text-sm">{category.name}</p>
-                        </div>
+                        </NavLink>
                       )
                     })}
                   </div>

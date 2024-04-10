@@ -3,7 +3,7 @@ import { scrollToTop } from '../../../../utils/functions/scrollToTop'
 import { useSidebarContext } from '../../../../context/sideBarContext'
 
 const SidebarLinks = ({ Links = [] }) => {
-  const { showSidebar } = useSidebarContext()
+  const { showSidebar, setShowSidebar } = useSidebarContext()
   return (
     <>
       {Links.map((link) => {
@@ -14,7 +14,9 @@ const SidebarLinks = ({ Links = [] }) => {
           >
             <NavLink
               to={link.slug}
-              onClick={() => scrollToTop()}
+              onClick={() => {
+                scrollToTop(), setShowSidebar(false)
+              }}
               className={({ isActive }) =>
                 `${
                   isActive ? 'bg-gray-300' : ''
