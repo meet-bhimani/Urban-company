@@ -85,7 +85,7 @@ const Users = () => {
           setShowConfirmationModal={setShowConfirmationModal}
         />
       )}
-      <div className="w-[90%] max-w-[80svw] md:max-w-[85svw] lg:max-w-[90svw] mx-auto mt-10 mb-16">
+      <div className="w-[90%] max-w-[80svw] mx-auto mt-10 mb-16">
         <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2 sm:gap-10 mb-5">
           <h1 className="text-xl md:text-2xl lg:text-3xl text-center">Users</h1>
           <SearchInput

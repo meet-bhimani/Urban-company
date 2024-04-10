@@ -52,7 +52,7 @@ const Services = () => {
       { field: 'id', headerName: 'ID', width: 50 },
       { field: 'name', headerName: 'Name', width: 150 },
       { field: 'description', headerName: 'Description', width: 300, sortable: false },
-      { field: 'provider_id', headerName: 'Provider ID', width: 120 },
+      { field: 'provider_id', headerName: 'Provider ID', width: 100 },
       { field: 'category', headerName: 'Category', width: 120 },
       { field: 'sub_category', headerName: 'Sub Category', width: 150 },
       { field: 'cost', headerName: 'Cost', width: 100 },
@@ -87,7 +87,7 @@ const Services = () => {
           setShowConfirmationModal={setShowConfirmationModal}
         />
       )}
-      <div className="w-[90%] max-w-[80svw] md:max-w-[85svw] lg:max-w-[90svw] mx-auto mt-10 mb-16">
+      <div className="w-[90%] max-w-[80svw] mx-auto mt-10 mb-16">
         <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2 sm:gap-10 mb-5">
           <h1 className="text-xl md:text-2xl lg:text-3xl text-center">Services</h1>
           <SearchInput
