@@ -85,7 +85,6 @@ export const Router = () => {
             },
             {
               path: '/user-profile',
-              // make sure to pass that profile from user or service provider
               element: <Profile />,
             },
           ],
@@ -111,7 +110,6 @@ export const Router = () => {
             },
             {
               path: '/requested-services',
-              // make sure to pass that requested service from admin or service provider
               element: <ServiceRequests />,
             },
             {
@@ -124,7 +122,6 @@ export const Router = () => {
             },
             {
               path: '/my-profile',
-              // make sure to pass that profile from user or service provider
               element: <Profile />,
             },
           ],
@@ -152,11 +149,6 @@ export const Router = () => {
               path: '/contact-messages',
               element: <ContactMessages />,
             },
-            // {
-            //   path: '/service-requests',
-            //   // make sure to pass that requested service from admin or service provider
-            //   element: <RequestedServices />,
-            // },
           ],
         },
       ],

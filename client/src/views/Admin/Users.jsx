@@ -56,8 +56,8 @@ const Users = () => {
       { field: 'role', headerName: 'Role', width: 140, sortable: false },
       { field: 'expertise', headerName: 'Expertise', width: 200, sortable: false },
       { field: 'brand_name', headerName: 'Brand Name', width: 150, sortable: false },
-      { field: 'gstin', headerName: 'GSTIN', width: 130, sortable: false },
-      { field: 'average_rating', headerName: 'Rating', width: 80 },
+      { field: 'gstin', headerName: 'GSTIN', width: 100, sortable: false },
+      { field: 'average_rating', headerName: 'Rating', width: 60 },
       {
         field: 'actions',
         headerName: 'Actions',
