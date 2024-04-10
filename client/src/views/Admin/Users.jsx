@@ -4,11 +4,16 @@ import Table from '../../components/common/Table'
 import { MdDelete } from 'react-icons/md'
 import ConfirmDeleteModal from '../../components/common/ConfirmDeleteModal'
 import toast from 'react-hot-toast'
+import SearchInput from '../../components/common/SearchInput'
+import useGlobalSearch from '../../utils/custom-hooks/useGlobalSearch'
 
 const Users = () => {
   const [users, setUsers] = useState([])
   const [showConfirmationModal, setShowConfirmationModal] = useState(false)
   const [userIdToBeDeleted, setUserIdToBeDeleted] = useState(null)
+
+  const fieldsToSearch = useMemo(() => ['name', 'email'], [])
+  const { filteredData: filteredUsers, searchQuery, setSearchQuery } = useGlobalSearch(users, fieldsToSearch)
 
   const handleDelete = (id) => {
     setUserIdToBeDeleted(id)
@@ -33,7 +38,7 @@ const Users = () => {
     try {
       const { success, data, error } = await getAllUsers()
       if (!success) throw new Error(error || 'Error fetching users')
-      setUsers(data)
+      setUsers(data.slice(1))
     } catch (error) {
       console.error(error)
     }
@@ -74,15 +79,24 @@ const Users = () => {
       {showConfirmationModal && (
         <ConfirmDeleteModal
           modalType={'delete'}
-          dataType={'user'}
+          dataName={'user'}
           Id={userIdToBeDeleted}
           handleClick={deleteUser}
           setShowConfirmationModal={setShowConfirmationModal}
         />
       )}
       <div className="w-[90%] max-w-[80svw] md:max-w-[85svw] lg:max-w-[90svw] mx-auto mt-10 mb-16">
-        <h1 className="text-xl md:text-2xl lg:text-3xl text-center mb-5">Users</h1>
-        <Table columns={columns} rows={users.slice(1)} pageSizeOptions={[5, 10, 25, 50]} />
+        <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2 sm:gap-10 mb-5">
+          <h1 className="text-xl md:text-2xl lg:text-3xl text-center">Users</h1>
+          <SearchInput
+            dataName={'users'}
+            placeholder={'Search users by name or email'}
+            className={'w-[min(400px,100%)]'}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+        <Table columns={columns} rows={filteredUsers} pageSizeOptions={[5, 10, 25, 50]} dataName={'user'} />
       </div>
     </>
   )

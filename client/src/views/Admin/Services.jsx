@@ -3,11 +3,16 @@ import Table from '../../components/common/Table'
 import { MdDelete } from 'react-icons/md'
 import { deleteServiceById, getAllServices } from '../../api/serviceApi'
 import ConfirmDeleteModal from '../../components/common/ConfirmDeleteModal'
+import useGlobalSearch from '../../utils/custom-hooks/useGlobalSearch'
+import SearchInput from '../../components/common/SearchInput'
 
 const Services = () => {
   const [services, setServices] = useState([])
   const [showConfirmationModal, setShowConfirmationModal] = useState(false)
   const [serviceIdToBeDeleted, setServiceIdToBeDeleted] = useState(null)
+
+  const fieldsToSearch = useMemo(() => ['name', 'category', 'sub_category'], [])
+  const { filteredData: filteredServices, searchQuery, setSearchQuery } = useGlobalSearch(services, fieldsToSearch)
 
   const handleDelete = (id) => {
     setServiceIdToBeDeleted(id)
@@ -76,15 +81,24 @@ const Services = () => {
       {showConfirmationModal && (
         <ConfirmDeleteModal
           modalType={'delete'}
-          dataType={'service'}
+          dataName={'service'}
           Id={serviceIdToBeDeleted}
           handleClick={deleteService}
           setShowConfirmationModal={setShowConfirmationModal}
         />
       )}
       <div className="w-[90%] max-w-[80svw] md:max-w-[85svw] lg:max-w-[90svw] mx-auto mt-10 mb-16">
-        <h1 className="text-xl md:text-2xl lg:text-3xl text-center mb-5">Services</h1>
-        <Table columns={columns} rows={services} pageSizeOptions={[5, 10, 25, 50]} />
+        <div className="flex flex-col sm:flex-row items-center justify-between w-full gap-2 sm:gap-10 mb-5">
+          <h1 className="text-xl md:text-2xl lg:text-3xl text-center">Services</h1>
+          <SearchInput
+            dataName={'services'}
+            placeholder={'Search by name, category or sub category'}
+            className={'w-[min(400px,90%)]'}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
+        <Table columns={columns} rows={filteredServices} pageSizeOptions={[5, 10, 25, 50]} dataName={'service'} />
       </div>
     </>
   )
