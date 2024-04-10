@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { deleteUserById, getAllUsers } from '../../api/usersApi'
 import Table from '../../components/common/Table'
 import { MdDelete } from 'react-icons/md'
@@ -8,7 +7,6 @@ import toast from 'react-hot-toast'
 
 const Users = () => {
   const [users, setUsers] = useState([])
-  const navigate = useNavigate()
   const [showConfirmationModal, setShowConfirmationModal] = useState(false)
   const [userIdToBeDeleted, setUserIdToBeDeleted] = useState(null)
 
