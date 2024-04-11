@@ -19,6 +19,7 @@ const ServicesList = () => {
   const { isAuth, user } = useSelector((state) => state.role)
   const navigate = useNavigate()
   const filterDropdownRef = useRef(null)
+  const [sortOrder, setSortOrder] = useState(null)
 
   const fieldsToSearch = useMemo(() => ['name', 'description', 'category', 'sub_category', 'features'], [])
   const { filteredData: searchData, searchQuery, setSearchQuery } = useGlobalSearch(services, fieldsToSearch)
@@ -28,6 +29,7 @@ const ServicesList = () => {
   const totalPage = Math.ceil(filteredServices.length / itemsPerPage)
 
   const handleCategorySelection = (category) => {
+    setPage(1)
     if (category === 'all') {
       if (filterCriteria.categories.length === uniqueCategories.length) {
         setFilterCriteria({ categories: [] })
@@ -55,9 +57,17 @@ const ServicesList = () => {
   }
 
   const servicesToShow = () => {
+    let sortedServices = [...filteredServices]
+
+    if (sortOrder) {
+      sortedServices.sort((a, b) =>
+        sortOrder === 'asc' ? parseFloat(a.cost) - parseFloat(b.cost) : parseFloat(b.cost) - parseFloat(a.cost)
+      )
+    }
+
     const startIndex = (page - 1) * itemsPerPage
-    const endIndex = Math.min(startIndex + itemsPerPage, filteredServices.length)
-    return filteredServices.slice(startIndex, endIndex)
+    const endIndex = Math.min(startIndex + itemsPerPage, sortedServices.length)
+    return sortedServices.slice(startIndex, endIndex)
   }
 
   const fetchServices = async () => {
@@ -102,16 +112,23 @@ const ServicesList = () => {
             dataName={'services'}
             className={'w-[min(600px,100%)]'}
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setPage(1), setSearchQuery(e.target.value)
+            }}
           />
           <div className="mt-4 relative z-50" ref={filterDropdownRef}>
             <button className="cursor-pointer text-2xl" onClick={() => setShowFilterDropdown(!showFilterDropdown)}>
-              {filterCriteria.categories.length > 0 ? <MdOutlineFilterAltOff /> : <MdOutlineFilterAlt />}
+              {filterCriteria.categories.length > 0 ? (
+                <MdOutlineFilterAltOff className="text-primary" />
+              ) : (
+                <MdOutlineFilterAlt className="text-primary" />
+              )}
             </button>
             {showFilterDropdown && (
-              <div className="absolute top-full right-0 w-max bg-secondary border border-gray-200 p-1 rounded-md shadow-lg">
+              <div className="absolute top-full -mt-2 right-0 w-max bg-secondary border border-gray-200 py-1 px-3 rounded-md shadow-lg">
                 <div className="py-1">
-                  <label className="flex gap-1 cursor-pointer select-none">
+                  Filter by Category
+                  <label className="pl-2 flex gap-1 cursor-pointer select-none">
                     <input
                       type="checkbox"
                       value="all"
@@ -121,7 +138,7 @@ const ServicesList = () => {
                     All Categories
                   </label>
                   {uniqueCategories.map((category) => (
-                    <label key={category} className="flex gap-1 cursor-pointer select-none">
+                    <label key={category} className="pl-2 flex gap-1 cursor-pointer select-none">
                       <input
                         type="checkbox"
                         value={category}
@@ -131,6 +148,15 @@ const ServicesList = () => {
                       {category}
                     </label>
                   ))}
+                </div>
+                <div className="flex flex-col items-start">
+                  Sort by price:
+                  <button className="text-base pl-2" onClick={() => setSortOrder('asc')}>
+                    Low to High
+                  </button>
+                  <button className="text-base pl-2" onClick={() => setSortOrder('desc')}>
+                    High to Low
+                  </button>
                 </div>
               </div>
             )}
