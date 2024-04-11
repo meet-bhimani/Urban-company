@@ -6,6 +6,9 @@ import { getCategories, getSubCategories } from '../../api/categoriesApi'
 import Button from '../../components/common/Button'
 import { FaLongArrowAltRight } from 'react-icons/fa'
 import dummySubCategories from '../../utils/data/dummySubCategories'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 const Home = () => {
   const { isAuth, user } = useSelector((state) => state.role)
@@ -61,12 +64,12 @@ const Home = () => {
                   <div className="grid grid-cols-2 md:grid-cols-3 gap-2 gap-x-6">
                     {dummySubCategories.map((category) => {
                       return (
-                        <div key={category.id} className="p-2 grid">
+                        <NavLink to={`/services`} key={category.id} className="p-2 grid">
                           <div className="bg-[#f5f5f5] w-[50px] h-[50px] rounded-lg justify-self-center grid place-items-center">
                             {category?.thumbnail && <img src={category?.thumbnail} className="w-[90%] rounded-lg" />}
                           </div>
                           <p className="text-center mt-2 text-xs xsm:text-sm md:text-sm">{category.name}</p>
-                        </div>
+                        </NavLink>
                       )
                     })}
                   </div>
@@ -93,14 +96,62 @@ const Home = () => {
           />
         </div>
 
-        {/* <div>
-          {categories &&
-            categories.map((category) => (
-              <div key={category.id}>
-                <h3>{category.name}</h3>
-              </div>
-            ))}
-        </div> */}
+        <div className="slider-container w-[80svw] md:w-[70svw] mx-auto my-32">
+          <h2 className="text-base sm:text-lg md:text-3xl mb-10 border-b-2 w-fit pb-1">New and noteworthy services</h2>
+          <Slider
+            arrows={true}
+            speed={1000}
+            slidesToShow={4}
+            slidesToScroll={1}
+            autoplay={true}
+            focusOnSelect={false}
+            responsive={[
+              {
+                breakpoint: 1200,
+                settings: {
+                  slidesToShow: 3,
+                  slidesToScroll: 3,
+                  infinite: true,
+                  dots: true,
+                },
+              },
+              {
+                breakpoint: 890,
+                settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 2,
+                  initialSlide: 2,
+                },
+              },
+              {
+                breakpoint: 490,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1,
+                },
+              },
+            ]}
+          >
+            {categories &&
+              categories.map((category) => (
+                <NavLink to={'/services'} key={category.id}>
+                  <img
+                    src={category.thumbnail}
+                    alt=""
+                    className="w-[min(200px,100%)] h-[200px] object-cover rounded-md shadow mb-2"
+                  />
+                  <h3>{category.name}</h3>
+                </NavLink>
+              ))}
+          </Slider>
+          <div className="w-full grid place-items-center sm:place-items-start mt-10">
+            <Button variant="dark" rounded classNames="-[180px]">
+              <NavLink to={'/services'} className="flex items-center justify-center gap-1">
+                Explore Now <FaLongArrowAltRight />
+              </NavLink>
+            </Button>
+          </div>
+        </div>
       </div>
     </>
   )

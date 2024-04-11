@@ -61,15 +61,17 @@ const TopNavbar = () => {
               <div className="absolute w-max top-1/2 -translate-y-1/2 right-3/4 group-hover:right-full mr-1 bg-black text-white px-2 py-1 text-xs rounded invisible group-hover:visible transition-all">
                 {user?.name}
               </div>
-              {showDropdown && user.role != 'admin' && (
+              {showDropdown && (
                 <div className="absolute top-full mt-1 right-5 bg-white shadow-lg rounded w-40 py-1 z-10 hidden md:block">
-                  <NavLink
-                    to={user.role === 'user' ? '/user-profile' : 'my-profile'}
-                    className="block px-3 py-1 text-gray-800 hover:bg-gray-100"
-                    onClick={() => setShowDropdown(false)}
-                  >
-                    My Profile
-                  </NavLink>
+                  {user.role != 'admin' && (
+                    <NavLink
+                      to={user.role === 'user' ? '/user-profile' : 'my-profile'}
+                      className="block px-3 py-1 text-gray-800 hover:bg-gray-100"
+                      onClick={() => setShowDropdown(false)}
+                    >
+                      My Profile
+                    </NavLink>
+                  )}
                   <button
                     onClick={handleLogout}
                     className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-100"
