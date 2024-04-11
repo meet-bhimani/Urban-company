@@ -13,8 +13,8 @@ const Layout = () => {
       <div className="flex h-svh">
         <div
           className={twMerge(
-            'z-10 fixed right-0 sm:left-0 top-0 h-full bg-secondary invisible sm:visible duration-300',
-            showSidebar ? 'w-[250px] visible' : 'w-[40px] xsm:w-[60px]'
+            'z-10 fixed -right-[100px] sm:left-0 top-0 h-full bg-secondary  duration-300',
+            showSidebar ? 'w-[250px] right-0' : 'w-[40px] xsm:w-[60px]'
           )}
         >
           <Sidebar />
