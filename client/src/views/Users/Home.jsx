@@ -104,6 +104,7 @@ const Home = () => {
             slidesToShow={4}
             slidesToScroll={1}
             autoplay={true}
+            focusOnSelect={false}
             responsive={[
               {
                 breakpoint: 1200,
@@ -133,16 +134,23 @@ const Home = () => {
           >
             {categories &&
               categories.map((category) => (
-                <div key={category.id}>
+                <NavLink to={'/services'} key={category.id}>
                   <img
                     src={category.thumbnail}
                     alt=""
                     className="w-[min(200px,100%)] h-[200px] object-cover rounded-md shadow mb-2"
                   />
                   <h3>{category.name}</h3>
-                </div>
+                </NavLink>
               ))}
           </Slider>
+          <div className="w-full grid place-items-center sm:place-items-start mt-10">
+            <Button variant="dark" rounded classNames="-[180px]">
+              <NavLink to={'/services'} className="flex items-center justify-center gap-1">
+                Explore Now <FaLongArrowAltRight />
+              </NavLink>
+            </Button>
+          </div>
         </div>
       </div>
     </>

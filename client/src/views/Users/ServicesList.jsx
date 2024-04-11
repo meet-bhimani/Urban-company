@@ -51,12 +51,14 @@ const ServicesList = () => {
         description={'explore professional services that experienced never before at your home with urban Company'}
       />
       <div className="w-[85%] mx-auto mb-14 mt-8">
-        <SearchInput
-          dataName={'services'}
-          className={'w-[min(400px,100%)] mx-auto'}
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
-        />
+        <div>
+          <SearchInput
+            dataName={'services'}
+            className={'w-[min(600px,100%)]'}
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+          />
+        </div>
         {getNonEmptyUniqueCategories(uniqueCategories).length > 0 ? (
           getNonEmptyUniqueCategories(uniqueCategories).map((category) => {
             return (

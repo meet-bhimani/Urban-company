@@ -25,7 +25,7 @@ const ServiceRequests = () => {
 
   useEffect(() => {
     fetchServiceRequests()
-  }, [])
+  }, [serviceProvider.accepted_services.length])
 
   return (
     <>
@@ -49,6 +49,7 @@ const ServiceRequests = () => {
                 key={booking.id}
                 serviceProvider={serviceProvider}
                 cardType={'requested'}
+                fetchServiceRequests={fetchServiceRequests}
               />
             )
           })}

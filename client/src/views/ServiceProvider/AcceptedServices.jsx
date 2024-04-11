@@ -47,6 +47,7 @@ const AcceptedServices = () => {
                 key={booking.id}
                 serviceProvider={serviceProvider}
                 cardType={'accepted'}
+                fetchServiceRequests={fetchServiceRequests}
               />
             )
           })}

@@ -20,7 +20,7 @@ const SidebarLinks = ({ Links = [] }) => {
               className={({ isActive }) =>
                 `${
                   isActive ? 'bg-gray-300' : ''
-                } relative text-black hover:bg-gray-300 flex items-center h-[40px] gap-1 text-[1rem] p-0.5 xsm:p-1.5 rounded transition-all duration-300 ease-in-out group`
+                } relative outline-none text-black hover:bg-gray-300 flex items-center h-[40px] gap-1 text-[1rem] p-0.5 xsm:p-1.5 rounded transition-all duration-300 ease-in-out group`
               }
             >
               <div className="flex items-center px-1">
