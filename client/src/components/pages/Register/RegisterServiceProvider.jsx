@@ -4,7 +4,6 @@ import InputWithLabel from '../../common/InputWithLabel'
 import Button from '../../common/Button'
 import { useFormik } from 'formik'
 import * as Yup from 'yup'
-import { setLoader } from '../../../redux/actions/appAction'
 import HelmetHeader from '../../common/HelmetHeader'
 import { registerUser } from '../../../api/registerApi'
 import { getAllUsers, getUserByEmail } from '../../../api/usersApi'
@@ -54,7 +53,6 @@ const RegisterServiceProvider = () => {
 
   async function onSubmit() {
     try {
-      // dispatch(setLoader(true))
       const { name, email, password, brandName, gstin, expertise, location } = values
       const { success } = await getUserByEmail(email)
 
@@ -93,8 +91,6 @@ const RegisterServiceProvider = () => {
       }
     } catch (error) {
       toast.error(error.message)
-    } finally {
-      // dispatch(setLoader(false))
     }
   }
 

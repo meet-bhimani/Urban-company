@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react'
+import { Suspense } from 'react'
 import './App.css'
 import { RouterProvider } from 'react-router-dom'
 import { Router } from './routes'

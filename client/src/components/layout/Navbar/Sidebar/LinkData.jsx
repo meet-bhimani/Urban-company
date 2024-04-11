@@ -1,4 +1,4 @@
-import { FaTasks, FaUser, FaCheckCircle, FaUsers, FaCogs, FaHeadphonesAlt, FaHome } from 'react-icons/fa'
+import { FaTasks, FaUser, FaUsers, FaCogs, FaHeadphonesAlt, FaHome } from 'react-icons/fa'
 import { FaSquarePlus } from 'react-icons/fa6'
 import { MdAccessTimeFilled, MdContactSupport, MdEventNote } from 'react-icons/md'
 
@@ -49,11 +49,6 @@ export const userLinks = [
 ]
 
 export const serviceProviderLinks = [
-  // {
-  //   label: 'Home',
-  //   slug: '/service-provider-dashboard',
-  //   icon: <FaHome />,
-  // },
   {
     label: 'My Services',
     slug: '/my-services',
@@ -74,11 +69,6 @@ export const serviceProviderLinks = [
     slug: '/accepted-services',
     icon: <MdAccessTimeFilled />,
   },
-  // {
-  //   label: 'Completed Services',
-  //   slug: '/completed-services',
-  //   icon: <FaCheckCircle />,
-  // },
   {
     label: 'My Profile',
     slug: '/my-profile',
@@ -92,11 +82,6 @@ export const serviceProviderLinks = [
 ]
 
 export const adminLinks = [
-  // {
-  //   label: 'Dashboard',
-  //   slug: '/admin-dashboard',
-  //   icon: <FaHome />,
-  // },
   {
     label: 'Manage Users',
     slug: '/manage-users',
@@ -117,14 +102,4 @@ export const adminLinks = [
     slug: '/contact-messages',
     icon: <MdContactSupport />,
   },
-  // {
-  //   label: 'Service Reviews',
-  //   slug: '/service-reviews',
-  //   icon: <FaUsers />,
-  // },
-  // {
-  //   label: 'User Reviews',
-  //   slug: '/user-reviews',
-  //   icon: <FaUsers />,
-  // },
 ]

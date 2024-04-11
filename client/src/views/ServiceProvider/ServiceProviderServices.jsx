@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import HelmetHeader from '../../components/common/HelmetHeader'
 import { useSelector } from 'react-redux'
 import { getServiceProviderServices } from '../../api/serviceApi'

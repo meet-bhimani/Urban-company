@@ -1,5 +1,4 @@
 import { DataGrid } from '@mui/x-data-grid'
-import React from 'react'
 
 const Table = ({ columns, rows, pageSizeOptions, dataName }) => {
   function CustomNoRowsOverlay() {
