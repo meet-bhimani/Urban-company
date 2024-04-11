@@ -29,6 +29,7 @@ const ServicesList = () => {
   const totalPage = Math.ceil(filteredServices.length / itemsPerPage)
 
   const handleCategorySelection = (category) => {
+    setPage(1)
     if (category === 'all') {
       if (filterCriteria.categories.length === uniqueCategories.length) {
         setFilterCriteria({ categories: [] })
@@ -111,11 +112,17 @@ const ServicesList = () => {
             dataName={'services'}
             className={'w-[min(600px,100%)]'}
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              setPage(1), setSearchQuery(e.target.value)
+            }}
           />
           <div className="mt-4 relative z-50" ref={filterDropdownRef}>
             <button className="cursor-pointer text-2xl" onClick={() => setShowFilterDropdown(!showFilterDropdown)}>
-              {filterCriteria.categories.length > 0 ? <MdOutlineFilterAltOff /> : <MdOutlineFilterAlt />}
+              {filterCriteria.categories.length > 0 ? (
+                <MdOutlineFilterAltOff className="text-primary" />
+              ) : (
+                <MdOutlineFilterAlt className="text-primary" />
+              )}
             </button>
             {showFilterDropdown && (
               <div className="absolute top-full -mt-2 right-0 w-max bg-secondary border border-gray-200 py-1 px-3 rounded-md shadow-lg">
