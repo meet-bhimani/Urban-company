@@ -6,7 +6,7 @@ import ServiceCard from '../../components/common/ServiceCard'
 import HelmetHeader from '../../components/common/HelmetHeader'
 import useGlobalSearch from '../../utils/custom-hooks/useGlobalSearch'
 import SearchInput from '../../components/common/SearchInput'
-import useCategoryFilter from '../../utils/custom-hooks/useCategoryFilter'
+import useFilter from '../../utils/custom-hooks/useFilter'
 import { MdOutlineFilterAlt, MdOutlineFilterAltOff } from 'react-icons/md'
 
 const ServicesList = () => {
@@ -20,7 +20,10 @@ const ServicesList = () => {
 
   const fieldsToSearch = useMemo(() => ['name', 'description', 'category', 'sub_category', 'features'], [])
   const { filteredData: searchData, searchQuery, setSearchQuery } = useGlobalSearch(services, fieldsToSearch)
-  const { filteredData: filteredServices } = useCategoryFilter(searchData, filterCriteria)
+
+  const { filteredData: filteredServices } = useFilter(searchData, filterCriteria)
+  const itemsPerPage = 8
+  const totalPage = Math.ceil(filteredServices.length / itemsPerPage)
 
   const handleCategorySelection = (category) => {
     if (category === 'all') {
