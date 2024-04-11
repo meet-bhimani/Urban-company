@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { getAllServices } from '../../api/serviceApi'
@@ -9,6 +9,7 @@ import SearchInput from '../../components/common/SearchInput'
 import useFilter from '../../utils/custom-hooks/useFilter'
 import { MdOutlineFilterAlt, MdOutlineFilterAltOff } from 'react-icons/md'
 import Pagination from '../../components/common/Pagination'
+import { scrollToTop } from '../../utils/functions/scrollToTop'
 
 const ServicesList = () => {
   const [services, setServices] = useState(null)
@@ -47,6 +48,7 @@ const ServicesList = () => {
   }
 
   const handlePageChange = (value) => {
+    scrollToTop()
     if (value === ' ...') {
       setPage(totalPage)
     } else if (value === '... ') {

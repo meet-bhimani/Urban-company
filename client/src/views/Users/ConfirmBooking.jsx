@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { NavLink, useNavigate, useParams } from 'react-router-dom'
 import { bookService, getServiceById } from '../../api/serviceApi'
@@ -10,7 +10,6 @@ import * as Yup from 'yup'
 import Button from '../../components/common/Button'
 import toast from 'react-hot-toast'
 import { setRole } from '../../redux/actions/authAction'
-import { setLoader } from '../../redux/actions/appAction'
 
 const ConfirmBooking = () => {
   const { id } = useParams()
@@ -43,7 +42,6 @@ const ConfirmBooking = () => {
 
   const onSubmit = async (values) => {
     try {
-      // dispatch(setLoader(true))
       const { success, data, error } = await bookService(values, user, service)
       if (!success) throw new Error(error.message || 'Failed to book service, try again after sometime')
       dispatch(setRole(data))
@@ -51,8 +49,6 @@ const ConfirmBooking = () => {
       navigate('/user-bookings')
     } catch (error) {
       toast.error(error?.message)
-    } finally {
-      // dispatch(setLoader(false))
     }
   }
 

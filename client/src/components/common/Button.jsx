@@ -1,4 +1,3 @@
-import React from 'react'
 import PropTypes from 'prop-types'
 import { twMerge } from 'tailwind-merge'
 
@@ -52,7 +51,6 @@ Button.propTypes = {
     'danger',
     'warning',
     'primary-outline',
-    'light-outline',
     'dark-outline',
     'success-outline',
     'danger-outline',

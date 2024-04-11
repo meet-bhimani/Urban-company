@@ -227,8 +227,7 @@
 				"Thorough cleaning of all areas",
 				"Sanitization of high-touch surfaces",
 				"Dusting of high ceilings",
-				"Disinfection of hard-to-reach spots",
-				"new feature"
+				"Disinfection of hard-to-reach spots"
 			],
 			"offer_text": "10% off on your first booking!"
 		},
@@ -934,7 +933,6 @@
 			"provider_id": "2",
 			"booking_date": "2024-04-11",
 			"status": "pending",
-			"notes": "No instructions yet",
 			"expected_service_date": "2024-04-28",
 			"location": {
 				"address_line": "Near Bus stand , Ajab",

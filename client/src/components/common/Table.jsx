@@ -1,5 +1,5 @@
+import PropTypes from 'prop-types'
 import { DataGrid } from '@mui/x-data-grid'
-import React from 'react'
 
 const Table = ({ columns, rows, pageSizeOptions, dataName }) => {
   function CustomNoRowsOverlay() {
@@ -25,6 +25,13 @@ const Table = ({ columns, rows, pageSizeOptions, dataName }) => {
       />
     </div>
   )
+}
+
+Table.propTypes = {
+  columns: PropTypes.arrayOf(PropTypes.object).isRequired,
+  rows: PropTypes.arrayOf(PropTypes.object).isRequired,
+  pageSizeOptions: PropTypes.arrayOf(PropTypes.number).isRequired,
+  dataName: PropTypes.string.isRequired,
 }
 
 export default Table

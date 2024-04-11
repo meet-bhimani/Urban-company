@@ -1,4 +1,3 @@
-import React from 'react'
 import InputWithLabel from './InputWithLabel'
 
 const SearchInput = ({ dataName, className, value, onChange, ...props }) => {

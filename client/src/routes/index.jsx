@@ -19,14 +19,11 @@ const RegisterServiceProvider = React.lazy(() => import('../components/pages/Reg
 const ConfirmBooking = React.lazy(() => import('../views/Users/ConfirmBooking'))
 const UserBookings = React.lazy(() => import('../views/Users/UserBookings'))
 const Profile = React.lazy(() => import('../components/pages/Profile'))
-const ServiceProviderDashboard = React.lazy(() => import('../views/ServiceProvider/ServiceProviderDashboard'))
 const ServiceProviderServices = React.lazy(() => import('../views/ServiceProvider/ServiceProviderServices'))
 const MyServiceDetails = React.lazy(() => import('../views/ServiceProvider/MyServiceDetails'))
 const ServiceRequests = React.lazy(() => import('../views/ServiceProvider/ServiceRequests'))
 const AcceptedServices = React.lazy(() => import('../views/ServiceProvider/AcceptedServices'))
-const CompletedServices = React.lazy(() => import('../views/ServiceProvider/CompletedServices'))
 const CreateNewService = React.lazy(() => import('../views/ServiceProvider/CreateNewService'))
-const AdminDashboard = React.lazy(() => import('../views/Admin/AdminDashboard'))
 const Users = React.lazy(() => import('../views/Admin/Users'))
 const Services = React.lazy(() => import('../views/Admin/Services'))
 const ContactMessages = React.lazy(() => import('../views/Admin/ContactMessages'))
@@ -93,10 +90,6 @@ export const Router = () => {
           element: <PrivateRoutesForServiceProvider isAuth={isAuth} user={user} />,
           children: [
             {
-              path: '/service-provider-dashboard',
-              element: <ServiceProviderDashboard />,
-            },
-            {
               path: '/my-services',
               element: <ServiceProviderServices />,
             },
@@ -117,10 +110,6 @@ export const Router = () => {
               element: <AcceptedServices />,
             },
             {
-              path: '/completed-services',
-              element: <CompletedServices />,
-            },
-            {
               path: '/my-profile',
               element: <Profile />,
             },
@@ -129,10 +118,6 @@ export const Router = () => {
         {
           element: <PrivateRoutesForAdmin isAuth={isAuth} user={user} />,
           children: [
-            {
-              path: '/admin-dashboard',
-              element: <AdminDashboard />,
-            },
             {
               path: '/manage-users',
               element: <Users />,

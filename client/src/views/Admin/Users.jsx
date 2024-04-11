@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { deleteUserById, getAllUsers } from '../../api/usersApi'
 import Table from '../../components/common/Table'
 import { MdDelete } from 'react-icons/md'
@@ -6,6 +6,7 @@ import ConfirmDeleteModal from '../../components/common/ConfirmDeleteModal'
 import toast from 'react-hot-toast'
 import SearchInput from '../../components/common/SearchInput'
 import useGlobalSearch from '../../utils/custom-hooks/useGlobalSearch'
+import HelmetHeader from '../../components/common/HelmetHeader'
 
 const Users = () => {
   const [users, setUsers] = useState([])
@@ -76,6 +77,10 @@ const Users = () => {
 
   return (
     <>
+      <HelmetHeader
+        title={'Manage Users | Urban Company'}
+        description={'admin can see all the Users listed by all the service providers, also admin can delete Users'}
+      />
       {showConfirmationModal && (
         <ConfirmDeleteModal
           modalType={'delete'}

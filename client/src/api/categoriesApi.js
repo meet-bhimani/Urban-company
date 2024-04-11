@@ -41,8 +41,3 @@ export const createCategory = async (name) => {
     }
   }
 }
-
-// export const getMainCategoriesName = async () => {
-//   const response = await API.get('categories')
-//   return response.data.map((category) => category.name)
-// }

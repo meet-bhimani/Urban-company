@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { getContactMessages, markMessageReviewed } from '../../api/contactMessageApi'
 import Button from '../../components/common/Button'
 import HelmetHeader from '../../components/common/HelmetHeader'
@@ -6,7 +6,6 @@ import toast from 'react-hot-toast'
 
 const ContactMessages = () => {
   const [messages, setMessages] = useState([])
-  // const [messageIdToBeReviewd]
 
   const fetchMessages = async () => {
     try {

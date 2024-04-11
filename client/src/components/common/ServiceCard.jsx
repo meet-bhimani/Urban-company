@@ -1,4 +1,3 @@
-import React from 'react'
 import { NavLink } from 'react-router-dom'
 import Button from './Button'
 import { MdOutlineCurrencyRupee } from 'react-icons/md'
@@ -7,12 +6,12 @@ const ServiceCard = ({ service, isServiceProvider = false }) => {
   return (
     <>
       <div className="border-2 border-secondary p-4 rounded-md min-h-[300px] flex flex-col shadow">
-        <div className="w-[min(250px,100%)] h-[200px] mx-auto">
+        <NavLink to={`/services/${service.id}`} className="w-[min(250px,100%)] h-[200px] mx-auto">
           <img
             src={service?.thumbnail}
-            className="w-full h-full object-cover rounded-lg hover:scale-110 duration-200"
+            className="w-full h-full object-cover rounded-lg hover:scale-105 duration-200"
           />
-        </div>
+        </NavLink>
         <div className="px-2 flex flex-col min-h-[250px]">
           <h3 className="text-base md:text-lg mt-3">{service?.name}</h3>
           <div className="flex gap-1 items-center mt-2">

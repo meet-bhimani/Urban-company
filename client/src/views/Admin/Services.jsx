@@ -1,10 +1,11 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import Table from '../../components/common/Table'
 import { MdDelete } from 'react-icons/md'
 import { deleteServiceById, getAllServices } from '../../api/serviceApi'
 import ConfirmDeleteModal from '../../components/common/ConfirmDeleteModal'
 import useGlobalSearch from '../../utils/custom-hooks/useGlobalSearch'
 import SearchInput from '../../components/common/SearchInput'
+import HelmetHeader from '../../components/common/HelmetHeader'
 
 const Services = () => {
   const [services, setServices] = useState([])
@@ -78,6 +79,12 @@ const Services = () => {
 
   return (
     <>
+      <HelmetHeader
+        title={'Manage Services | Urban Company'}
+        description={
+          'admin can see all the services listed by all the service providers, also admin can delete services'
+        }
+      />
       {showConfirmationModal && (
         <ConfirmDeleteModal
           modalType={'delete'}

@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import PropTypes from 'prop-types'
+import { useEffect, useState } from 'react'
 import { twMerge } from 'tailwind-merge'
 
 const Pagination = ({ page, setPage, totalPage }) => {
@@ -89,6 +90,12 @@ const Pagination = ({ page, setPage, totalPage }) => {
       </span>
     </div>
   )
+}
+
+Pagination.propTypes = {
+  page: PropTypes.number.isRequired,
+  setPage: PropTypes.func.isRequired,
+  totalPage: PropTypes.number.isRequired,
 }
 
 export default Pagination

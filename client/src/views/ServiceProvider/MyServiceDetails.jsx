@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router'
 import { useDispatch } from 'react-redux'
 import { deleteServiceById, getServiceById, updateService } from '../../api/serviceApi'
