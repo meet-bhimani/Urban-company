@@ -8,12 +8,14 @@ import useGlobalSearch from '../../utils/custom-hooks/useGlobalSearch'
 import SearchInput from '../../components/common/SearchInput'
 import useFilter from '../../utils/custom-hooks/useFilter'
 import { MdOutlineFilterAlt, MdOutlineFilterAltOff } from 'react-icons/md'
+import Pagination from '../../components/common/Pagination'
 
 const ServicesList = () => {
   const [services, setServices] = useState(null)
   const [uniqueCategories, setUniqueCategories] = useState([])
   const [filterCriteria, setFilterCriteria] = useState({ categories: [] })
   const [showFilterDropdown, setShowFilterDropdown] = useState(false)
+  const [page, setPage] = useState(1)
   const { isAuth, user } = useSelector((state) => state.role)
   const navigate = useNavigate()
   const filterDropdownRef = useRef(null)
@@ -42,6 +44,22 @@ const ServicesList = () => {
     }
   }
 
+  const handlePageChange = (value) => {
+    if (value === ' ...') {
+      setPage(totalPage)
+    } else if (value === '... ') {
+      setPage(1)
+    } else if (value >= 1 && value <= totalPage) {
+      setPage(value)
+    }
+  }
+
+  const servicesToShow = () => {
+    const startIndex = (page - 1) * itemsPerPage
+    const endIndex = Math.min(startIndex + itemsPerPage, filteredServices.length)
+    return filteredServices.slice(startIndex, endIndex)
+  }
+
   const fetchServices = async () => {
     try {
       const { success, data } = await getAllServices()
@@ -66,9 +84,7 @@ const ServicesList = () => {
         setShowFilterDropdown(false)
       }
     }
-
     document.addEventListener('click', handleClickOutside)
-
     return () => {
       document.removeEventListener('click', handleClickOutside)
     }
@@ -120,13 +136,18 @@ const ServicesList = () => {
             )}
           </div>
         </div>
-        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {filteredServices?.length > 0 ? (
-            filteredServices.map((service) => <ServiceCard service={service} key={service.id} />)
+        <div>
+          {servicesToShow()?.length > 0 ? (
+            <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+              {servicesToShow().map((service) => {
+                return <ServiceCard service={service} key={service.id} />
+              })}
+            </div>
           ) : (
             <div className="text-base text-center mt-4">No services found matching your search</div>
           )}
         </div>
+        {servicesToShow()?.length > 0 && <Pagination page={page} setPage={handlePageChange} totalPage={totalPage} />}
       </div>
     </>
   )
