@@ -1,1023 +1,959 @@
 {
-  "users": [
-    {
-      "id": "1",
-      "name": "Admin",
-      "email": "admin@example.com",
-      "password": "Admin@123",
-      "role": "admin"
-    },
-    {
-      "id": "2",
-      "name": "Priya Sharma",
-      "email": "priya@example.com",
-      "password": "priya@123",
-      "brand_name": "Sharma Services",
-      "gstin": "GSTIN123D",
-      "role": "service_provider",
-      "expertise": [
-        "House Cleaning",
-        "Painting"
-      ],
-      "offered_services": [
-        "1",
-        "2",
-        "11"
-      ],
-      "accepted_services": [
-        "15",
-        "14"
-      ],
-      "location": {
-        "address_line": "456 Park Avenue",
-        "city": "Bangalore",
-        "state": "Karnataka"
-      },
-      "completed_services": [
-        "2",
-        "1"
-      ],
-      "average_rating": 4.2,
-      "status": "active"
-    },
-    {
-      "id": "3",
-      "name": "Amit Patel",
-      "email": "amit@example.com",
-      "password": "amitpass",
-      "role": "service_provider",
-      "expertise": [
-        "Appliance Repair",
-        "Electrical Wiring"
-      ],
-      "offered_services": [
-        "3",
-        "4"
-      ],
-      "accepted_services": [],
-      "location": {
-        "address_line": "789 Elm Street",
-        "city": "Delhi",
-        "state": "Delhi"
-      },
-      "completed_services": [],
-      "brand_name": "Patel Electricals",
-      "gstin": "GSTIN456E",
-      "average_rating": 4,
-      "status": "active"
-    },
-    {
-      "id": "4",
-      "name": "Deepak Singh",
-      "email": "deepak@example.com",
-      "password": "deepak123",
-      "role": "service_provider",
-      "expertise": [
-        "Plumbing Services"
-      ],
-      "offered_services": [
-        "5"
-      ],
-      "accepted_services": [],
-      "location": {
-        "address_line": "10 Oak Street",
-        "city": "Mumbai",
-        "state": "Maharashtra"
-      },
-      "completed_services": [],
-      "brand_name": "Singh Plumbing",
-      "gstin": "GSTIN789F",
-      "average_rating": 0,
-      "status": "active"
-    },
-    {
-      "id": "5",
-      "name": "Sneha Kapoor",
-      "email": "sneha@example.com",
-      "password": "sneha123",
-      "role": "service_provider",
-      "expertise": [
-        "Salon at Home",
-        "Spa at Home"
-      ],
-      "offered_services": [
-        "6",
-        "7"
-      ],
-      "accepted_services": [
-        "11"
-      ],
-      "location": {
-        "address_line": "102, Rosewood Avenue",
-        "city": "Chennai",
-        "state": "Tamil Nadu"
-      },
-      "completed_services": [],
-      "brand_name": "Sneha's Salon",
-      "gstin": "GSTIN012A",
-      "average_rating": 0,
-      "status": "active"
-    },
-    {
-      "id": "6",
-      "name": "Rahul Banerjee",
-      "email": "rahul@example.com",
-      "password": "rahul123",
-      "role": "service_provider",
-      "expertise": [
-        "Fitness Trainer at Home"
-      ],
-      "offered_services": [
-        "8"
-      ],
-      "accepted_services": [],
-      "location": {
-        "address_line": "20 Lake View Road",
-        "city": "Kolkata",
-        "state": "West Bengal"
-      },
-      "completed_services": [],
-      "brand_name": "Rahul's Fitness",
-      "gstin": "GSTIN345B",
-      "average_rating": 0,
-      "status": "active"
-    },
-    {
-      "id": "7",
-      "name": "Aruna Reddy",
-      "email": "aruna@example.com",
-      "password": "aruna123",
-      "role": "service_provider",
-      "expertise": [
-        "Yoga Instructor at Home",
-        "Massage at Home"
-      ],
-      "offered_services": [
-        "9",
-        "10"
-      ],
-      "accepted_services": [],
-      "location": {
-        "address_line": "15 River Side Drive",
-        "city": "Hyderabad",
-        "state": "Telangana"
-      },
-      "completed_services": [],
-      "brand_name": "Aruna's Wellness",
-      "gstin": "GSTIN678C",
-      "average_rating": 0,
-      "status": "active"
-    },
-    {
-      "id": "8",
-      "name": "Meet Bhimani",
-      "email": "meet@gmail.com",
-      "password": "meet123",
-      "role": "user",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      },
-      "requested_services": [
-        "2",
-        "3",
-        "4",
-        "5",
-        "9",
-        "10",
-        "11"
-      ],
-      "active_bookings": [
-        "1",
-        "14",
-        "11"
-      ]
-    },
-    {
-      "id": "9",
-      "name": "Dhruv",
-      "email": "dhruv@test.com",
-      "password": "dhruv",
-      "brand_name": "Cleaners",
-      "gstin": "GSTIN555",
-      "role": "service_provider",
-      "expertise": [
-        "House cleaning",
-        "Pest control"
-      ],
-      "location": {
-        "address_line": "Flat 5, jay ambenagar society",
-        "city": "Ahmedabad",
-        "state": "Gujarat"
-      },
-      "offered_services": [],
-      "accepted_services": [],
-      "completed_services": [],
-      "average_rating": 0,
-      "status": "active"
-    },
-    {
-      "id": "10",
-      "name": "Smit",
-      "email": "smit@gmail.com",
-      "password": "smit123",
-      "role": "user",
-      "location": {
-        "address_line": "jay ambenagar society",
-        "city": "Ahmedabad",
-        "state": "Gujarat"
-      },
-      "requested_services": [
-        "7",
-        "8"
-      ],
-      "active_bookings": []
-    },
-    {
-      "id": "11",
-      "name": "jay",
-      "email": "jay@gmail.com",
-      "password": "123",
-      "role": "user",
-      "location": {
-        "address_line": "gulab tower",
-        "city": "ahmedbad",
-        "state": "gujarat"
-      },
-      "requested_services": [],
-      "active_bookings": []
-    },
-    {
-      "id": "12",
-      "name": "Harshul Shah",
-      "email": "harshul@gmail.com",
-      "password": "harshul123",
-      "role": "user",
-      "location": {
-        "address_line": "college",
-        "city": "ahmedbad",
-        "state": "gujarat"
-      },
-      "requested_services": [],
-      "active_bookings": [
-        "15"
-      ]
-    }
-  ],
-  "services": [
-    {
-      "id": "1",
-      "name": "House Cleaning",
-      "description": "Experience the epitome of cleanliness and freshness with our professional house cleaning services. Our team of meticulous cleaners will meticulously scrub, sanitize, and polish every corner of your home, ensuring it shines from top to bottom. From dusting high ceilings to disinfecting hard-to-reach areas, we leave no stone unturned in our quest to create a spotless living environment for you and your family.",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/w_128,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1663751091534-64d921.jpeg",
-      "provider_id": "2",
-      "category": "Home Services",
-      "sub_category": "Cleaning",
-      "cost": 5000,
-      "available": true,
-      "rating": 4.5,
-      "total_reviews": "53k",
-      "total_bookings": 7200,
-      "location": {
-        "address_line": "456 Park Avenue",
-        "city": "Bangalore",
-        "state": "Karnataka"
-      },
-      "features": [
-        "Thorough cleaning of all areas",
-        "Sanitization of high-touch surfaces",
-        "Dusting of high ceilings",
-        "Disinfection of hard-to-reach spots",
-        "new feature"
-      ],
-      "offer_text": "10% off on your first booking!"
-    },
-    {
-      "id": "2",
-      "name": "Interior Painting",
-      "description": "Transform your living space into a work of art with our interior painting services. Our skilled painters bring creativity and precision to every brushstroke, delivering flawless results that enhance the beauty and ambiance of your home. From selecting the perfect color palette to applying premium-quality paint, we ensure a seamless painting experience that exceeds your expectations.",
-      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKqHAv9WePIK88qqaSHh-1thIUV8pyDcVPTu-VP9KvAQ&s",
-      "provider_id": "2",
-      "category": "Home Services",
-      "sub_category": "Painting",
-      "cost": 100,
-      "available": false,
-      "rating": 4.2,
-      "total_reviews": "42k",
-      "total_bookings": 5300,
-      "location": {
-        "address_line": "456 Park Avenue",
-        "city": "Bangalore",
-        "state": "Karnataka"
-      },
-      "features": [
-        "Professional color consultation",
-        "Premium-quality paint materials",
-        "Precision brushstroke techniques",
-        "Enhancement of home's ambiance"
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Appliance Repair",
-      "description": "Restore functionality to your essential home appliances with our reliable repair services. Our expert technicians are equipped with the knowledge and tools to diagnose and fix a wide range of appliance issues, from faulty wiring to mechanical malfunctions. With prompt service and lasting solutions, we'll have your appliances running smoothly in no time, saving you time, money, and hassle.",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700141800784-5ca077.jpeg",
-      "provider_id": "3",
-      "category": "Repairs & Maintenance",
-      "sub_category": "Appliance Repair",
-      "cost": 80,
-      "available": true,
-      "rating": 4.7,
-      "total_reviews": "61k",
-      "total_bookings": 9200,
-      "location": {
-        "address_line": "789 Elm Street",
-        "city": "Delhi",
-        "state": "Delhi"
-      },
-      "features": [
-        "Expert diagnosis of appliance issues",
-        "Timely and efficient repairs",
-        "Wide range of appliance expertise",
-        "Cost-effective solutions"
-      ]
-    },
-    {
-      "id": "4",
-      "name": "Electrical Wiring",
-      "description": "Ensure the safety and efficiency of your home's electrical system with our professional wiring services. Whether you're building a new home or renovating an existing one, our licensed electricians will design and install wiring solutions that meet your specific needs and comply with all safety regulations. From basic wiring installations to complex electrical upgrades, we provide reliable and cost-effective solutions for all your electrical needs.",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/w_128,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1640069912643-d7bb98.png",
-      "provider_id": "3",
-      "category": "Home Services",
-      "sub_category": "Electrical",
-      "cost": 120,
-      "available": true,
-      "rating": 4.8,
-      "total_reviews": "79k",
-      "total_bookings": 11500,
-      "location": {
-        "address_line": "789 Elm Street",
-        "city": "Delhi",
-        "state": "Delhi"
-      },
-      "features": [
-        "Custom wiring design for new constructions or renovations",
-        "Installation of electrical fixtures and outlets",
-        "Testing and troubleshooting of electrical systems",
-        "Upgrades for energy efficiency and safety",
-        "Compliance with building codes and regulations"
-      ],
-      "offer_text": "Book now and get a free electrical inspection!"
-    },
-    {
-      "id": "5",
-      "name": "Plumbing Services",
-      "description": "Say goodbye to plumbing problems with our comprehensive plumbing services. From leaky faucets to clogged drains, our skilled plumbers have the expertise and equipment to tackle any plumbing issue with efficiency and precision. With prompt service and quality workmanship, we'll restore your plumbing system to optimal condition, ensuring smooth water flow and peace of mind.",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/w_128,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700730868846-5e47f4.jpeg",
-      "provider_id": "4",
-      "category": "Home Services",
-      "sub_category": "Plumbing",
-      "cost": 90,
-      "available": true,
-      "rating": 4.4,
-      "total_reviews": "56k",
-      "total_bookings": 8800,
-      "location": {
-        "address_line": "10 Oak Street",
-        "city": "Mumbai",
-        "state": "Maharashtra"
-      },
-      "features": [
-        "Efficient diagnosis of plumbing issues",
-        "Prompt and reliable service",
-        "Quality workmanship",
-        "Clog prevention recommendations"
-      ],
-      "offer_text": "Get 15% off on your first booking!"
-    },
-    {
-      "id": "6",
-      "name": "Salon at Home",
-      "description": "Experience luxury and convenience with our salon services brought directly to your doorstep. Indulge in a range of pampering treatments, including hair styling, manicures, pedicures, and more, all performed by skilled professionals in the comfort of your own home. With personalized attention and premium products, we'll help you look and feel your best without ever leaving your house.",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700127735237-fc713d.jpeg",
-      "provider_id": "5",
-      "category": "Beauty & Wellness",
-      "sub_category": "Salon at Home",
-      "cost": 80,
-      "available": true,
-      "rating": 4.6,
-      "total_reviews": "48k",
-      "total_bookings": 6200,
-      "location": {
-        "address_line": "102, Rosewood Avenue",
-        "city": "Chennai",
-        "state": "Tamil Nadu"
-      },
-      "features": [
-        "Professional hair styling",
-        "Manicures and pedicures",
-        "Premium salon products",
-        "Comfort of home environment"
-      ]
-    },
-    {
-      "id": "7",
-      "name": "Spa at Home",
-      "description": "Escape the stresses of daily life and indulge in a luxurious spa experience without ever leaving your home. Our spa services offer a variety of relaxing treatments, including massages, facials, and body scrubs, all designed to rejuvenate your body and mind. With soothing music, aromatic oils, and expert therapists, we'll create a tranquil oasis in the comfort of your own space.",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700135829701-85b36c.jpeg",
-      "provider_id": "5",
-      "category": "Beauty & Wellness",
-      "sub_category": "Spa at Home",
-      "cost": 150,
-      "available": true,
-      "rating": 4.9,
-      "total_reviews": "72k",
-      "total_bookings": 9300,
-      "location": {
-        "address_line": "102, Rosewood Avenue",
-        "city": "Chennai",
-        "state": "Tamil Nadu"
-      },
-      "features": [
-        "Customized spa treatments",
-        "Tranquil ambiance at home",
-        "Variety of massages and facials",
-        "Expert therapists and aromatic oils"
-      ]
-    },
-    {
-      "id": "8",
-      "name": "Fitness Trainer at Home",
-      "description": "Achieve your fitness goals with personalized training sessions in the comfort and privacy of your own home. Our certified fitness trainers will design customized workout plans tailored to your needs and abilities, guiding you through exercises that target specific muscle groups and improve overall fitness. With expert guidance and motivation, you'll see results faster and enjoy a healthier lifestyle.",
-      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn5xkCeKvY8HQDk9VOGtrkb9HqVTM_ZMOrPA&s",
-      "provider_id": "6",
-      "category": "Beauty & Wellness",
-      "sub_category": "Fitness Trainer at Home",
-      "cost": 120,
-      "available": true,
-      "rating": 4.7,
-      "total_reviews": "64k",
-      "total_bookings": 7200,
-      "location": {
-        "address_line": "20 Lake View Road",
-        "city": "Kolkata",
-        "state": "West Bengal"
-      },
-      "features": [
-        "Personalized workout plans",
-        "Targeted exercises for specific goals",
-        "Motivational coaching and support",
-        "Flexible scheduling at your convenience"
-      ],
-      "offer_text": "Exclusive offer: 20% off on first session!"
-    },
-    {
-      "id": "9",
-      "name": "Yoga Instructor at Home",
-      "description": "Find inner peace and harmony with private yoga sessions conducted in the serene environment of your own home. Our experienced yoga instructors will guide you through gentle stretches, mindful breathing exercises, and meditation techniques, helping you connect with your body, mind, and spirit. With personalized instruction and encouragement, you'll experience the transformative power of yoga in the comfort of familiar surroundings.",
-      "thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXyt2jsVp2Dex2XxOXh9gKhvIEtO2AnjQs-OW6mDoFBA&s",
-      "provider_id": "7",
-      "category": "Beauty & Wellness",
-      "sub_category": "Yoga Instructor at Home",
-      "cost": 100,
-      "available": true,
-      "rating": 4.8,
-      "total_reviews": "59k",
-      "total_bookings": 6700,
-      "location": {
-        "address_line": "15 River Side Drive",
-        "city": "Hyderabad",
-        "state": "Telangana"
-      },
-      "features": [
-        "Customized yoga sessions",
-        "Mindful breathing and meditation techniques",
-        "Personalized guidance for all skill levels",
-        "Inner peace and holistic well-being"
-      ]
-    },
-    {
-      "id": "10",
-      "name": "Massage at Home",
-      "description": "Indulge in the ultimate relaxation experience with our massage services delivered directly to your doorstep. Choose from a variety of massage techniques, including Swedish, deep tissue, and aromatherapy, to soothe sore muscles, relieve tension, and promote overall well-being. With expert therapists and premium oils, we'll create a tranquil spa ambiance in the comfort of your own home, leaving you feeling rejuvenated and refreshed.",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700135826199-2ae5f2.jpeg",
-      "provider_id": "7",
-      "category": "Beauty & Wellness",
-      "sub_category": "Massage at Home",
-      "cost": 80,
-      "available": true,
-      "rating": 4.6,
-      "total_reviews": "68k",
-      "total_bookings": 8100,
-      "location": {
-        "address_line": "15 River Side Drive",
-        "city": "Hyderabad",
-        "state": "Telangana"
-      },
-      "features": [
-        "Variety of massage techniques",
-        "Soothing and relaxing ambiance",
-        "Relief from muscle tension and stress",
-        "Use of premium oils for rejuvenation"
-      ],
-      "offer_text": "Limited time offer: 15% off on first massage!"
-    },
-    {
-      "id": "11",
-      "name": "Native Water Purifier",
-      "description": "Service to add new native water purifier at your home with lowest cost",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_233,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1687428458328-9e147d.jpeg",
-      "provider_id": "2",
-      "category": "Home Services",
-      "sub_category": "Plumbing",
-      "cost": 1500,
-      "available": true,
-      "rating": 0,
-      "total_reviews": 0,
-      "total_bookings": 0,
-      "location": {
-        "address_line": "456 Park Avenue",
-        "city": "Bangalore",
-        "state": "Karnataka"
-      },
-      "features": [
-        "10 stage purifier boosted",
-        " minerals & charged with copper"
-      ],
-      "offer_text": "10% off on your first order"
-    }
-  ],
-  "categories": [
-    {
-      "id": "1",
-      "name": "Home Services",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700129474836-c5b146.jpeg",
-      "sub_categories": [
-        {
-          "id": "1",
-          "name": "Cleaning",
-          "parent_category": "Home Services"
-        },
-        {
-          "id": "2",
-          "name": "Plumbing",
-          "parent_category": "Home Services"
-        },
-        {
-          "id": "3",
-          "name": "Electrical",
-          "parent_category": "Home Services"
-        },
-        {
-          "id": "4",
-          "name": "Carpentry",
-          "parent_category": "Home Services"
-        },
-        {
-          "id": "5",
-          "name": "Pest Control",
-          "parent_category": "Home Services"
-        }
-      ]
-    },
-    {
-      "id": "2",
-      "name": "Beauty & Wellness",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1698747190108-6fb9c1.jpeg",
-      "sub_categories": [
-        {
-          "id": "6",
-          "name": "Salon at Home",
-          "parent_category": "Beauty & Wellness"
-        },
-        {
-          "id": "7",
-          "name": "Spa at Home",
-          "parent_category": "Beauty & Wellness"
-        },
-        {
-          "id": "8",
-          "name": "Fitness Trainer at Home",
-          "parent_category": "Beauty & Wellness"
-        },
-        {
-          "id": "9",
-          "name": "Yoga Instructor at Home",
-          "parent_category": "Beauty & Wellness"
-        },
-        {
-          "id": "10",
-          "name": "Massage at Home",
-          "parent_category": "Beauty & Wellness"
-        }
-      ]
-    },
-    {
-      "id": "3",
-      "name": "Repairs & Maintenance",
-      "thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700141800784-5ca077.jpeg",
-      "sub_categories": [
-        {
-          "id": "11",
-          "name": "Appliance Repair",
-          "parent_category": "Repairs & Maintenance"
-        },
-        {
-          "id": "12",
-          "name": "AC Service & Repair",
-          "parent_category": "Repairs & Maintenance"
-        },
-        {
-          "id": "13",
-          "name": "Computer/Laptop Repair",
-          "parent_category": "Repairs & Maintenance"
-        },
-        {
-          "id": "14",
-          "name": "Mobile Repair",
-          "parent_category": "Repairs & Maintenance"
-        },
-        {
-          "id": "15",
-          "name": "Car/Bike Service & Repair",
-          "parent_category": "Repairs & Maintenance"
-        }
-      ]
-    },
-    {
-      "id": "4",
-      "name": "Health & Fitness",
-      "thumbnail": "",
-      "sub_categories": [
-        {
-          "id": "16",
-          "name": "Personal Training",
-          "parent_category": "Health & Fitness"
-        },
-        {
-          "id": "17",
-          "name": "Nutritionist Consultation",
-          "parent_category": "Health & Fitness"
-        },
-        {
-          "id": "18",
-          "name": "Yoga Instructor at Home",
-          "parent_category": "Health & Fitness"
-        },
-        {
-          "id": "19",
-          "name": "Meditation Sessions",
-          "parent_category": "Health & Fitness"
-        },
-        {
-          "id": "20",
-          "name": "Physical Therapy",
-          "parent_category": "Health & Fitness"
-        }
-      ]
-    },
-    {
-      "id": "5",
-      "name": "Automotive Services",
-      "thumbnail": "",
-      "sub_categories": [
-        {
-          "id": "21",
-          "name": "Car Wash & Detailing",
-          "parent_category": "Automotive Services"
-        },
-        {
-          "id": "22",
-          "name": "Mechanic Services",
-          "parent_category": "Automotive Services"
-        },
-        {
-          "id": "23",
-          "name": "Car Painting",
-          "parent_category": "Automotive Services"
-        },
-        {
-          "id": "24",
-          "name": "Tire Replacement",
-          "parent_category": "Automotive Services"
-        },
-        {
-          "id": "25",
-          "name": "Car Rental",
-          "parent_category": "Automotive Services"
-        }
-      ]
-    },
-    {
-      "id": "6",
-      "name": "Pet Care",
-      "thumbnail": "",
-      "sub_categories": [
-        {
-          "id": "26",
-          "name": "Dog Walking",
-          "parent_category": "Pet Care"
-        },
-        {
-          "id": "27",
-          "name": "Pet Grooming",
-          "parent_category": "Pet Care"
-        },
-        {
-          "id": "28",
-          "name": "Pet Sitting",
-          "parent_category": "Pet Care"
-        },
-        {
-          "id": "29",
-          "name": "Veterinary Services",
-          "parent_category": "Pet Care"
-        },
-        {
-          "id": "30",
-          "name": "Pet Training",
-          "parent_category": "Pet Care"
-        }
-      ]
-    },
-    {
-      "id": "7",
-      "name": "Locks",
-      "thumbnail": "",
-      "sub_categories": []
-    }
-  ],
-  "bookings": [
-    {
-      "id": "1",
-      "user_id": "8",
-      "service_id": "1",
-      "provider_id": "2",
-      "booking_date": "2024-04-05",
-      "expected_service_date": "2024-04-14",
-      "status": "completed",
-      "location": {
-        "address_line": "Jay ambenagar",
-        "city": "Ahmedabad",
-        "state": "Gujarat"
-      },
-      "notes": "Please bring your own cleaning supplies"
-    },
-    {
-      "id": "2",
-      "user_id": "8",
-      "service_id": "2",
-      "provider_id": "2",
-      "booking_date": "2024-04-02",
-      "expected_service_date": "2024-04-05",
-      "status": "completed",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      },
-      "notes": "I have some paint colors"
-    },
-    {
-      "id": "3",
-      "user_id": "8",
-      "service_id": "5",
-      "provider_id": "4",
-      "booking_date": "2024-04-05",
-      "status": "pending",
-      "notes": "",
-      "expected_service_date": "2024-04-13",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "4",
-      "user_id": "8",
-      "service_id": "5",
-      "provider_id": "4",
-      "booking_date": "2024-04-05",
-      "status": "pending",
-      "notes": "",
-      "expected_service_date": "2024-04-13",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "5",
-      "user_id": "8",
-      "service_id": "5",
-      "provider_id": "4",
-      "booking_date": "2024-04-05",
-      "status": "pending",
-      "notes": "",
-      "expected_service_date": "2024-04-13",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "6",
-      "user_id": "8",
-      "service_id": "5",
-      "provider_id": "4",
-      "booking_date": "2024-04-05",
-      "status": "pending",
-      "notes": "note",
-      "expected_service_date": "2024-04-12",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "7",
-      "user_id": "10",
-      "service_id": "1",
-      "provider_id": "2",
-      "booking_date": "2024-04-05",
-      "status": "pending",
-      "notes": "",
-      "expected_service_date": "2024-04-13",
-      "location": {
-        "address_line": "jay ambenagar society",
-        "city": "Ahmedabad",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "8",
-      "user_id": "10",
-      "service_id": "3",
-      "provider_id": "3",
-      "booking_date": "2024-04-05",
-      "status": "pending",
-      "notes": "",
-      "expected_service_date": "2024-04-14",
-      "location": {
-        "address_line": "jay ambenagar society",
-        "city": "Ahmedabad",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "9",
-      "user_id": "8",
-      "service_id": "10",
-      "provider_id": "7",
-      "booking_date": "2024-04-05",
-      "status": "pending",
-      "notes": "",
-      "expected_service_date": "2024-04-20",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "10",
-      "user_id": "8",
-      "service_id": "7",
-      "provider_id": "5",
-      "booking_date": "2024-04-05",
-      "status": "pending",
-      "notes": "",
-      "expected_service_date": "2024-04-14",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "11",
-      "user_id": "8",
-      "service_id": "6",
-      "provider_id": "5",
-      "booking_date": "2024-04-05",
-      "status": "accepted",
-      "notes": "",
-      "expected_service_date": "2024-04-27",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "12",
-      "user_id": "8",
-      "service_id": "6",
-      "provider_id": "5",
-      "booking_date": "2024-04-05",
-      "status": "declined",
-      "notes": "",
-      "expected_service_date": "2024-04-06",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "13",
-      "user_id": "8",
-      "service_id": "6",
-      "provider_id": "5",
-      "booking_date": "2024-04-05",
-      "status": "pending",
-      "notes": "",
-      "expected_service_date": "2024-04-07",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "14",
-      "user_id": "8",
-      "service_id": "1",
-      "provider_id": "2",
-      "booking_date": "2024-04-05",
-      "status": "accepted",
-      "notes": "",
-      "expected_service_date": "2024-04-19",
-      "location": {
-        "address_line": "Bhimani Heights",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    },
-    {
-      "id": "15",
-      "user_id": "12",
-      "service_id": "1",
-      "provider_id": "2",
-      "booking_date": "2024-04-06",
-      "status": "canceled",
-      "notes": "",
-      "expected_service_date": "2024-04-10",
-      "location": {
-        "address_line": "LD college hostel",
-        "city": "ahmedbad",
-        "state": "gujarat"
-      },
-      "canceled_by": "service_provider"
-    },
-    {
-      "id": "18",
-      "user_id": "8",
-      "service_id": "11",
-      "provider_id": "2",
-      "booking_date": "2024-04-09",
-      "status": "pending",
-      "notes": "",
-      "expected_service_date": "2024-04-21",
-      "location": {
-        "address_line": "Near Petrol Pump, Ajab",
-        "city": "Junagadh",
-        "state": "Gujarat"
-      }
-    }
-  ],
-  "contacts": [
-    {
-      "id": "1",
-      "name": "Meet",
-      "email": "meet@gmail.com",
-      "phone": "9601063644",
-      "message": "I want to give feedback to your  ",
-      "reviewed": true,
-      "timestamp": "4/9/2024, 8:03:44 PM"
-    },
-    {
-      "id": "2",
-      "name": "Meet",
-      "email": "meet@gmail.com",
-      "phone": "9601063644",
-      "message": "I want to give feedback to your company that it is amazing",
-      "reviewed": true,
-      "timestamp": "4/9/2024, 8:03:44 PM"
-    },
-    {
-      "id": "3",
-      "name": "Meet",
-      "email": "meet@gmail.com",
-      "phone": "9601063644",
-      "message": "I want to give feedback to your company that it is amazing,I want to give feedback to your company that it is amazing,I want to give feedback to your company that it is amazing,I want to give feedback to your company that it is amazing,I want to give feedback to your company that it is amazing",
-      "reviewed": false,
-      "timestamp": "4/9/2024, 8:03:44 PM"
-    }
-  ]
+	"users": [
+		{
+			"id": "1",
+			"name": "Admin",
+			"email": "admin@example.com",
+			"password": "Admin@123",
+			"role": "admin"
+		},
+		{
+			"id": "2",
+			"name": "Priya Sharma",
+			"email": "priya@example.com",
+			"password": "priya@123",
+			"brand_name": "Sharma Services",
+			"gstin": "GSTIN123D",
+			"role": "service_provider",
+			"expertise": ["House Cleaning", "Painting"],
+			"offered_services": ["1", "2", "11"],
+			"accepted_services": ["15", "14"],
+			"location": {
+				"address_line": "456 Park Avenue",
+				"city": "Bangalore",
+				"state": "Karnataka"
+			},
+			"completed_services": ["2", "1"],
+			"average_rating": 4.2,
+			"status": "active"
+		},
+		{
+			"id": "3",
+			"name": "Amit Patel",
+			"email": "amit@example.com",
+			"password": "amitpass",
+			"role": "service_provider",
+			"expertise": ["Appliance Repair", "Electrical Wiring"],
+			"offered_services": ["3", "4"],
+			"accepted_services": [],
+			"location": {
+				"address_line": "789 Elm Street",
+				"city": "Delhi",
+				"state": "Delhi"
+			},
+			"completed_services": [],
+			"brand_name": "Patel Electricals",
+			"gstin": "GSTIN456E",
+			"average_rating": 4,
+			"status": "active"
+		},
+		{
+			"id": "4",
+			"name": "Deepak Singh",
+			"email": "deepak@example.com",
+			"password": "deepak123",
+			"role": "service_provider",
+			"expertise": ["Plumbing Services"],
+			"offered_services": ["5"],
+			"accepted_services": [],
+			"location": {
+				"address_line": "10 Oak Street",
+				"city": "Mumbai",
+				"state": "Maharashtra"
+			},
+			"completed_services": [],
+			"brand_name": "Singh Plumbing",
+			"gstin": "GSTIN789F",
+			"average_rating": 0,
+			"status": "active"
+		},
+		{
+			"id": "5",
+			"name": "Sneha Kapoor",
+			"email": "sneha@example.com",
+			"password": "sneha123",
+			"role": "service_provider",
+			"expertise": ["Salon at Home", "Spa at Home"],
+			"offered_services": ["6", "7"],
+			"accepted_services": ["11"],
+			"location": {
+				"address_line": "102, Rosewood Avenue",
+				"city": "Chennai",
+				"state": "Tamil Nadu"
+			},
+			"completed_services": [],
+			"brand_name": "Sneha's Salon",
+			"gstin": "GSTIN012A",
+			"average_rating": 0,
+			"status": "active"
+		},
+		{
+			"id": "6",
+			"name": "Rahul Banerjee",
+			"email": "rahul@example.com",
+			"password": "rahul123",
+			"role": "service_provider",
+			"expertise": ["Fitness Trainer at Home"],
+			"offered_services": ["8"],
+			"accepted_services": [],
+			"location": {
+				"address_line": "20 Lake View Road",
+				"city": "Kolkata",
+				"state": "West Bengal"
+			},
+			"completed_services": [],
+			"brand_name": "Rahul's Fitness",
+			"gstin": "GSTIN345B",
+			"average_rating": 0,
+			"status": "active"
+		},
+		{
+			"id": "7",
+			"name": "Aruna Reddy",
+			"email": "aruna@example.com",
+			"password": "aruna123",
+			"role": "service_provider",
+			"expertise": ["Yoga Instructor at Home", "Massage at Home"],
+			"offered_services": ["9", "10"],
+			"accepted_services": [],
+			"location": {
+				"address_line": "15 River Side Drive",
+				"city": "Hyderabad",
+				"state": "Telangana"
+			},
+			"completed_services": [],
+			"brand_name": "Aruna's Wellness",
+			"gstin": "GSTIN678C",
+			"average_rating": 0,
+			"status": "active"
+		},
+		{
+			"id": "8",
+			"name": "Meet Bhimani",
+			"email": "meet@gmail.com",
+			"password": "meet123",
+			"role": "user",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			},
+			"requested_services": ["2", "3", "4", "5", "9", "10", "11"],
+			"active_bookings": ["1", "14", "11"]
+		},
+		{
+			"id": "9",
+			"name": "Dhruv",
+			"email": "dhruv@test.com",
+			"password": "dhruv",
+			"brand_name": "Cleaners",
+			"gstin": "GSTIN555",
+			"role": "service_provider",
+			"expertise": ["House cleaning", "Pest control"],
+			"location": {
+				"address_line": "Flat 5, jay ambenagar society",
+				"city": "Ahmedabad",
+				"state": "Gujarat"
+			},
+			"offered_services": [],
+			"accepted_services": [],
+			"completed_services": [],
+			"average_rating": 0,
+			"status": "active"
+		},
+		{
+			"id": "10",
+			"name": "Smit",
+			"email": "smit@gmail.com",
+			"password": "smit123",
+			"role": "user",
+			"location": {
+				"address_line": "jay ambenagar society",
+				"city": "Ahmedabad",
+				"state": "Gujarat"
+			},
+			"requested_services": ["7", "8"],
+			"active_bookings": []
+		},
+		{
+			"id": "11",
+			"name": "jay",
+			"email": "jay@gmail.com",
+			"password": "123",
+			"role": "user",
+			"location": {
+				"address_line": "gulab tower",
+				"city": "ahmedbad",
+				"state": "gujarat"
+			},
+			"requested_services": [],
+			"active_bookings": []
+		},
+		{
+			"id": "12",
+			"name": "Harshul Shah",
+			"email": "harshul@gmail.com",
+			"password": "harshul123",
+			"role": "user",
+			"location": {
+				"address_line": "college",
+				"city": "ahmedbad",
+				"state": "gujarat"
+			},
+			"requested_services": [],
+			"active_bookings": ["15"]
+		}
+	],
+	"services": [
+		{
+			"id": "1",
+			"name": "House Cleaning",
+			"description": "Experience the epitome of cleanliness and freshness with our professional house cleaning services. Our team of meticulous cleaners will meticulously scrub, sanitize, and polish every corner of your home, ensuring it shines from top to bottom. From dusting high ceilings to disinfecting hard-to-reach areas, we leave no stone unturned in our quest to create a spotless living environment for you and your family.",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/w_128,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1663751091534-64d921.jpeg",
+			"provider_id": "2",
+			"category": "Home Services",
+			"sub_category": "Cleaning",
+			"cost": 5000,
+			"available": true,
+			"rating": 4.5,
+			"total_reviews": "53k",
+			"total_bookings": 7200,
+			"location": {
+				"address_line": "456 Park Avenue",
+				"city": "Bangalore",
+				"state": "Karnataka"
+			},
+			"features": [
+				"Thorough cleaning of all areas",
+				"Sanitization of high-touch surfaces",
+				"Dusting of high ceilings",
+				"Disinfection of hard-to-reach spots",
+				"new feature"
+			],
+			"offer_text": "10% off on your first booking!"
+		},
+		{
+			"id": "2",
+			"name": "Interior Painting",
+			"description": "Transform your living space into a work of art with our interior painting services. Our skilled painters bring creativity and precision to every brushstroke, delivering flawless results that enhance the beauty and ambiance of your home. From selecting the perfect color palette to applying premium-quality paint, we ensure a seamless painting experience that exceeds your expectations.",
+			"thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKqHAv9WePIK88qqaSHh-1thIUV8pyDcVPTu-VP9KvAQ&s",
+			"provider_id": "2",
+			"category": "Home Services",
+			"sub_category": "Painting",
+			"cost": 100,
+			"available": false,
+			"rating": 4.2,
+			"total_reviews": "42k",
+			"total_bookings": 5300,
+			"location": {
+				"address_line": "456 Park Avenue",
+				"city": "Bangalore",
+				"state": "Karnataka"
+			},
+			"features": [
+				"Professional color consultation",
+				"Premium-quality paint materials",
+				"Precision brushstroke techniques",
+				"Enhancement of home's ambiance"
+			]
+		},
+		{
+			"id": "3",
+			"name": "Appliance Repair",
+			"description": "Restore functionality to your essential home appliances with our reliable repair services. Our expert technicians are equipped with the knowledge and tools to diagnose and fix a wide range of appliance issues, from faulty wiring to mechanical malfunctions. With prompt service and lasting solutions, we'll have your appliances running smoothly in no time, saving you time, money, and hassle.",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700141800784-5ca077.jpeg",
+			"provider_id": "3",
+			"category": "Repairs & Maintenance",
+			"sub_category": "Appliance Repair",
+			"cost": 80,
+			"available": true,
+			"rating": 4.7,
+			"total_reviews": "61k",
+			"total_bookings": 9200,
+			"location": {
+				"address_line": "789 Elm Street",
+				"city": "Delhi",
+				"state": "Delhi"
+			},
+			"features": [
+				"Expert diagnosis of appliance issues",
+				"Timely and efficient repairs",
+				"Wide range of appliance expertise",
+				"Cost-effective solutions"
+			]
+		},
+		{
+			"id": "4",
+			"name": "Electrical Wiring",
+			"description": "Ensure the safety and efficiency of your home's electrical system with our professional wiring services. Whether you're building a new home or renovating an existing one, our licensed electricians will design and install wiring solutions that meet your specific needs and comply with all safety regulations. From basic wiring installations to complex electrical upgrades, we provide reliable and cost-effective solutions for all your electrical needs.",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/w_128,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1640069912643-d7bb98.png",
+			"provider_id": "3",
+			"category": "Home Services",
+			"sub_category": "Electrical",
+			"cost": 120,
+			"available": true,
+			"rating": 4.8,
+			"total_reviews": "79k",
+			"total_bookings": 11500,
+			"location": {
+				"address_line": "789 Elm Street",
+				"city": "Delhi",
+				"state": "Delhi"
+			},
+			"features": [
+				"Custom wiring design for new constructions or renovations",
+				"Installation of electrical fixtures and outlets",
+				"Testing and troubleshooting of electrical systems",
+				"Upgrades for energy efficiency and safety",
+				"Compliance with building codes and regulations"
+			],
+			"offer_text": "Book now and get a free electrical inspection!"
+		},
+		{
+			"id": "5",
+			"name": "Plumbing Services",
+			"description": "Say goodbye to plumbing problems with our comprehensive plumbing services. From leaky faucets to clogged drains, our skilled plumbers have the expertise and equipment to tackle any plumbing issue with efficiency and precision. With prompt service and quality workmanship, we'll restore your plumbing system to optimal condition, ensuring smooth water flow and peace of mind.",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template,q_auto:low,f_auto/w_128,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700730868846-5e47f4.jpeg",
+			"provider_id": "4",
+			"category": "Home Services",
+			"sub_category": "Plumbing",
+			"cost": 90,
+			"available": true,
+			"rating": 4.4,
+			"total_reviews": "56k",
+			"total_bookings": 8800,
+			"location": {
+				"address_line": "10 Oak Street",
+				"city": "Mumbai",
+				"state": "Maharashtra"
+			},
+			"features": [
+				"Efficient diagnosis of plumbing issues",
+				"Prompt and reliable service",
+				"Quality workmanship",
+				"Clog prevention recommendations"
+			],
+			"offer_text": "Get 15% off on your first booking!"
+		},
+		{
+			"id": "6",
+			"name": "Salon at Home",
+			"description": "Experience luxury and convenience with our salon services brought directly to your doorstep. Indulge in a range of pampering treatments, including hair styling, manicures, pedicures, and more, all performed by skilled professionals in the comfort of your own home. With personalized attention and premium products, we'll help you look and feel your best without ever leaving your house.",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700127735237-fc713d.jpeg",
+			"provider_id": "5",
+			"category": "Beauty & Wellness",
+			"sub_category": "Salon at Home",
+			"cost": 80,
+			"available": true,
+			"rating": 4.6,
+			"total_reviews": "48k",
+			"total_bookings": 6200,
+			"location": {
+				"address_line": "102, Rosewood Avenue",
+				"city": "Chennai",
+				"state": "Tamil Nadu"
+			},
+			"features": [
+				"Professional hair styling",
+				"Manicures and pedicures",
+				"Premium salon products",
+				"Comfort of home environment"
+			]
+		},
+		{
+			"id": "7",
+			"name": "Spa at Home",
+			"description": "Escape the stresses of daily life and indulge in a luxurious spa experience without ever leaving your home. Our spa services offer a variety of relaxing treatments, including massages, facials, and body scrubs, all designed to rejuvenate your body and mind. With soothing music, aromatic oils, and expert therapists, we'll create a tranquil oasis in the comfort of your own space.",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700135829701-85b36c.jpeg",
+			"provider_id": "5",
+			"category": "Beauty & Wellness",
+			"sub_category": "Spa at Home",
+			"cost": 150,
+			"available": true,
+			"rating": 4.9,
+			"total_reviews": "72k",
+			"total_bookings": 9300,
+			"location": {
+				"address_line": "102, Rosewood Avenue",
+				"city": "Chennai",
+				"state": "Tamil Nadu"
+			},
+			"features": [
+				"Customized spa treatments",
+				"Tranquil ambiance at home",
+				"Variety of massages and facials",
+				"Expert therapists and aromatic oils"
+			]
+		},
+		{
+			"id": "8",
+			"name": "Fitness Trainer at Home",
+			"description": "Achieve your fitness goals with personalized training sessions in the comfort and privacy of your own home. Our certified fitness trainers will design customized workout plans tailored to your needs and abilities, guiding you through exercises that target specific muscle groups and improve overall fitness. With expert guidance and motivation, you'll see results faster and enjoy a healthier lifestyle.",
+			"thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn5xkCeKvY8HQDk9VOGtrkb9HqVTM_ZMOrPA&s",
+			"provider_id": "6",
+			"category": "Beauty & Wellness",
+			"sub_category": "Fitness Trainer at Home",
+			"cost": 120,
+			"available": true,
+			"rating": 4.7,
+			"total_reviews": "64k",
+			"total_bookings": 7200,
+			"location": {
+				"address_line": "20 Lake View Road",
+				"city": "Kolkata",
+				"state": "West Bengal"
+			},
+			"features": [
+				"Personalized workout plans",
+				"Targeted exercises for specific goals",
+				"Motivational coaching and support",
+				"Flexible scheduling at your convenience"
+			],
+			"offer_text": "Exclusive offer: 20% off on first session!"
+		},
+		{
+			"id": "9",
+			"name": "Yoga Instructor at Home",
+			"description": "Find inner peace and harmony with private yoga sessions conducted in the serene environment of your own home. Our experienced yoga instructors will guide you through gentle stretches, mindful breathing exercises, and meditation techniques, helping you connect with your body, mind, and spirit. With personalized instruction and encouragement, you'll experience the transformative power of yoga in the comfort of familiar surroundings.",
+			"thumbnail": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXyt2jsVp2Dex2XxOXh9gKhvIEtO2AnjQs-OW6mDoFBA&s",
+			"provider_id": "7",
+			"category": "Beauty & Wellness",
+			"sub_category": "Yoga Instructor at Home",
+			"cost": 100,
+			"available": true,
+			"rating": 4.8,
+			"total_reviews": "59k",
+			"total_bookings": 6700,
+			"location": {
+				"address_line": "15 River Side Drive",
+				"city": "Hyderabad",
+				"state": "Telangana"
+			},
+			"features": [
+				"Customized yoga sessions",
+				"Mindful breathing and meditation techniques",
+				"Personalized guidance for all skill levels",
+				"Inner peace and holistic well-being"
+			]
+		},
+		{
+			"id": "10",
+			"name": "Massage at Home",
+			"description": "Indulge in the ultimate relaxation experience with our massage services delivered directly to your doorstep. Choose from a variety of massage techniques, including Swedish, deep tissue, and aromatherapy, to soothe sore muscles, relieve tension, and promote overall well-being. With expert therapists and premium oils, we'll create a tranquil spa ambiance in the comfort of your own home, leaving you feeling rejuvenated and refreshed.",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700135826199-2ae5f2.jpeg",
+			"provider_id": "7",
+			"category": "Beauty & Wellness",
+			"sub_category": "Massage at Home",
+			"cost": 80,
+			"available": true,
+			"rating": 4.6,
+			"total_reviews": "68k",
+			"total_bookings": 8100,
+			"location": {
+				"address_line": "15 River Side Drive",
+				"city": "Hyderabad",
+				"state": "Telangana"
+			},
+			"features": [
+				"Variety of massage techniques",
+				"Soothing and relaxing ambiance",
+				"Relief from muscle tension and stress",
+				"Use of premium oils for rejuvenation"
+			],
+			"offer_text": "Limited time offer: 15% off on first massage!"
+		},
+		{
+			"id": "11",
+			"name": "Native Water Purifier",
+			"description": "Service to add new native water purifier at your home with lowest cost",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_233,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1687428458328-9e147d.jpeg",
+			"provider_id": "2",
+			"category": "Home Services",
+			"sub_category": "Plumbing",
+			"cost": 1500,
+			"available": true,
+			"rating": 0,
+			"total_reviews": 0,
+			"total_bookings": 0,
+			"location": {
+				"address_line": "456 Park Avenue",
+				"city": "Bangalore",
+				"state": "Karnataka"
+			},
+			"features": ["10 stage purifier boosted", " minerals & charged with copper"],
+			"offer_text": "10% off on your first order"
+		}
+	],
+	"categories": [
+		{
+			"id": "1",
+			"name": "Home Services",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700129474836-c5b146.jpeg",
+			"sub_categories": [
+				{
+					"id": "1",
+					"name": "Cleaning",
+					"parent_category": "Home Services"
+				},
+				{
+					"id": "2",
+					"name": "Plumbing",
+					"parent_category": "Home Services"
+				},
+				{
+					"id": "3",
+					"name": "Electrical",
+					"parent_category": "Home Services"
+				},
+				{
+					"id": "4",
+					"name": "Carpentry",
+					"parent_category": "Home Services"
+				},
+				{
+					"id": "5",
+					"name": "Pest Control",
+					"parent_category": "Home Services"
+				}
+			]
+		},
+		{
+			"id": "2",
+			"name": "Beauty & Wellness",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1698747190108-6fb9c1.jpeg",
+			"sub_categories": [
+				{
+					"id": "6",
+					"name": "Salon at Home",
+					"parent_category": "Beauty & Wellness"
+				},
+				{
+					"id": "7",
+					"name": "Spa at Home",
+					"parent_category": "Beauty & Wellness"
+				},
+				{
+					"id": "8",
+					"name": "Fitness Trainer at Home",
+					"parent_category": "Beauty & Wellness"
+				},
+				{
+					"id": "9",
+					"name": "Yoga Instructor at Home",
+					"parent_category": "Beauty & Wellness"
+				},
+				{
+					"id": "10",
+					"name": "Massage at Home",
+					"parent_category": "Beauty & Wellness"
+				}
+			]
+		},
+		{
+			"id": "3",
+			"name": "Repairs & Maintenance",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_231,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/supply/customer-app-supply/1700141800784-5ca077.jpeg",
+			"sub_categories": [
+				{
+					"id": "11",
+					"name": "Appliance Repair",
+					"parent_category": "Repairs & Maintenance"
+				},
+				{
+					"id": "12",
+					"name": "AC Service & Repair",
+					"parent_category": "Repairs & Maintenance"
+				},
+				{
+					"id": "13",
+					"name": "Computer/Laptop Repair",
+					"parent_category": "Repairs & Maintenance"
+				},
+				{
+					"id": "14",
+					"name": "Mobile Repair",
+					"parent_category": "Repairs & Maintenance"
+				},
+				{
+					"id": "15",
+					"name": "Car/Bike Service & Repair",
+					"parent_category": "Repairs & Maintenance"
+				}
+			]
+		},
+		{
+			"id": "4",
+			"name": "Health & Fitness",
+			"thumbnail": "https://image.khaleejtimes.com/?uuid=3b3afca5-e62c-5b6f-9741-06c2799462d5&function=cropresize&type=preview&source=false&q=75&crop_w=0.99999&crop_h=0.83333&width=1200&height=675&x=1.0E-5&y=0.00741",
+			"sub_categories": [
+				{
+					"id": "16",
+					"name": "Personal Training",
+					"parent_category": "Health & Fitness"
+				},
+				{
+					"id": "17",
+					"name": "Nutritionist Consultation",
+					"parent_category": "Health & Fitness"
+				},
+				{
+					"id": "18",
+					"name": "Yoga Instructor at Home",
+					"parent_category": "Health & Fitness"
+				},
+				{
+					"id": "19",
+					"name": "Meditation Sessions",
+					"parent_category": "Health & Fitness"
+				},
+				{
+					"id": "20",
+					"name": "Physical Therapy",
+					"parent_category": "Health & Fitness"
+				}
+			]
+		},
+		{
+			"id": "5",
+			"name": "Automotive Services",
+			"thumbnail": "https://www.selective.com/~/media/Images/S/Selective-V2/content-images/our-insurance/auto-care-and-service.jpg?h=471&iar=0&w=760",
+			"sub_categories": [
+				{
+					"id": "21",
+					"name": "Car Wash & Detailing",
+					"parent_category": "Automotive Services"
+				},
+				{
+					"id": "22",
+					"name": "Mechanic Services",
+					"parent_category": "Automotive Services"
+				},
+				{
+					"id": "23",
+					"name": "Car Painting",
+					"parent_category": "Automotive Services"
+				},
+				{
+					"id": "24",
+					"name": "Tire Replacement",
+					"parent_category": "Automotive Services"
+				},
+				{
+					"id": "25",
+					"name": "Car Rental",
+					"parent_category": "Automotive Services"
+				}
+			]
+		},
+		{
+			"id": "6",
+			"name": "Pet Care",
+			"thumbnail": "https://img.freepik.com/free-photo/veterinarian-check-ing-puppy-s-health_23-2148728396.jpg",
+			"sub_categories": [
+				{
+					"id": "26",
+					"name": "Dog Walking",
+					"parent_category": "Pet Care"
+				},
+				{
+					"id": "27",
+					"name": "Pet Grooming",
+					"parent_category": "Pet Care"
+				},
+				{
+					"id": "28",
+					"name": "Pet Sitting",
+					"parent_category": "Pet Care"
+				},
+				{
+					"id": "29",
+					"name": "Veterinary Services",
+					"parent_category": "Pet Care"
+				},
+				{
+					"id": "30",
+					"name": "Pet Training",
+					"parent_category": "Pet Care"
+				}
+			]
+		},
+		{
+			"id": "7",
+			"name": "Locks",
+			"thumbnail": "https://res.cloudinary.com/urbanclap/image/upload/t_high_res_template/w_233,dpr_1,fl_progressive:steep,q_auto:low,f_auto,c_limit/images/growth/luminosity/1700124385012-7be2b4.jpeg",
+			"sub_categories": []
+		}
+	],
+	"bookings": [
+		{
+			"id": "1",
+			"user_id": "8",
+			"service_id": "1",
+			"provider_id": "2",
+			"booking_date": "2024-04-05",
+			"expected_service_date": "2024-04-14",
+			"status": "completed",
+			"location": {
+				"address_line": "Jay ambenagar",
+				"city": "Ahmedabad",
+				"state": "Gujarat"
+			},
+			"notes": "Please bring your own cleaning supplies"
+		},
+		{
+			"id": "2",
+			"user_id": "8",
+			"service_id": "2",
+			"provider_id": "2",
+			"booking_date": "2024-04-02",
+			"expected_service_date": "2024-04-05",
+			"status": "completed",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			},
+			"notes": "I have some paint colors"
+		},
+		{
+			"id": "3",
+			"user_id": "8",
+			"service_id": "5",
+			"provider_id": "4",
+			"booking_date": "2024-04-05",
+			"status": "pending",
+			"notes": "",
+			"expected_service_date": "2024-04-13",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "4",
+			"user_id": "8",
+			"service_id": "5",
+			"provider_id": "4",
+			"booking_date": "2024-04-05",
+			"status": "pending",
+			"notes": "",
+			"expected_service_date": "2024-04-13",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "5",
+			"user_id": "8",
+			"service_id": "5",
+			"provider_id": "4",
+			"booking_date": "2024-04-05",
+			"status": "pending",
+			"notes": "",
+			"expected_service_date": "2024-04-13",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "6",
+			"user_id": "8",
+			"service_id": "5",
+			"provider_id": "4",
+			"booking_date": "2024-04-05",
+			"status": "pending",
+			"notes": "note",
+			"expected_service_date": "2024-04-12",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "7",
+			"user_id": "10",
+			"service_id": "1",
+			"provider_id": "2",
+			"booking_date": "2024-04-05",
+			"status": "pending",
+			"notes": "",
+			"expected_service_date": "2024-04-13",
+			"location": {
+				"address_line": "jay ambenagar society",
+				"city": "Ahmedabad",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "8",
+			"user_id": "10",
+			"service_id": "3",
+			"provider_id": "3",
+			"booking_date": "2024-04-05",
+			"status": "pending",
+			"notes": "",
+			"expected_service_date": "2024-04-14",
+			"location": {
+				"address_line": "jay ambenagar society",
+				"city": "Ahmedabad",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "9",
+			"user_id": "8",
+			"service_id": "10",
+			"provider_id": "7",
+			"booking_date": "2024-04-05",
+			"status": "pending",
+			"notes": "",
+			"expected_service_date": "2024-04-20",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "10",
+			"user_id": "8",
+			"service_id": "7",
+			"provider_id": "5",
+			"booking_date": "2024-04-05",
+			"status": "pending",
+			"notes": "",
+			"expected_service_date": "2024-04-14",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "11",
+			"user_id": "8",
+			"service_id": "6",
+			"provider_id": "5",
+			"booking_date": "2024-04-05",
+			"status": "accepted",
+			"notes": "",
+			"expected_service_date": "2024-04-27",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "12",
+			"user_id": "8",
+			"service_id": "6",
+			"provider_id": "5",
+			"booking_date": "2024-04-05",
+			"status": "declined",
+			"notes": "",
+			"expected_service_date": "2024-04-06",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "13",
+			"user_id": "8",
+			"service_id": "6",
+			"provider_id": "5",
+			"booking_date": "2024-04-05",
+			"status": "pending",
+			"notes": "",
+			"expected_service_date": "2024-04-07",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "14",
+			"user_id": "8",
+			"service_id": "1",
+			"provider_id": "2",
+			"booking_date": "2024-04-05",
+			"status": "accepted",
+			"notes": "",
+			"expected_service_date": "2024-04-19",
+			"location": {
+				"address_line": "Bhimani Heights",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		},
+		{
+			"id": "15",
+			"user_id": "12",
+			"service_id": "1",
+			"provider_id": "2",
+			"booking_date": "2024-04-06",
+			"status": "canceled",
+			"notes": "",
+			"expected_service_date": "2024-04-10",
+			"location": {
+				"address_line": "LD college hostel",
+				"city": "ahmedbad",
+				"state": "gujarat"
+			},
+			"canceled_by": "service_provider"
+		},
+		{
+			"id": "18",
+			"user_id": "8",
+			"service_id": "11",
+			"provider_id": "2",
+			"booking_date": "2024-04-09",
+			"status": "pending",
+			"notes": "",
+			"expected_service_date": "2024-04-21",
+			"location": {
+				"address_line": "Near Petrol Pump, Ajab",
+				"city": "Junagadh",
+				"state": "Gujarat"
+			}
+		}
+	],
+	"contacts": [
+		{
+			"id": "1",
+			"name": "Meet",
+			"email": "meet@gmail.com",
+			"phone": "9601063644",
+			"message": "I want to give feedback to your  ",
+			"reviewed": true,
+			"timestamp": "4/9/2024, 8:03:44 PM"
+		},
+		{
+			"id": "2",
+			"name": "Meet",
+			"email": "meet@gmail.com",
+			"phone": "9601063644",
+			"message": "I want to give feedback to your company that it is amazing",
+			"reviewed": true,
+			"timestamp": "4/9/2024, 8:03:44 PM"
+		},
+		{
+			"id": "3",
+			"name": "Meet",
+			"email": "meet@gmail.com",
+			"phone": "9601063644",
+			"message": "I want to give feedback to your company that it is amazing,I want to give feedback to your company that it is amazing,I want to give feedback to your company that it is amazing,I want to give feedback to your company that it is amazing,I want to give feedback to your company that it is amazing",
+			"reviewed": false,
+			"timestamp": "4/9/2024, 8:03:44 PM"
+		}
+	]
 }
