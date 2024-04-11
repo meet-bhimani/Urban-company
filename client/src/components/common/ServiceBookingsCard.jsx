@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 import Button from './Button'
 import { MdOutlineCurrencyRupee } from 'react-icons/md'
@@ -9,9 +8,8 @@ import InputWithLabel from './InputWithLabel'
 import toast from 'react-hot-toast'
 import { cancelBooking, updateBooking } from '../../api/bookingsApi'
 import ConfirmDeleteModal from './ConfirmDeleteModal'
-import { setLoader } from '../../redux/actions/appAction'
 
-const ServiceBookingsCard = ({ booking: userBooking, service }) => {
+const ServiceBookingsCard = ({ booking: userBooking, service, setRerender }) => {
   const [booking, setBooking] = useState(userBooking)
   const [isEditingLocation, setIsEditingLocation] = useState(false)
   const [editedLocation, setEditedLocation] = useState({
@@ -19,8 +17,6 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
     expected_service_date: booking.expected_service_date,
   })
   const [showConfirmationModal, setShowConfirmationModal] = useState(false)
-  const { isAuth, user } = useSelector((state) => state.role)
-  const dispatch = useDispatch()
 
   const initialValues = {
     address_line: editedLocation.address_line,
@@ -63,15 +59,14 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
 
   async function handleCancelBooking(id) {
     try {
-      dispatch(setLoader(true))
       const { success, data, error } = await cancelBooking(userBooking, 'user')
       if (!success) throw new Error(error.message || 'Error in cancellation of booking')
       toast.success('Booking canceled successfully')
+      setBooking(data)
     } catch (error) {
       toast.error(error.message)
       console.error(error)
     } finally {
-      dispatch(setLoader(false))
       setShowConfirmationModal(false)
     }
   }
@@ -237,7 +232,7 @@ const ServiceBookingsCard = ({ booking: userBooking, service }) => {
                     <span>
                       {booking?.status.charAt(0).toUpperCase() + booking?.status.slice(1)}{' '}
                       {booking?.canceled_by === 'user'
-                        ? 'By User'
+                        ? 'By You'
                         : booking?.canceled_by === 'service_provider'
                         ? 'By Service Provider'
                         : ''}
