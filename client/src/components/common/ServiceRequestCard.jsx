@@ -100,16 +100,24 @@ const ServiceRequestCard = ({ service, booking, user, serviceProvider, cardType,
             <div className="mt-4 flex flex-col gap-2 md:flex-row">
               {cardType === 'requested' && (
                 <>
-                  <div>
-                    <Button variant={'primary'} size="sm" rounded onClick={handleAcceptClick}>
-                      Accept
+                  {new Date(booking?.expected_service_date) > new Date() ? (
+                    <>
+                      <div>
+                        <Button variant={'primary'} size="sm" rounded onClick={handleAcceptClick}>
+                          Accept
+                        </Button>
+                      </div>
+                      <div>
+                        <Button variant={'danger'} size="sm" rounded onClick={handleDeclineClick}>
+                          Decline
+                        </Button>
+                      </div>
+                    </>
+                  ) : (
+                    <Button variant={'disabled'} size="sm" rounded>
+                      Expired
                     </Button>
-                  </div>
-                  <div>
-                    <Button variant={'danger'} size="sm" rounded onClick={handleDeclineClick}>
-                      Decline
-                    </Button>
-                  </div>
+                  )}
                 </>
               )}
               {cardType === 'accepted' && (
