@@ -37,10 +37,10 @@ Welcome to Urban Company, your ultimate destination for professional services at
 
 ### Server (JSON-Server)
 
-- Navigate to the server directory:
+- Open new terminal and navigate to the server directory:
 
   ```bash
-  cd ../server
+    cd server
   ```
 
 - Install dependencies
