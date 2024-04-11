@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import { useSelector } from 'react-redux'
 import { getAllServices } from '../../api/serviceApi'
@@ -6,25 +6,37 @@ import ServiceCard from '../../components/common/ServiceCard'
 import HelmetHeader from '../../components/common/HelmetHeader'
 import useGlobalSearch from '../../utils/custom-hooks/useGlobalSearch'
 import SearchInput from '../../components/common/SearchInput'
+import useCategoryFilter from '../../utils/custom-hooks/useCategoryFilter'
+import { MdOutlineFilterAlt, MdOutlineFilterAltOff } from 'react-icons/md'
 
 const ServicesList = () => {
   const [services, setServices] = useState(null)
   const [uniqueCategories, setUniqueCategories] = useState([])
+  const [filterCriteria, setFilterCriteria] = useState({ categories: [] })
+  const [showFilterDropdown, setShowFilterDropdown] = useState(false)
   const { isAuth, user } = useSelector((state) => state.role)
   const navigate = useNavigate()
+  const filterDropdownRef = useRef(null)
 
   const fieldsToSearch = useMemo(() => ['name', 'description', 'category', 'sub_category', 'features'], [])
-  const { filteredData: filteredServices, searchQuery, setSearchQuery } = useGlobalSearch(services, fieldsToSearch)
+  const { filteredData: searchData, searchQuery, setSearchQuery } = useGlobalSearch(services, fieldsToSearch)
+  const { filteredData: filteredServices } = useCategoryFilter(searchData, filterCriteria)
 
-  const getNonEmptyUniqueCategories = (uniqueCategories) => {
-    return uniqueCategories.filter((category) => {
-      return getServicesByCategory(category).length > 0
-    })
-  }
-
-  const getServicesByCategory = (category) => {
-    if (!filteredServices) return []
-    return filteredServices.filter((service) => service.category === category)
+  const handleCategorySelection = (category) => {
+    if (category === 'all') {
+      if (filterCriteria.categories.length === uniqueCategories.length) {
+        setFilterCriteria({ categories: [] })
+      } else {
+        setFilterCriteria({ categories: uniqueCategories })
+      }
+    } else {
+      setFilterCriteria((prevCriteria) => {
+        const updatedCategories = prevCriteria.categories.includes(category)
+          ? prevCriteria.categories.filter((cat) => cat !== category)
+          : [...prevCriteria.categories, category]
+        return { ...prevCriteria, categories: updatedCategories }
+      })
+    }
   }
 
   const fetchServices = async () => {
@@ -32,7 +44,8 @@ const ServicesList = () => {
       const { success, data } = await getAllServices()
       if (success) {
         setServices(data)
-        setUniqueCategories([...new Set(data.map((service) => service.category))])
+        const categories = [...new Set(data.map((service) => service.category))]
+        setUniqueCategories(categories)
       }
     } catch (error) {
       console.error(error?.message)
@@ -44,6 +57,20 @@ const ServicesList = () => {
     fetchServices()
   }, [])
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (filterDropdownRef.current && !filterDropdownRef.current.contains(event.target)) {
+        setShowFilterDropdown(false)
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside)
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside)
+    }
+  }, [])
+
   return (
     <>
       <HelmetHeader
@@ -51,30 +78,52 @@ const ServicesList = () => {
         description={'explore professional services that experienced never before at your home with urban Company'}
       />
       <div className="w-[85%] mx-auto mb-14 mt-8">
-        <div>
+        <div className="flex gap-4 items-center justify-between">
           <SearchInput
             dataName={'services'}
             className={'w-[min(600px,100%)]'}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
-        </div>
-        {getNonEmptyUniqueCategories(uniqueCategories).length > 0 ? (
-          getNonEmptyUniqueCategories(uniqueCategories).map((category) => {
-            return (
-              <div key={category} className="mt-10">
-                <h2 className="text-xl md:text-2xl lg:text-3xl">{category}</h2>
-                <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                  {getServicesByCategory(category).map((service) => (
-                    <ServiceCard service={service} key={service.id} />
+          <div className="mt-4 relative z-50" ref={filterDropdownRef}>
+            <button className="cursor-pointer text-2xl" onClick={() => setShowFilterDropdown(!showFilterDropdown)}>
+              {filterCriteria.categories.length > 0 ? <MdOutlineFilterAltOff /> : <MdOutlineFilterAlt />}
+            </button>
+            {showFilterDropdown && (
+              <div className="absolute top-full right-0 w-max bg-secondary border border-gray-200 p-1 rounded-md shadow-lg">
+                <div className="py-1">
+                  <label className="flex gap-1 cursor-pointer select-none">
+                    <input
+                      type="checkbox"
+                      value="all"
+                      checked={filterCriteria.categories.length === uniqueCategories.length}
+                      onChange={() => handleCategorySelection('all')}
+                    />
+                    All Categories
+                  </label>
+                  {uniqueCategories.map((category) => (
+                    <label key={category} className="flex gap-1 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        value={category}
+                        checked={filterCriteria.categories.includes(category)}
+                        onChange={() => handleCategorySelection(category)}
+                      />
+                      {category}
+                    </label>
                   ))}
                 </div>
               </div>
-            )
-          })
-        ) : (
-          <div className="text-base text-center mt-4">No services found matching your search</div>
-        )}
+            )}
+          </div>
+        </div>
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+          {filteredServices?.length > 0 ? (
+            filteredServices.map((service) => <ServiceCard service={service} key={service.id} />)
+          ) : (
+            <div className="text-base text-center mt-4">No services found matching your search</div>
+          )}
+        </div>
       </div>
     </>
   )
