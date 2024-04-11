@@ -10,7 +10,7 @@ const ServiceRequests = () => {
   const [users, setUsers] = useState([])
 
   const { user: serviceProvider } = useSelector((state) => state.role)
-  console.log('Me rerender hua')
+
   const fetchServiceRequests = async () => {
     try {
       const { success, data, error } = await getBookingsForServiceProvider(serviceProvider, 'pending')
@@ -49,6 +49,7 @@ const ServiceRequests = () => {
                 key={booking.id}
                 serviceProvider={serviceProvider}
                 cardType={'requested'}
+                fetchServiceRequests={fetchServiceRequests}
               />
             )
           })}

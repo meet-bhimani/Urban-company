@@ -6,7 +6,7 @@ import { acceptServiceRequest, declineServiceRequest } from '../../api/serviceAp
 import { setRole } from '../../redux/actions/authAction'
 import { cancelBooking, completeService } from '../../api/bookingsApi'
 
-const ServiceRequestCard = ({ service, booking, user, serviceProvider, cardType }) => {
+const ServiceRequestCard = ({ service, booking, user, serviceProvider, cardType, fetchServiceRequests }) => {
   const dispatch = useDispatch()
 
   const handleAcceptClick = async () => {
@@ -26,16 +26,19 @@ const ServiceRequestCard = ({ service, booking, user, serviceProvider, cardType 
       const { success, data, error } = await declineServiceRequest(booking)
       if (!success) throw new Error(error.message || 'Error Declining service')
       toast.success('Service Declined Successfully')
+      fetchServiceRequests()
     } catch (error) {
       console.error(error)
       toast.error('Something went wrong! try again here')
     }
   }
+
   const handleCompleteClick = async () => {
     try {
       const { success, data, error } = await completeService(booking, serviceProvider)
       if (!success) throw new Error(error.message || 'Error in completing service')
       toast.success('Booking Completed successfully')
+      fetchServiceRequests()
     } catch (error) {
       toast.error(error.message)
       console.error(error)
@@ -47,6 +50,7 @@ const ServiceRequestCard = ({ service, booking, user, serviceProvider, cardType 
       const { success, data, error } = await cancelBooking(booking, 'service_provider')
       if (!success) throw new Error(error.message || 'Error in cancellation of booking')
       toast.success('Booking canceled successfully')
+      fetchServiceRequests()
     } catch (error) {
       toast.error(error.message)
       console.error(error)
