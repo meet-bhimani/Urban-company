@@ -28,10 +28,17 @@ const RegisterServiceProvider = () => {
     },
   }
 
+  const passwordRules = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{6,}$/
+
   const registerSchema = Yup.object({
     name: Yup.string().required('Name is required'),
     email: Yup.string().trim().required('Email is required').email('Please enter a valid email address'),
-    password: Yup.string().trim().required('Password is required'),
+    password: Yup.string()
+      .required('Password is required')
+      .matches(
+        passwordRules,
+        'Password must be at least 6 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character'
+      ),
     confirmPassword: Yup.string()
       .required('Confirm password is required')
       .oneOf([Yup.ref('password'), null], 'Passwords must match'),
@@ -137,6 +144,7 @@ const RegisterServiceProvider = () => {
               name="password"
               label="Password"
               type="password"
+              autoComplete={'off'}
               value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -155,6 +163,7 @@ const RegisterServiceProvider = () => {
               name="confirmPassword"
               label="Confirm Password"
               type="password"
+              autoComplete={'off'}
               value={values.confirmPassword}
               onChange={handleChange}
               onBlur={handleBlur}

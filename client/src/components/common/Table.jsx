@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import { DataGrid } from '@mui/x-data-grid'
 
 const Table = ({ columns, rows, pageSizeOptions, dataName }) => {
@@ -24,6 +25,13 @@ const Table = ({ columns, rows, pageSizeOptions, dataName }) => {
       />
     </div>
   )
+}
+
+Table.propTypes = {
+  columns: PropTypes.arrayOf(PropTypes.object).isRequired,
+  rows: PropTypes.arrayOf(PropTypes.object).isRequired,
+  pageSizeOptions: PropTypes.arrayOf(PropTypes.number).isRequired,
+  dataName: PropTypes.string.isRequired,
 }
 
 export default Table

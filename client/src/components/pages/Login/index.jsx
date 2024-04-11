@@ -78,6 +78,7 @@ const Login = () => {
               name="password"
               label="Password"
               type="password"
+              autoComplete={'off'}
               value={values.password}
               onChange={handleChange}
               onBlur={handleBlur}

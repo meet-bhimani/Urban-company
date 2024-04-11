@@ -51,7 +51,6 @@ Button.propTypes = {
     'danger',
     'warning',
     'primary-outline',
-    'light-outline',
     'dark-outline',
     'success-outline',
     'danger-outline',
